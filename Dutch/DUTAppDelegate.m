@@ -8,13 +8,15 @@
 
 #import "DUTAppDelegate.h"
 
+
+@interface DUTAppDelegate()
+@property (nonatomic, strong, readwrite) IBOutlet UINavigationController *navigationController;
+@end
 @implementation DUTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.navigationController = self.window.rootViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

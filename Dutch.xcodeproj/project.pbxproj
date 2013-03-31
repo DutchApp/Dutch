@@ -16,6 +16,10 @@
 		A597ECC417077825008061B2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A597ECC317077825008061B2 /* Default.png */; };
 		A597ECC617077825008061B2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A597ECC517077825008061B2 /* Default@2x.png */; };
 		A597ECC817077825008061B2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A597ECC717077825008061B2 /* Default-568h@2x.png */; };
+		A597ECD117077A84008061B2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A597ECD017077A84008061B2 /* MainStoryboard.storyboard */; };
+		A597ECD617078AF5008061B2 /* DUTLoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECD517078AF5008061B2 /* DUTLoginTableViewController.m */; };
+		A597ECDC17079746008061B2 /* DUTRegistrationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECDB17079746008061B2 /* DUTRegistrationTableViewController.m */; };
+		A597ECE01707B486008061B2 /* DUTTransportUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECDF1707B486008061B2 /* DUTTransportUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,13 @@
 		A597ECC317077825008061B2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A597ECC517077825008061B2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A597ECC717077825008061B2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A597ECD017077A84008061B2 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		A597ECD417078AF5008061B2 /* DUTLoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTLoginTableViewController.h; path = ViewControllers/DUTLoginTableViewController.h; sourceTree = "<group>"; };
+		A597ECD517078AF5008061B2 /* DUTLoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTLoginTableViewController.m; path = ViewControllers/DUTLoginTableViewController.m; sourceTree = "<group>"; };
+		A597ECDA17079746008061B2 /* DUTRegistrationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTRegistrationTableViewController.h; path = ViewControllers/DUTRegistrationTableViewController.h; sourceTree = "<group>"; };
+		A597ECDB17079746008061B2 /* DUTRegistrationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTRegistrationTableViewController.m; path = ViewControllers/DUTRegistrationTableViewController.m; sourceTree = "<group>"; };
+		A597ECDE1707B486008061B2 /* DUTTransportUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTTransportUtility.h; path = Transport/DUTTransportUtility.h; sourceTree = "<group>"; };
+		A597ECDF1707B486008061B2 /* DUTTransportUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTTransportUtility.m; path = Transport/DUTTransportUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +89,10 @@
 		A597ECB717077825008061B2 /* Dutch */ = {
 			isa = PBXGroup;
 			children = (
-				A597ECC017077825008061B2 /* DUTAppDelegate.h */,
-				A597ECC117077825008061B2 /* DUTAppDelegate.m */,
+				A597ECDD1707B413008061B2 /* Utility */,
+				A597ECD317078AA7008061B2 /* ViewControllers */,
+				A597ECD217078A93008061B2 /* App */,
+				A597ECCF1707784B008061B2 /* Resource */,
 				A597ECB817077825008061B2 /* Supporting Files */,
 			);
 			path = Dutch;
@@ -97,6 +110,43 @@
 				A597ECC717077825008061B2 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A597ECCF1707784B008061B2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A597ECD017077A84008061B2 /* MainStoryboard.storyboard */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		A597ECD217078A93008061B2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A597ECC017077825008061B2 /* DUTAppDelegate.h */,
+				A597ECC117077825008061B2 /* DUTAppDelegate.m */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		A597ECD317078AA7008061B2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A597ECD417078AF5008061B2 /* DUTLoginTableViewController.h */,
+				A597ECD517078AF5008061B2 /* DUTLoginTableViewController.m */,
+				A597ECDA17079746008061B2 /* DUTRegistrationTableViewController.h */,
+				A597ECDB17079746008061B2 /* DUTRegistrationTableViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A597ECDD1707B413008061B2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A597ECDE1707B486008061B2 /* DUTTransportUtility.h */,
+				A597ECDF1707B486008061B2 /* DUTTransportUtility.m */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +205,7 @@
 				A597ECC417077825008061B2 /* Default.png in Resources */,
 				A597ECC617077825008061B2 /* Default@2x.png in Resources */,
 				A597ECC817077825008061B2 /* Default-568h@2x.png in Resources */,
+				A597ECD117077A84008061B2 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +218,9 @@
 			files = (
 				A597ECBE17077825008061B2 /* main.m in Sources */,
 				A597ECC217077825008061B2 /* DUTAppDelegate.m in Sources */,
+				A597ECD617078AF5008061B2 /* DUTLoginTableViewController.m in Sources */,
+				A597ECDC17079746008061B2 /* DUTRegistrationTableViewController.m in Sources */,
+				A597ECE01707B486008061B2 /* DUTTransportUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
