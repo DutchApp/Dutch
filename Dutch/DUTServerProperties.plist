@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>host</key>
+	<string>dutch.herokuapp.com</string>
+	<key>secure</key>
+	<false/>
+	<key>port</key>
+	<string></string>
+	<key>contentType</key>
+	<string>json</string>
+	<key>serverTimeOut</key>
+	<integer>60</integer>
+</dict>
+</plist>

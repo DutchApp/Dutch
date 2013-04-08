@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11901A1E171227A700E5BC8E /* DUTServerOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A1D171227A700E5BC8E /* DUTServerOperations.m */; };
+		11901A2217122ACE00E5BC8E /* DUTRequestEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */; };
+		11901A4917123A9B00E5BC8E /* DUTRequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */; };
+		11901A4C17123D9A00E5BC8E /* DUTServerProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */; };
 		A597ECB217077825008061B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB117077825008061B2 /* UIKit.framework */; };
 		A597ECB417077825008061B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB317077825008061B2 /* Foundation.framework */; };
 		A597ECB617077825008061B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB517077825008061B2 /* CoreGraphics.framework */; };
@@ -23,6 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11901A1C171227A700E5BC8E /* DUTServerOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTServerOperations.h; path = DutchOperations/DUTServerOperations.h; sourceTree = "<group>"; };
+		11901A1D171227A700E5BC8E /* DUTServerOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTServerOperations.m; path = DutchOperations/DUTServerOperations.m; sourceTree = "<group>"; };
+		11901A2017122ACE00E5BC8E /* DUTRequestEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTRequestEncoder.h; path = DutchRequestData/DUTRequestEncoder.h; sourceTree = "<group>"; };
+		11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTRequestEncoder.m; path = DutchRequestData/DUTRequestEncoder.m; sourceTree = "<group>"; };
+		11901A361712353900E5BC8E /* DUTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTConstants.h; path = Constants/DUTConstants.h; sourceTree = "<group>"; };
+		11901A37171235C000E5BC8E /* DUTConstantVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTConstantVariables.h; path = Constants/DUTConstantVariables.h; sourceTree = "<group>"; };
+		11901A4717123A9B00E5BC8E /* DUTRequestCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTRequestCreator.h; path = RequestCreator/DUTRequestCreator.h; sourceTree = "<group>"; };
+		11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTRequestCreator.m; path = RequestCreator/DUTRequestCreator.m; sourceTree = "<group>"; };
+		11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DUTServerProperties.plist; sourceTree = "<group>"; };
 		A597ECAE17077825008061B2 /* Dutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A597ECB117077825008061B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A597ECB317077825008061B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,6 +72,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11901A1B1712273300E5BC8E /* DutchOperations */ = {
+			isa = PBXGroup;
+			children = (
+				11901A1C171227A700E5BC8E /* DUTServerOperations.h */,
+				11901A1D171227A700E5BC8E /* DUTServerOperations.m */,
+			);
+			name = DutchOperations;
+			sourceTree = "<group>";
+		};
+		11901A1F17122A6200E5BC8E /* DutchRequestData */ = {
+			isa = PBXGroup;
+			children = (
+				11901A2017122ACE00E5BC8E /* DUTRequestEncoder.h */,
+				11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */,
+			);
+			name = DutchRequestData;
+			sourceTree = "<group>";
+		};
+		11901A341712345E00E5BC8E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				11901A361712353900E5BC8E /* DUTConstants.h */,
+				11901A37171235C000E5BC8E /* DUTConstantVariables.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		11901A4617123A5800E5BC8E /* RequestCreation */ = {
+			isa = PBXGroup;
+			children = (
+				11901A4717123A9B00E5BC8E /* DUTRequestCreator.h */,
+				11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */,
+			);
+			name = RequestCreation;
+			sourceTree = "<group>";
+		};
 		A597ECA517077825008061B2 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +138,10 @@
 		A597ECB717077825008061B2 /* Dutch */ = {
 			isa = PBXGroup;
 			children = (
+				11901A4617123A5800E5BC8E /* RequestCreation */,
+				11901A341712345E00E5BC8E /* Constants */,
+				11901A1F17122A6200E5BC8E /* DutchRequestData */,
+				11901A1B1712273300E5BC8E /* DutchOperations */,
 				A597ECDD1707B413008061B2 /* Utility */,
 				A597ECD317078AA7008061B2 /* ViewControllers */,
 				A597ECD217078A93008061B2 /* App */,
@@ -116,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A597ECD017077A84008061B2 /* MainStoryboard.storyboard */,
+				11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -206,6 +260,7 @@
 				A597ECC617077825008061B2 /* Default@2x.png in Resources */,
 				A597ECC817077825008061B2 /* Default-568h@2x.png in Resources */,
 				A597ECD117077A84008061B2 /* MainStoryboard.storyboard in Resources */,
+				11901A4C17123D9A00E5BC8E /* DUTServerProperties.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +276,9 @@
 				A597ECD617078AF5008061B2 /* DUTLoginTableViewController.m in Sources */,
 				A597ECDC17079746008061B2 /* DUTRegistrationTableViewController.m in Sources */,
 				A597ECE01707B486008061B2 /* DUTTransportUtility.m in Sources */,
+				11901A1E171227A700E5BC8E /* DUTServerOperations.m in Sources */,
+				11901A2217122ACE00E5BC8E /* DUTRequestEncoder.m in Sources */,
+				11901A4917123A9B00E5BC8E /* DUTRequestCreator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +395,7 @@
 				A597ECCD17077825008061B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
