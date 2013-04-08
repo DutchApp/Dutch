@@ -14,6 +14,6 @@
 /**
  * Method to create the URL request for user registration.
  */
-+ (NSURLRequest *)urlRequestForRegisterUser;
++ (NSMutableURLRequest *)urlRequestForRegisterUser;
 
 @end

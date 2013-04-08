@@ -14,9 +14,9 @@
 @implementation DUTServerOperations
 
 
-+ (NSData *)registerUserWithInformation:(NSDictionary *)userInformation
-                           successBlock:(BasicBlock)successBlock
-                           failureBlock:(BasicBlock)failureBlock
++ (void)registerUserWithInformation:(NSDictionary *)userInformation
+                           successBlock:(BlockWithParameter)successBlock
+                           failureBlock:(BlockWithParameter)failureBlock
                               withError:(NSError **)error {
     NSData *encodedData = [DUTRequestEncoder encodeRequestFromData:userInformation withError:error];
     NSMutableURLRequest *registerUserURLRequest = [DUTRequestCreator urlRequestForRegisterUser];

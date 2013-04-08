@@ -43,7 +43,7 @@
 #pragma mark Class Methods
 
 
-+ (NSURLRequest *)urlRequestForRegisterUser {
++ (NSMutableURLRequest *)urlRequestForRegisterUser {
     NSString *urlString =
         [NSString stringWithFormat:@"%@://%@users.%@",
                   [self httpProtocol],

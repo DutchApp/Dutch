@@ -36,7 +36,7 @@
                             <color key="tintColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                             <items>
                                 <navigationItem title="Registration" id="dqY-Hs-tyu">
-                                    <barButtonItem key="leftBarButtonItem" title="✖" style="plain" id="Gvy-MP-9Da">
+                                    <barButtonItem key="leftBarButtonItem" title="✖" id="Gvy-MP-9Da">
                                         <color key="tintColor" white="0.70992943549999998" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="cancel:" destination="z2x-9y-WQO" id="cHK-c0-48H"/>

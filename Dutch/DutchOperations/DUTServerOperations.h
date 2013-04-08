@@ -21,7 +21,7 @@
  * @failureBlock to be executed in case of failure
  *
  */
-+ (NSData *)registerUserWithInformation:(NSDictionary *)userInformation
++ (void)registerUserWithInformation:(NSDictionary *)userInformation
                            successBlock:(BlockWithParameter)successBlock
                            failureBlock:(BlockWithParameter)failureBlock
                               withError:(NSError **)error;
