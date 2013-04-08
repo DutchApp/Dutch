@@ -289,6 +289,8 @@
 				11901A1E171227A700E5BC8E /* DUTServerOperations.m in Sources */,
 				11901A2217122ACE00E5BC8E /* DUTRequestEncoder.m in Sources */,
 				11901A4917123A9B00E5BC8E /* DUTRequestCreator.m in Sources */,
+				A5C3CB03171227A100724C25 /* DUTUtility.m in Sources */,
+				A5C3CB06171227C200724C25 /* DUTUtility+Validation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
