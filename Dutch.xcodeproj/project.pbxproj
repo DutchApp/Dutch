@@ -24,6 +24,8 @@
 		A597ECD617078AF5008061B2 /* DUTLoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECD517078AF5008061B2 /* DUTLoginTableViewController.m */; };
 		A597ECDC17079746008061B2 /* DUTRegistrationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECDB17079746008061B2 /* DUTRegistrationTableViewController.m */; };
 		A597ECE01707B486008061B2 /* DUTTransportUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECDF1707B486008061B2 /* DUTTransportUtility.m */; };
+		A5C3CB03171227A100724C25 /* DUTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C3CB02171227A100724C25 /* DUTUtility.m */; };
+		A5C3CB06171227C200724C25 /* DUTUtility+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C3CB05171227C200724C25 /* DUTUtility+Validation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,10 @@
 		A597ECDB17079746008061B2 /* DUTRegistrationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTRegistrationTableViewController.m; path = ViewControllers/DUTRegistrationTableViewController.m; sourceTree = "<group>"; };
 		A597ECDE1707B486008061B2 /* DUTTransportUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTTransportUtility.h; path = Transport/DUTTransportUtility.h; sourceTree = "<group>"; };
 		A597ECDF1707B486008061B2 /* DUTTransportUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTTransportUtility.m; path = Transport/DUTTransportUtility.m; sourceTree = "<group>"; };
+		A5C3CB01171227A100724C25 /* DUTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTUtility.h; path = Utility/DUTUtility.h; sourceTree = "<group>"; };
+		A5C3CB02171227A100724C25 /* DUTUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTUtility.m; path = Utility/DUTUtility.m; sourceTree = "<group>"; };
+		A5C3CB04171227C200724C25 /* DUTUtility+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DUTUtility+Validation.h"; path = "Utility/DUTUtility+Validation.h"; sourceTree = "<group>"; };
+		A5C3CB05171227C200724C25 /* DUTUtility+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DUTUtility+Validation.m"; path = "Utility/DUTUtility+Validation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +205,10 @@
 			children = (
 				A597ECDE1707B486008061B2 /* DUTTransportUtility.h */,
 				A597ECDF1707B486008061B2 /* DUTTransportUtility.m */,
+				A5C3CB01171227A100724C25 /* DUTUtility.h */,
+				A5C3CB02171227A100724C25 /* DUTUtility.m */,
+				A5C3CB04171227C200724C25 /* DUTUtility+Validation.h */,
+				A5C3CB05171227C200724C25 /* DUTUtility+Validation.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
