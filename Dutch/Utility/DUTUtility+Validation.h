@@ -10,4 +10,6 @@
 
 @interface DUTUtility (Validation)
 
+
++ (BOOL)validEMail:(NSString *)emailAddress;
 @end

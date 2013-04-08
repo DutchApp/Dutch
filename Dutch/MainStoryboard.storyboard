@@ -12,6 +12,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="WmC-88-LYR">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="XhG-zG-vZV" kind="relationship" relationship="rootViewController" id="SF8-Zc-7dJ"/>
@@ -28,42 +29,37 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Ijl-28-22z">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.88235300780000003" green="0.8980392814" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="0.709929435483871" alpha="1" colorSpace="calibratedWhite"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" barStyle="blackOpaque" id="dpA-Sm-nGe">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                             <items>
-                                <navigationItem title="Registration" id="dqY-Hs-tyu"/>
+                                <navigationItem title="Registration" id="dqY-Hs-tyu">
+                                    <barButtonItem key="leftBarButtonItem" title="✖" style="plain" id="Gvy-MP-9Da">
+                                        <color key="tintColor" white="0.70992943549999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="cancel:" destination="z2x-9y-WQO" id="cHK-c0-48H"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" title="✔" id="tO3-vN-92Z">
+                                        <color key="tintColor" white="0.70992943549999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="done:" destination="z2x-9y-WQO" id="ojD-al-083"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
                             </items>
                         </navigationBar>
                         <view key="tableFooterView" contentMode="scaleToFill" id="WaE-7E-c6c">
                             <rect key="frame" x="0.0" y="242" width="320" height="63"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3Z-rS-yEf">
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="73" id="CSM-8n-y4x"/>
-                                        <constraint firstAttribute="height" constant="44" id="w2w-qy-7mx"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="Submit">
-                                        <color key="titleColor" red="0.22745099660000001" green="0.26666668059999998" blue="0.32941177490000001" alpha="1" colorSpace="deviceRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="actionSubmit:" destination="z2x-9y-WQO" eventType="touchUpInside" id="Mbc-hq-eNC"/>
-                                    </connections>
-                                </button>
                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hXI-EN-wK1"/>
                             </subviews>
-                            <color key="backgroundColor" red="0.88235300780000003" green="0.8980392814" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="backgroundColor" white="0.70992943549999998" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="hXI-EN-wK1" firstAttribute="centerX" secondItem="WaE-7E-c6c" secondAttribute="centerX" type="default" id="Nef-oJ-nwf"/>
-                                <constraint firstItem="hXI-EN-wK1" firstAttribute="centerX" secondItem="B3Z-rS-yEf" secondAttribute="centerX" type="default" id="mt1-HJ-mip"/>
-                                <constraint firstItem="B3Z-rS-yEf" firstAttribute="centerY" secondItem="WaE-7E-c6c" secondAttribute="centerY" type="default" id="nP4-8P-3Cm"/>
                                 <constraint firstItem="hXI-EN-wK1" firstAttribute="centerY" secondItem="WaE-7E-c6c" secondAttribute="centerY" type="default" id="v9y-tV-KvL"/>
                             </constraints>
                         </view>
@@ -84,6 +80,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="z2x-9y-WQO" id="9EN-r5-hgp"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -170,6 +169,14 @@
                             <outlet property="delegate" destination="z2x-9y-WQO" id="I4S-UT-R2x"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="doneButton" destination="tO3-vN-92Z" id="rU2-U7-y1l"/>
+                        <outlet property="name" destination="8OL-nZ-1i3" id="w8P-yF-DwX"/>
+                        <outlet property="navigationBar" destination="dpA-Sm-nGe" id="3aQ-Tf-SWM"/>
+                        <outlet property="pwd" destination="mRJ-PJ-qig" id="Hw9-52-x3H"/>
+                        <outlet property="pwd_confirmation" destination="Rhm-BS-zij" id="oKJ-z5-CzC"/>
+                        <outlet property="userName" destination="uCo-OC-zsP" id="ujp-B9-yY4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iv1-Pm-a1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,22 +186,22 @@
         <scene sceneID="ih6-To-7Yv">
             <objects>
                 <tableViewController storyboardIdentifier="login" id="XhG-zG-vZV" customClass="DUTLoginTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="100" sectionFooterHeight="10" id="Pha-lT-lEZ">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="30" sectionFooterHeight="10" id="Pha-lT-lEZ">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.88235300780000003" green="0.8980392814" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="QzI-qH-cmd">
-                            <rect key="frame" x="0.0" y="200" width="320" height="83"/>
+                            <rect key="frame" x="0.0" y="130" width="320" height="73"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3l-cD-zNO">
                                     <constraints>
+                                        <constraint firstAttribute="width" constant="73" id="Afi-je-Xll"/>
                                         <constraint firstAttribute="height" constant="35" id="Tmy-6H-a3q"/>
-                                        <constraint firstAttribute="width" constant="73" id="gua-vC-HRr"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" title="Login">
-                                        <color key="titleColor" red="0.22745099663734436" green="0.26666668057441711" blue="0.32941177487373352" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <state key="highlighted">
@@ -207,7 +214,7 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" title="Register">
-                                        <color key="titleColor" red="0.22745099663734436" green="0.26666668057441711" blue="0.32941177487373352" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <state key="highlighted">
@@ -218,23 +225,23 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.88235300780000003" green="0.8980392814" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="backgroundColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="g3l-cD-zNO" firstAttribute="leading" secondItem="QzI-qH-cmd" secondAttribute="leading" constant="123" id="0nR-M9-amV"/>
                                 <constraint firstItem="Wml-BS-xYl" firstAttribute="trailing" secondItem="g3l-cD-zNO" secondAttribute="trailing" type="default" id="7ub-kJ-J64"/>
                                 <constraint firstItem="g3l-cD-zNO" firstAttribute="leading" secondItem="Wml-BS-xYl" secondAttribute="leading" type="default" id="A59-eX-X0T"/>
-                                <constraint firstItem="Wml-BS-xYl" firstAttribute="top" secondItem="g3l-cD-zNO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="BPE-1X-L2P"/>
-                                <constraint firstItem="g3l-cD-zNO" firstAttribute="top" secondItem="QzI-qH-cmd" secondAttribute="top" type="default" id="kQd-91-rgP"/>
+                                <constraint firstItem="g3l-cD-zNO" firstAttribute="top" secondItem="QzI-qH-cmd" secondAttribute="top" constant="-6" id="IF8-xc-hod"/>
+                                <constraint firstAttribute="bottom" secondItem="Wml-BS-xYl" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Ixr-rC-Cfs"/>
+                                <constraint firstItem="g3l-cD-zNO" firstAttribute="leading" secondItem="QzI-qH-cmd" secondAttribute="leading" constant="123" id="o1F-Ke-kBh"/>
                             </constraints>
                         </view>
                         <sections>
                             <tableViewSection id="P9a-wM-wTm">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fE4-6U-hHv">
-                                        <rect key="frame" x="0.0" y="100" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="30" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User e-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O0O-HG-9EG">
@@ -254,7 +261,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3YA-IQ-Ecm">
-                                        <rect key="frame" x="0.0" y="145" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="75" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -298,8 +305,15 @@
         <class className="DUTRegistrationTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DUTRegistrationTableViewController.h"/>
             <relationships>
-                <relationship kind="action" name="actionSubmit:"/>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="pwd" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pwd_confirmation" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
