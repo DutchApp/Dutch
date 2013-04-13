@@ -11,12 +11,10 @@
 #import "DUTUtility+Validation.h"
 #import "DUTServerOperations.h"
 
-#define kUserEmailRow 0
-#define kUserNameRow 1
-#define kUserPasswordRow 2
-#define kUserPasswordReenterRow 3
 
 @interface DUTRegistrationTableViewController ()
+
+
 @property(nonatomic,strong,readwrite) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property(nonatomic,strong,readwrite) IBOutlet UITextField *userName;
 @property(nonatomic,strong,readwrite) IBOutlet UITextField *name;
@@ -25,12 +23,14 @@
 @property(nonatomic,strong,readwrite) IBOutlet UINavigationBar *navigationBar;
 @property(nonatomic,strong,readwrite) IBOutlet UIBarButtonItem *doneButton;
 
+
 @end
+
 
 @implementation DUTRegistrationTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+
+- (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
@@ -38,8 +38,8 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -49,21 +49,15 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-}
-
-
-#pragma mark - Action Methods
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Actions
 
 
 - (NSString *)stringWithUUID {
