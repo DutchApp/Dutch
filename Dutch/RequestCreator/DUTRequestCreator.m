@@ -45,7 +45,7 @@
 
 + (NSMutableURLRequest *)urlRequestForRegisterUser {
     NSString *urlString =
-        [NSString stringWithFormat:@"%@://%@users.%@",
+        [NSString stringWithFormat:@"%@://%@//users.%@",
                   [self httpProtocol],
                   [self host], [self serverContentType]];
     

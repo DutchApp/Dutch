@@ -9,6 +9,7 @@
 #import "DUTRegistrationTableViewController.h"
 
 #import "DUTUtility+Validation.h"
+#import "DUTServerOperations.h"
 
 #define kUserEmailRow 0
 #define kUserNameRow 1
@@ -65,20 +66,6 @@
 #pragma mark - Action Methods
 
 
-- (NSData *)createRequestBody {
-    NSData *jsonObject = nil;
-    NSDictionary *registrationInfoDictionary = @{@"email":self.userName.text, @"name":self.name.text,
-                                                 @"password":self.pwd.text,
-                                                 @"password_confirmation":self.pwd_confirmation.text};
-    
-    if ([NSJSONSerialization isValidJSONObject:registrationInfoDictionary]) {
-        NSError *error = nil;
-        jsonObject = [NSJSONSerialization dataWithJSONObject:registrationInfoDictionary options:0 error:&error];
-    }
-    return jsonObject;
-}
-
-
 - (NSString *)stringWithUUID {
     CFUUIDRef uuidObj = CFUUIDCreate(nil);//create a new UUID
     NSString *uuid = (__bridge_transfer NSString *)(CFUUIDCreateString(nil, uuidObj));
@@ -88,28 +75,15 @@
 
 
 - (IBAction)done:(id)sender {
-    NSLog(@"Submit selected");
-    NSData *requestBody = [self createRequestBody];
-    [self.activityIndicator startAnimating];
-    self.tableView.userInteractionEnabled = NO;
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSError *error = nil;
-        NSURLResponse *response = nil;
-        NSURL *url = [NSURL URLWithString:@"https://dutch.herokuapp.com/users.json"];
-        NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc]initWithURL:url];
-        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        [urlRequest setHTTPMethod:@"POST"];
-        [urlRequest setHTTPBody:requestBody];
-        NSData *jsonResponseData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSError *error;
-            self.tableView.userInteractionEnabled = YES;
-            [self.activityIndicator stopAnimating];
-            NSDictionary *jsonDict = (NSDictionary *) [NSJSONSerialization JSONObjectWithData:jsonResponseData options:NSJSONReadingMutableContainers error:&error];
-            NSLog(@"response %@",jsonDict);
-            [self dismissViewControllerAnimated:YES completion:nil];
-        });
-    });    
+     NSDictionary *registrationInfoDictionary =
+        @{@"email":self.userName.text, @"name":self.name.text, @"password":self.pwd.text,
+          @"password_confirmation":self.pwd_confirmation.text};
+    [DUTServerOperations registerUserWithInformation:registrationInfoDictionary
+                                        successBlock:^(id object) {
+                                            NSLog(@"Response:%@",object);
+                                        } failureBlock:^(id object) {
+                                            NSLog(@"Failure:%@",object);                                            
+                                        }];
 }
 
 

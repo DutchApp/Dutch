@@ -10,6 +10,7 @@
 
 #import "DUTConstants.h"
 
+
 @interface DUTServerOperations : NSObject
 
 
@@ -23,7 +24,6 @@
  */
 + (void)registerUserWithInformation:(NSDictionary *)userInformation
                            successBlock:(BlockWithParameter)successBlock
-                           failureBlock:(BlockWithParameter)failureBlock
-                              withError:(NSError **)error;
+                           failureBlock:(BlockWithParameter)failureBlock;
 
 @end

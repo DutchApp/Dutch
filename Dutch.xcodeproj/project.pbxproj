@@ -11,6 +11,7 @@
 		11901A2217122ACE00E5BC8E /* DUTRequestEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */; };
 		11901A4917123A9B00E5BC8E /* DUTRequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */; };
 		11901A4C17123D9A00E5BC8E /* DUTServerProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */; };
+		A53F7273171A09CE00B61DE7 /* DUTResponseDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7272171A09CE00B61DE7 /* DUTResponseDecoder.m */; };
 		A597ECB217077825008061B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB117077825008061B2 /* UIKit.framework */; };
 		A597ECB417077825008061B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB317077825008061B2 /* Foundation.framework */; };
 		A597ECB617077825008061B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB517077825008061B2 /* CoreGraphics.framework */; };
@@ -38,6 +39,9 @@
 		11901A4717123A9B00E5BC8E /* DUTRequestCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTRequestCreator.h; path = RequestCreator/DUTRequestCreator.h; sourceTree = "<group>"; };
 		11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTRequestCreator.m; path = RequestCreator/DUTRequestCreator.m; sourceTree = "<group>"; };
 		11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DUTServerProperties.plist; sourceTree = "<group>"; };
+		A53F7271171A09CE00B61DE7 /* DUTResponseDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTResponseDecoder.h; path = DutchRequestData/DUTResponseDecoder.h; sourceTree = "<group>"; };
+		A53F7272171A09CE00B61DE7 /* DUTResponseDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTResponseDecoder.m; path = DutchRequestData/DUTResponseDecoder.m; sourceTree = "<group>"; };
+		A53F7274171A0D0500B61DE7 /* DUTServerOperationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DUTServerOperationConstants.h; path = DutchOperations/DUTServerOperationConstants.h; sourceTree = "<group>"; };
 		A597ECAE17077825008061B2 /* Dutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A597ECB117077825008061B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A597ECB317077825008061B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +96,8 @@
 			children = (
 				11901A2017122ACE00E5BC8E /* DUTRequestEncoder.h */,
 				11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */,
+				A53F7271171A09CE00B61DE7 /* DUTResponseDecoder.h */,
+				A53F7272171A09CE00B61DE7 /* DUTResponseDecoder.m */,
 			);
 			name = DutchRequestData;
 			sourceTree = "<group>";
@@ -101,6 +107,7 @@
 			children = (
 				11901A361712353900E5BC8E /* DUTConstants.h */,
 				11901A37171235C000E5BC8E /* DUTConstantVariables.h */,
+				A53F7274171A0D0500B61DE7 /* DUTServerOperationConstants.h */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -291,6 +298,7 @@
 				11901A4917123A9B00E5BC8E /* DUTRequestCreator.m in Sources */,
 				A5C3CB03171227A100724C25 /* DUTUtility.m in Sources */,
 				A5C3CB06171227C200724C25 /* DUTUtility+Validation.m in Sources */,
+				A53F7273171A09CE00B61DE7 /* DUTResponseDecoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
