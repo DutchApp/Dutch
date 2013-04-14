@@ -8,9 +8,11 @@
 
 #import "DUTServerOperations.h"
 
+#import "DUTAppDelegate.h"
 #import "DUTRequestCreator.h"
 #import "DUTResponseDecoder.h"
 #import "DUTRequestEncoder.h"
+
 
 NSString * const kServerOpError = @"error";
 NSString * const kServerOpResponseData = @"responseDict";
@@ -22,7 +24,7 @@ NSString * const kServerOpRequestData = @"requestDict";
 + (void)registerUserWithInformation:(NSDictionary *)userInformation
                            successBlock:(BlockWithParameter)successBlock
                            failureBlock:(BlockWithParameter)failureBlock {
-    NSError *error = nil;
+    __block NSError *error = nil;
     NSData *encodedData = [DUTRequestEncoder encodeRequestFromData:userInformation withError:&error];
     
     if (error) {
@@ -34,28 +36,46 @@ NSString * const kServerOpRequestData = @"requestDict";
     NSMutableURLRequest *registerUserURLRequest = [DUTRequestCreator urlRequestForRegisterUser];
     [registerUserURLRequest setHTTPBody:encodedData];
     
-    // HTTP submit. Probably should be in its own framework
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    [NSURLConnection sendAsynchronousRequest:registerUserURLRequest
-                                       queue:queue
-                           completionHandler:^(NSURLResponse *urlResponse, NSData *responseData, NSError *error ) {
-                               if (error) {
-                                   NSDictionary *errorDict = @{kServerOpError:error, kServerOpRequestData:userInformation};
-                                   failureBlock(errorDict);
-                                   return ;
-                               }
-                               NSDictionary *responseDict =
-                                [DUTResponseDecoder decodeFromData:responseData
-                                                         withError:&error];
-                               if (error) {
-                                   NSDictionary *errorDict = @{kServerOpError:error, kServerOpRequestData:userInformation};
-                                   failureBlock(errorDict);
-                                   return;
-                               }
-                               responseDict =
-                                @{kServerOpRequestData:userInformation,kServerOpResponseData:responseDict};
-                               successBlock(responseDict);
-                           }];
+    __block MBProgressHUD *progressView = [self showProgressViewWithMessage:@"Loading"];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        NSURLResponse *urlResponse = nil;
+        NSData *responseData = [NSURLConnection sendSynchronousRequest:registerUserURLRequest
+                                                     returningResponse:&urlResponse
+                                                                 error:&error];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [progressView hide:YES];
+            if (error) {
+                NSDictionary *errorDict = @{kServerOpError:error, kServerOpRequestData:userInformation};
+                failureBlock(errorDict);
+                return;
+            }
+            else {
+               NSDictionary *responseDict =
+                    [DUTResponseDecoder decodeFromData:responseData
+                                              withError:&error];
+                if (error) {
+                    NSDictionary *errorDict = @{kServerOpError:error, kServerOpRequestData:userInformation};
+                    failureBlock(errorDict);
+                }
+                else {
+                    responseDict = @{kServerOpRequestData:userInformation,kServerOpResponseData:responseDict};
+                    successBlock(responseDict);
+                }
+            }
+        });
+    });
+}
+
+
++ (MBProgressHUD *)showProgressViewWithMessage:(NSString *)message {
+    MBProgressHUD *progressView =
+        [[MBProgressHUD alloc] initWithWindow:[[[UIApplication sharedApplication] delegate] window]];
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:progressView];
+	progressView.labelText = message;
+    
+    [progressView show:YES];
+    return progressView;
 }
 
 @end
