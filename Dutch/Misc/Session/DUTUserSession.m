@@ -8,7 +8,33 @@
 
 #import "DUTUserSession.h"
 
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Implementation
+
+
 @implementation DUTUserSession
+
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Initialization
+
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.authToken = nil;
+    }
+    
+    return self;
+}
+
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Public Methods
 
 
 + (DUTUserSession *)sharedSession {
@@ -20,6 +46,11 @@
     });
     
     return session;
+}
+
+
+- (void)reset {
+    self.authToken = nil;
 }
 
 @end
