@@ -11,7 +11,7 @@
 @implementation DUTUtility (Validation)
 
 
-+ (BOOL)validEMail:(NSString *)emailAddress {
++ (BOOL)isValidEMail:(NSString *)emailAddress {
     // RFC 3696
     NSString *emailRegex =
     @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
@@ -21,5 +21,9 @@
     return [predicate evaluateWithObject:emailAddress];
 }
 
+
++ (BOOL)isContentValid:(NSString *)content {
+    return content != nil && [content length] > 0;
+}
 
 @end
