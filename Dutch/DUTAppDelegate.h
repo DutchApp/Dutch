@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Imterface
+
+
 @interface DUTAppDelegate : UIResponder <UIApplicationDelegate>
 
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Properties
+
+
 @property (strong, nonatomic) UIWindow *window;
+
 
 @end
