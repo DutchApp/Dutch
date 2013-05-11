@@ -78,7 +78,7 @@
 
 
 + (NSString *)httpProtocol {
-    return [[self serverConfiguration] objectForKey:kSecureKey] ? @"https" : @"http";
+    return ((NSNumber *)[[self serverConfiguration] objectForKey:kSecureKey]).boolValue ? @"https" : @"http";
 }
 
 

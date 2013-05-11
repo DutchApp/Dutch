@@ -10,33 +10,27 @@
 
 #import "DUTUtility+Validation.h"
 #import "DUTServerOperations.h"
+#import "DUTGroupedCellControllerContainer.h"
+#import "DUTEditableCellController.h"
 
 
 @interface DUTRegistrationTableViewController ()
 
 
 @property(nonatomic,strong,readwrite) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property(nonatomic,strong,readwrite) IBOutlet UITextField *userName;
-@property(nonatomic,strong,readwrite) IBOutlet UITextField *name;
-@property(nonatomic,strong,readwrite) IBOutlet UITextField *pwd;
-@property(nonatomic,strong,readwrite) IBOutlet UITextField *pwd_confirmation;
+@property(nonatomic,strong,readwrite) IBOutlet DUTEditableCellController *userName;
+@property(nonatomic,strong,readwrite) IBOutlet DUTEditableCellController *name;
+@property(nonatomic,strong,readwrite) IBOutlet DUTEditableCellController *pwd;
+@property(nonatomic,strong,readwrite) IBOutlet DUTEditableCellController *pwd_confirmation;
 @property(nonatomic,strong,readwrite) IBOutlet UINavigationBar *navigationBar;
 @property(nonatomic,strong,readwrite) IBOutlet UIBarButtonItem *doneButton;
-
-
+@property(nonatomic,strong,readwrite) DUTGroupedCellControllerContainer *controllerContainer;
+@property(nonatomic,strong,readwrite) DUTGroupedCellControllerContainer *controllerContainer1;
 @end
 
 
 @implementation DUTRegistrationTableViewController
 
-
-- (id)initWithStyle:(UITableViewStyle)style {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 
 - (void)viewDidLoad {
@@ -47,6 +41,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setupSections];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +49,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
 
 // *************************************************************************************************
 #pragma mark -
@@ -86,7 +84,7 @@
 }
 
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+/*- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     if (textField == self.userName) {
         NSString *userName = textField.text;
@@ -99,5 +97,59 @@
         }
     }
     return YES;
-  }
+  }*/
+
+- (void)setupSections {
+
+    self.controllerContainer =[DUTGroupedCellControllerContainer containerForViewController:self frame:CGRectZero];
+    self.controllerContainer.table.translatesAutoresizingMaskIntoConstraints = NO;
+    self.navigationBar.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.controllerContainer assignSectionWithTitle:@"Info" index:0];
+    self.userName =
+        [DUTEditableCellController cellControllerWithText:@""
+                                              placeHolder:@"User email" ];
+    self.userName.descriptiveFormat = @"User email is %@";
+    [self.controllerContainer addCellController:self.userName section:0];
+    
+    self.name =
+        [DUTEditableCellController cellControllerWithText:@""
+                                              placeHolder:@"Name" ];
+    self.name.descriptiveFormat = @"User name is %@";
+    [self.controllerContainer addCellController:self.name section:0];
+    
+    self.pwd =
+        [DUTEditableCellController cellControllerWithText:@""
+                                              placeHolder:@"Password" ];
+    self.pwd.mask = YES;
+    [self.controllerContainer addCellController:self.pwd section:0];
+    
+    self.pwd_confirmation =
+        [DUTEditableCellController cellControllerWithText:@""
+                                              placeHolder:@"Password Confirmation" ];
+    self.pwd_confirmation.mask = YES;
+    [self.controllerContainer addCellController:self.pwd_confirmation section:0];
+    
+    // Autolayout
+    
+    {
+        id constraint = [NSLayoutConstraint constraintWithItem:self.controllerContainer.table attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.navigationBar attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+        [self.view addConstraint:constraint];
+    }
+    {
+        id constraint = [NSLayoutConstraint constraintWithItem:self.controllerContainer.table attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+        [self.view addConstraint:constraint];
+    }
+    {
+        id constraint = [NSLayoutConstraint constraintWithItem:self.controllerContainer.table attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
+        [self.view addConstraint:constraint];
+    }
+    {
+        id constraint = [NSLayoutConstraint constraintWithItem:self.controllerContainer.table attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
+        [self.view addConstraint:constraint];
+    }
+}
+
+- (UITableView *)table {
+    return self.controllerContainer.table;
+}
 @end
