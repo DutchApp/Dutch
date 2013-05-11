@@ -25,7 +25,6 @@
 @property(nonatomic,strong,readwrite) IBOutlet UINavigationBar *navigationBar;
 @property(nonatomic,strong,readwrite) IBOutlet UIBarButtonItem *doneButton;
 @property(nonatomic,strong,readwrite) DUTGroupedCellControllerContainer *controllerContainer;
-@property(nonatomic,strong,readwrite) DUTGroupedCellControllerContainer *controllerContainer1;
 @end
 
 
@@ -42,11 +41,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self setupSections];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -86,6 +80,32 @@
 
 /*- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
+    if ([textField isEqual:self.userName]) {
+        userName = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        password = self.pwd.text;
+        name = self.name.text;
+        passwordConfirmation = self.pwd_confirmation.text;
+    }
+    else if ([textField isEqual:self.pwd]) {
+        password = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        name = self.name.text;
+        passwordConfirmation = self.pwd_confirmation.text;
+        userName = self.userName.text;
+    }
+    else if ([textField isEqual:self.name]) {
+        name = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        password = self.pwd.text;
+        passwordConfirmation = self.pwd_confirmation.text;
+        userName = self.userName.text;
+    }
+    else if ([textField isEqual:self.pwd_confirmation]) {
+        passwordConfirmation = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        password = self.pwd.text;
+        name = self.name.text;
+        userName = self.userName.text;
+    }
+    
+    
     if ([DUTUtility isValidEMail:userName] && [DUTUtility isContentValid:password] &&
         [DUTUtility isContentValid:name] && [DUTUtility isContentValid:passwordConfirmation]) {
         self.navigationBar.topItem.rightBarButtonItem = self.doneButton;
@@ -94,12 +114,6 @@
         self.navigationBar.topItem.rightBarButtonItem = nil;
     }
     
-    return YES;
-}
-
-
-- (BOOL)textFieldShouldClear:(UITextField *)textField {
-    self.navigationBar.topItem.rightBarButtonItem = nil;
     return YES;
   }*/
 

@@ -11,7 +11,9 @@
 		11901A2217122ACE00E5BC8E /* DUTRequestEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */; };
 		11901A4917123A9B00E5BC8E /* DUTRequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */; };
 		11901A4C17123D9A00E5BC8E /* DUTServerProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */; };
+		11DF9308171A64010069FA33 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A51FA1EE173EBF76001911B9 /* DUTDescriptiveTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA1ED173EBF76001911B9 /* DUTDescriptiveTextField.m */; };
+		A51FA1FA173F10FF001911B9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA1F9173F10FF001911B9 /* MBProgressHUD.m */; };
 		A53F7273171A09CE00B61DE7 /* DUTResponseDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7272171A09CE00B61DE7 /* DUTResponseDecoder.m */; };
 		A53F7278171A29E900B61DE7 /* DUTEditableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7277171A29E900B61DE7 /* DUTEditableCellController.m */; };
 		A53F727C171A3B9200B61DE7 /* DUTGroupedCellControllerContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F727B171A3B9200B61DE7 /* DUTGroupedCellControllerContainer.m */; };
@@ -47,6 +49,8 @@
 		11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DUTServerProperties.plist; sourceTree = "<group>"; };
 		A51FA1EC173EBF76001911B9 /* DUTDescriptiveTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTDescriptiveTextField.h; sourceTree = "<group>"; };
 		A51FA1ED173EBF76001911B9 /* DUTDescriptiveTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTDescriptiveTextField.m; sourceTree = "<group>"; };
+		A51FA1F8173F10FF001911B9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		A51FA1F9173F10FF001911B9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		A53F7271171A09CE00B61DE7 /* DUTResponseDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTResponseDecoder.h; path = DutchRequestData/DUTResponseDecoder.h; sourceTree = "<group>"; };
 		A53F7272171A09CE00B61DE7 /* DUTResponseDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTResponseDecoder.m; path = DutchRequestData/DUTResponseDecoder.m; sourceTree = "<group>"; };
 		A53F7274171A0D0500B61DE7 /* DUTServerOperationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DUTServerOperationConstants.h; path = DutchOperations/DUTServerOperationConstants.h; sourceTree = "<group>"; };
@@ -144,10 +148,20 @@
 		A51FA1EB173EBF5F001911B9 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				A51FA1F7173F10FF001911B9 /* ActivityView */,
 				A51FA1EC173EBF76001911B9 /* DUTDescriptiveTextField.h */,
 				A51FA1ED173EBF76001911B9 /* DUTDescriptiveTextField.m */,
 			);
 			name = CustomControls;
+			sourceTree = "<group>";
+		};
+		A51FA1F7173F10FF001911B9 /* ActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				A51FA1F8173F10FF001911B9 /* MBProgressHUD.h */,
+				A51FA1F9173F10FF001911B9 /* MBProgressHUD.m */,
+			);
+			path = ActivityView;
 			sourceTree = "<group>";
 		};
 		A53F7275171A296600B61DE7 /* CellControllers */ = {
@@ -365,6 +379,8 @@
 				A53F7282171A40C800B61DE7 /* DUTCellContainerSection.m in Sources */,
 				A53F7287171A4DAC00B61DE7 /* DUTEditableCell.m in Sources */,
 				A51FA1EE173EBF76001911B9 /* DUTDescriptiveTextField.m in Sources */,
+				11DF9308171A64010069FA33 /* (null) in Sources */,
+				A51FA1FA173F10FF001911B9 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
