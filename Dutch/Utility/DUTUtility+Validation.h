@@ -11,5 +11,15 @@
 @interface DUTUtility (Validation)
 
 
-+ (BOOL)validEMail:(NSString *)emailAddress;
+/**
+ * Documentation
+ */
++ (BOOL)isValidEMail:(NSString *)emailAddress;
+
+
+/**
+ * Documentation
+ */
++ (BOOL)isContentValid:(NSString *)content;
+
 @end

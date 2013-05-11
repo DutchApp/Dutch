@@ -86,16 +86,20 @@
 
 /*- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
-    if (textField == self.userName) {
-        NSString *userName = textField.text;
-        userName = [userName stringByReplacingCharactersInRange:range withString:string];
-        if ([DUTUtility validEMail:userName]) {
-            self.navigationBar.topItem.rightBarButtonItem = self.doneButton;
-        }
-        else {
-            self.navigationBar.topItem.rightBarButtonItem = nil;
-        }
+    if ([DUTUtility isValidEMail:userName] && [DUTUtility isContentValid:password] &&
+        [DUTUtility isContentValid:name] && [DUTUtility isContentValid:passwordConfirmation]) {
+        self.navigationBar.topItem.rightBarButtonItem = self.doneButton;
     }
+    else {
+        self.navigationBar.topItem.rightBarButtonItem = nil;
+    }
+    
+    return YES;
+}
+
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
+    self.navigationBar.topItem.rightBarButtonItem = nil;
     return YES;
   }*/
 

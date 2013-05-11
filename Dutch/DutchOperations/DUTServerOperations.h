@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 #import "DUTConstants.h"
+#import "MBProgressHUD.h"
 
 
-@interface DUTServerOperations : NSObject
+@interface DUTServerOperations : NSObject <MBProgressHUDDelegate>
 
 
 /**
