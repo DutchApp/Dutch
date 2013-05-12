@@ -68,7 +68,7 @@
                                         successBlock:^(id object) {
                                             NSLog(@"Response:%@",object);
                                         } failureBlock:^(id object) {
-                                            NSLog(@"Failure:%@",object);                                            
+                                            NSLog(@"Failure:%@",object);
                                         }];
 }
 
