@@ -36,6 +36,8 @@ NSString * const kServerOpRequestData = @"requestDict";
     NSMutableURLRequest *registerUserURLRequest = [DUTRequestCreator urlRequestForRegisterUser];
     [registerUserURLRequest setHTTPBody:encodedData];
     
+    [self logRequest:registerUserURLRequest];
+    
     __block MBProgressHUD *progressView = [self showProgressViewWithMessage:@"Loading"];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -78,4 +80,7 @@ NSString * const kServerOpRequestData = @"requestDict";
     return progressView;
 }
 
++ (void)logRequest:(NSURLRequest *)request {
+    NSLog(@"URL:%@\nHTTP Method: %@\nheaderFields:%@\nbody:%@",request.URL,request.HTTPMethod,request.allHTTPHeaderFields,request.HTTPBody);
+}
 @end

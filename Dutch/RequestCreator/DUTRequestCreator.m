@@ -26,7 +26,7 @@
 #define kHostKey @"host"
 #define kContentType @"contentType"
 #define kServerTimeOut @"serverTimeOut"
-#define kContentTypeHTTPHeaderField @"Content-Type"
+#define kContentTypeHTTPHeaderField @"Content-type"
 #define kHTTPPostMethod @"POST"
 
 
@@ -45,7 +45,7 @@
 
 + (NSMutableURLRequest *)urlRequestForRegisterUser {
     NSString *urlString =
-        [NSString stringWithFormat:@"%@://%@//users.%@",
+        [NSString stringWithFormat:@"%@://%@/users.%@",
                   [self httpProtocol],
                   [self host], [self serverContentType]];
     
@@ -58,7 +58,6 @@
     [urlRequest setValue:[self contentTypeForHTTPHeader]
                 forHTTPHeaderField:kContentTypeHTTPHeaderField];
     [urlRequest setHTTPMethod:kHTTPPostMethod];
-    
     return urlRequest;
 }
 

@@ -62,8 +62,8 @@
 
 - (IBAction)done:(id)sender {
      NSDictionary *registrationInfoDictionary =
-        @{@"email":self.userName.text, @"name":self.name.text, @"password":self.pwd.text,
-          @"password_confirmation":self.pwd_confirmation.text};
+    @{@"user" : @{@"email":self.userName.text, @"name":self.name.text, @"password":self.pwd.text,
+                  @"password_confirmation":self.pwd_confirmation.text}};
     [DUTServerOperations registerUserWithInformation:registrationInfoDictionary
                                         successBlock:^(id object) {
                                             NSLog(@"Response:%@",object);
