@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DUTRegistrationTableViewController : UIViewController<UITextFieldDelegate>
+@interface DUTRegistrationViewController : UIViewController<UITextFieldDelegate>
 
 @end

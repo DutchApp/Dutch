@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Dutch Inc. All rights reserved.
 //
 
-#import "DUTRegistrationTableViewController.h"
+#import "DUTRegistrationViewController.h"
 
 #import "DUTUtility+Validation.h"
 #import "DUTServerOperations.h"
@@ -14,7 +14,7 @@
 #import "DUTEditableCellController.h"
 
 
-@interface DUTRegistrationTableViewController ()
+@interface DUTRegistrationViewController ()
 
 
 @property(nonatomic,strong,readwrite) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -28,7 +28,7 @@
 @end
 
 
-@implementation DUTRegistrationTableViewController
+@implementation DUTRegistrationViewController
 
 
 
