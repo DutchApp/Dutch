@@ -12,8 +12,11 @@
 		11901A4917123A9B00E5BC8E /* DUTRequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */; };
 		11901A4C17123D9A00E5BC8E /* DUTServerProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */; };
 		11DF9308171A64010069FA33 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		A51FA1EE173EBF76001911B9 /* DUTDescriptiveTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA1ED173EBF76001911B9 /* DUTDescriptiveTextField.m */; };
-		A51FA1FA173F10FF001911B9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA1F9173F10FF001911B9 /* MBProgressHUD.m */; };
+		A51FA1FE173F2F2D001911B9 /* DUTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA1FD173F2F2D001911B9 /* DUTValidator.m */; };
+		A51FA201173F2F69001911B9 /* DUTEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA200173F2F69001911B9 /* DUTEmailValidator.m */; };
+		A51FA205173F4025001911B9 /* DUTDescriptiveTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA204173F4025001911B9 /* DUTDescriptiveTextField.m */; };
+		A51FA209173F42D4001911B9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA208173F42D4001911B9 /* MBProgressHUD.m */; };
+		A51FA20C173F4383001911B9 /* DUTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA20B173F4382001911B9 /* DUTTableViewCell.m */; };
 		A53F7273171A09CE00B61DE7 /* DUTResponseDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7272171A09CE00B61DE7 /* DUTResponseDecoder.m */; };
 		A53F7278171A29E900B61DE7 /* DUTEditableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7277171A29E900B61DE7 /* DUTEditableCellController.m */; };
 		A53F727C171A3B9200B61DE7 /* DUTGroupedCellControllerContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F727B171A3B9200B61DE7 /* DUTGroupedCellControllerContainer.m */; };
@@ -47,10 +50,19 @@
 		11901A4717123A9B00E5BC8E /* DUTRequestCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTRequestCreator.h; path = RequestCreator/DUTRequestCreator.h; sourceTree = "<group>"; };
 		11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTRequestCreator.m; path = RequestCreator/DUTRequestCreator.m; sourceTree = "<group>"; };
 		11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DUTServerProperties.plist; sourceTree = "<group>"; };
-		A51FA1EC173EBF76001911B9 /* DUTDescriptiveTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTDescriptiveTextField.h; sourceTree = "<group>"; };
-		A51FA1ED173EBF76001911B9 /* DUTDescriptiveTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTDescriptiveTextField.m; sourceTree = "<group>"; };
-		A51FA1F8173F10FF001911B9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		A51FA1F9173F10FF001911B9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		A5156B3A1741F1A2006FBC8B /* DUTCellContainerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUTCellContainerDelegate.h; sourceTree = "<group>"; };
+		A51FA1FC173F2F2D001911B9 /* DUTValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTValidator.h; sourceTree = "<group>"; };
+		A51FA1FD173F2F2D001911B9 /* DUTValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTValidator.m; sourceTree = "<group>"; };
+		A51FA1FF173F2F69001911B9 /* DUTEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTEmailValidator.h; sourceTree = "<group>"; };
+		A51FA200173F2F69001911B9 /* DUTEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTEmailValidator.m; sourceTree = "<group>"; };
+		A51FA202173F301F001911B9 /* DUTValidatorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUTValidatorDelegate.h; sourceTree = "<group>"; };
+		A51FA203173F4025001911B9 /* DUTDescriptiveTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTDescriptiveTextField.h; sourceTree = "<group>"; };
+		A51FA204173F4025001911B9 /* DUTDescriptiveTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTDescriptiveTextField.m; sourceTree = "<group>"; };
+		A51FA206173F404A001911B9 /* DUTControlDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUTControlDelegate.h; sourceTree = "<group>"; };
+		A51FA207173F42D4001911B9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		A51FA208173F42D4001911B9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		A51FA20A173F4382001911B9 /* DUTTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTTableViewCell.h; sourceTree = "<group>"; };
+		A51FA20B173F4382001911B9 /* DUTTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTTableViewCell.m; sourceTree = "<group>"; };
 		A53F7271171A09CE00B61DE7 /* DUTResponseDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTResponseDecoder.h; path = DutchRequestData/DUTResponseDecoder.h; sourceTree = "<group>"; };
 		A53F7272171A09CE00B61DE7 /* DUTResponseDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTResponseDecoder.m; path = DutchRequestData/DUTResponseDecoder.m; sourceTree = "<group>"; };
 		A53F7274171A0D0500B61DE7 /* DUTServerOperationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DUTServerOperationConstants.h; path = DutchOperations/DUTServerOperationConstants.h; sourceTree = "<group>"; };
@@ -148,20 +160,34 @@
 		A51FA1EB173EBF5F001911B9 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				A51FA203173F4025001911B9 /* DUTDescriptiveTextField.h */,
+				A51FA204173F4025001911B9 /* DUTDescriptiveTextField.m */,
 				A51FA1F7173F10FF001911B9 /* ActivityView */,
-				A51FA1EC173EBF76001911B9 /* DUTDescriptiveTextField.h */,
-				A51FA1ED173EBF76001911B9 /* DUTDescriptiveTextField.m */,
+				A51FA206173F404A001911B9 /* DUTControlDelegate.h */,
 			);
-			name = CustomControls;
+			path = CustomControls;
 			sourceTree = "<group>";
 		};
 		A51FA1F7173F10FF001911B9 /* ActivityView */ = {
 			isa = PBXGroup;
 			children = (
-				A51FA1F8173F10FF001911B9 /* MBProgressHUD.h */,
-				A51FA1F9173F10FF001911B9 /* MBProgressHUD.m */,
+				A51FA207173F42D4001911B9 /* MBProgressHUD.h */,
+				A51FA208173F42D4001911B9 /* MBProgressHUD.m */,
 			);
-			path = ActivityView;
+			name = ActivityView;
+			path = Dutch/ActivityView;
+			sourceTree = SOURCE_ROOT;
+		};
+		A51FA1FB173F2EE4001911B9 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				A51FA1FC173F2F2D001911B9 /* DUTValidator.h */,
+				A51FA1FD173F2F2D001911B9 /* DUTValidator.m */,
+				A51FA1FF173F2F69001911B9 /* DUTEmailValidator.h */,
+				A51FA200173F2F69001911B9 /* DUTEmailValidator.m */,
+				A51FA202173F301F001911B9 /* DUTValidatorDelegate.h */,
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 		A53F7275171A296600B61DE7 /* CellControllers */ = {
@@ -175,6 +201,8 @@
 				A53F7285171A4DAC00B61DE7 /* DUTEditableCell.h */,
 				A53F7286171A4DAC00B61DE7 /* DUTEditableCell.m */,
 				A53F7288171A52F000B61DE7 /* DUTCellDelegate.h */,
+				A51FA20A173F4382001911B9 /* DUTTableViewCell.h */,
+				A51FA20B173F4382001911B9 /* DUTTableViewCell.m */,
 			);
 			name = CellControllers;
 			path = Dutch/CellControllers;
@@ -187,6 +215,7 @@
 				A53F727B171A3B9200B61DE7 /* DUTGroupedCellControllerContainer.m */,
 				A53F7280171A40C800B61DE7 /* DUTCellContainerSection.h */,
 				A53F7281171A40C800B61DE7 /* DUTCellContainerSection.m */,
+				A5156B3A1741F1A2006FBC8B /* DUTCellContainerDelegate.h */,
 			);
 			name = CellControllerContainers;
 			path = Dutch/CellControllerContainers;
@@ -222,6 +251,7 @@
 		A597ECB717077825008061B2 /* Dutch */ = {
 			isa = PBXGroup;
 			children = (
+				A51FA1FB173F2EE4001911B9 /* Validators */,
 				A51FA1EB173EBF5F001911B9 /* CustomControls */,
 				A53F7279171A3AEF00B61DE7 /* CellControllerContainers */,
 				A53F7275171A296600B61DE7 /* CellControllers */,
@@ -378,9 +408,12 @@
 				A53F727F171A3C9400B61DE7 /* DUTCellController.m in Sources */,
 				A53F7282171A40C800B61DE7 /* DUTCellContainerSection.m in Sources */,
 				A53F7287171A4DAC00B61DE7 /* DUTEditableCell.m in Sources */,
-				A51FA1EE173EBF76001911B9 /* DUTDescriptiveTextField.m in Sources */,
 				11DF9308171A64010069FA33 /* (null) in Sources */,
-				A51FA1FA173F10FF001911B9 /* MBProgressHUD.m in Sources */,
+				A51FA1FE173F2F2D001911B9 /* DUTValidator.m in Sources */,
+				A51FA201173F2F69001911B9 /* DUTEmailValidator.m in Sources */,
+				A51FA205173F4025001911B9 /* DUTDescriptiveTextField.m in Sources */,
+				A51FA209173F42D4001911B9 /* MBProgressHUD.m in Sources */,
+				A51FA20C173F4383001911B9 /* DUTTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

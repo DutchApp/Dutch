@@ -40,7 +40,7 @@ replacementString:(NSString *)string {
     }
     NSString *text = [[self.textField internalText]stringByReplacingCharactersInRange:range withString:string];
     self.textField.valueText = text;
-    NSLog(@"%@ %@",text,self.textField.valueText);
+    [self.textField.controlDelegate control:self dataChanged:text];
     return YES;
 }
 

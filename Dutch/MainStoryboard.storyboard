@@ -36,6 +36,9 @@
                                     <navigationItem title="Registration" id="S4c-Jg-oqP">
                                         <barButtonItem key="leftBarButtonItem" title="✖" id="oSl-gT-9ss">
                                             <color key="tintColor" white="0.70992943549999998" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="cancel:" destination="2At-dv-lkN" id="yIq-Gp-xIe"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="✔" id="h3B-lT-kFP">
                                             <color key="tintColor" white="0.70992943549999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,6 +58,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="applyButton" destination="h3B-lT-kFP" id="ryx-hb-hKj"/>
                         <outlet property="navigationBar" destination="HCw-vc-jh2" id="Hpr-9B-SWi"/>
                     </connections>
                 </viewController>
@@ -181,6 +185,15 @@
     <classes>
         <class className="DUTLoginTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DUTLoginTableViewController.h"/>
+        </class>
+        <class className="DUTRegistrationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DUTRegistrationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="applyButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

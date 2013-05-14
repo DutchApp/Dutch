@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "DUTCellController.h"
+#import "DUTEditableCell.h"
+
 #pragma mark  Enums
 
 

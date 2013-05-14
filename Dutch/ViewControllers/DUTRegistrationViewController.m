@@ -10,21 +10,22 @@
 
 #import "DUTUtility+Validation.h"
 #import "DUTServerOperations.h"
-#import "DUTGroupedCellControllerContainer.h"
 #import "DUTEditableCellController.h"
+#import "DUTEmailValidator.h"
 
 
 @interface DUTRegistrationViewController ()
 
 
-@property(nonatomic,strong,readwrite) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property(nonatomic,strong,readwrite) IBOutlet DUTEditableCellController *userName;
-@property(nonatomic,strong,readwrite) IBOutlet DUTEditableCellController *name;
-@property(nonatomic,strong,readwrite) IBOutlet DUTEditableCellController *pwd;
-@property(nonatomic,strong,readwrite) IBOutlet DUTEditableCellController *pwd_confirmation;
+@property(nonatomic,strong,readwrite) DUTEditableCellController *userName;
+@property(nonatomic,strong,readwrite) DUTEditableCellController *name;
+@property(nonatomic,strong,readwrite) DUTEditableCellController *pwd;
+@property(nonatomic,strong,readwrite) DUTEditableCellController *pwd_confirmation;
 @property(nonatomic,strong,readwrite) IBOutlet UINavigationBar *navigationBar;
-@property(nonatomic,strong,readwrite) IBOutlet UIBarButtonItem *doneButton;
+@property(nonatomic,strong,readwrite) IBOutlet UIBarButtonItem *applyButton;
 @property(nonatomic,strong,readwrite) DUTGroupedCellControllerContainer *controllerContainer;
+
+
 @end
 
 
@@ -78,54 +79,17 @@
 }
 
 
-/*- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
-    if ([textField isEqual:self.userName]) {
-        userName = [textField.text stringByReplacingCharactersInRange:range withString:string];
-        password = self.pwd.text;
-        name = self.name.text;
-        passwordConfirmation = self.pwd_confirmation.text;
-    }
-    else if ([textField isEqual:self.pwd]) {
-        password = [textField.text stringByReplacingCharactersInRange:range withString:string];
-        name = self.name.text;
-        passwordConfirmation = self.pwd_confirmation.text;
-        userName = self.userName.text;
-    }
-    else if ([textField isEqual:self.name]) {
-        name = [textField.text stringByReplacingCharactersInRange:range withString:string];
-        password = self.pwd.text;
-        passwordConfirmation = self.pwd_confirmation.text;
-        userName = self.userName.text;
-    }
-    else if ([textField isEqual:self.pwd_confirmation]) {
-        passwordConfirmation = [textField.text stringByReplacingCharactersInRange:range withString:string];
-        password = self.pwd.text;
-        name = self.name.text;
-        userName = self.userName.text;
-    }
-    
-    
-    if ([DUTUtility isValidEMail:userName] && [DUTUtility isContentValid:password] &&
-        [DUTUtility isContentValid:name] && [DUTUtility isContentValid:passwordConfirmation]) {
-        self.navigationBar.topItem.rightBarButtonItem = self.doneButton;
-    }
-    else {
-        self.navigationBar.topItem.rightBarButtonItem = nil;
-    }
-    
-    return YES;
-  }*/
-
 - (void)setupSections {
 
     self.controllerContainer =[DUTGroupedCellControllerContainer containerForViewController:self frame:CGRectZero];
+    self.controllerContainer.delegate = self;
     self.controllerContainer.table.translatesAutoresizingMaskIntoConstraints = NO;
     self.navigationBar.translatesAutoresizingMaskIntoConstraints = NO;
     [self.controllerContainer assignSectionWithTitle:@"Info" index:0];
     self.userName =
         [DUTEditableCellController cellControllerWithText:@""
                                               placeHolder:@"User email" ];
+    self.userName.validator = [[DUTEmailValidator alloc]init];
     self.userName.descriptiveFormat = @"User email is %@";
     [self.controllerContainer addCellController:self.userName section:0];
     
@@ -170,4 +134,12 @@
 - (UITableView *)table {
     return self.controllerContainer.table;
 }
+
+#pragma mark - 
+#pragma DUTCellContainerDelegate
+
+- (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer dataValidity:(BOOL)valid {
+    self.navigationBar.topItem.rightBarButtonItem = valid ? self.applyButton:nil;
+}
+
 @end

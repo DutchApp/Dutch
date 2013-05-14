@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "DUTCellControllerDelegate.h"
+#import "DUTValidatorDelegate.h"
+#include "DUTTableViewCell.h"
 
-@interface DUTCellController : NSObject<DUTCellControllerDelegate>
 
+@interface DUTCellController : NSObject<DUTCellControllerDelegate,  DUTTableViewCellDelegate>
+
+
+@property (nonatomic,strong,readwrite) id<DUTValidatorDelegate> validator;
+@property (nonatomic,strong,readonly) id cellData;
+@property (nonatomic,weak,readwrite) id<DUTCellControllerEventDelegate> eventDelegate;
+
+- (BOOL)isValidData;
 @end

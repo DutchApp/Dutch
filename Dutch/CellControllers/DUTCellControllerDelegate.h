@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+@class DUTTableViewCell;
+@class DUTCellController;
+
 @protocol DUTCellControllerDelegate <NSObject>
 
 
@@ -15,4 +18,11 @@
 
 - (UITableViewCell *)tableViewCellForTable:(UITableView *)tableView;
 - (NSString *)cellIdentifier;
+@end
+
+
+@protocol DUTCellControllerEventDelegate <NSObject>
+
+- (void)cellController:(DUTCellController *)controller dataValid:(BOOL)dataValid;
+
 @end

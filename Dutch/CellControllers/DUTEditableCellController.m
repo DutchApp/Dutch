@@ -7,7 +7,6 @@
 //
 
 #import "DUTEditableCellController.h"
-#import "DUTEditableCell.h"
 
 NSString *const cellIdentifier = @"editableCell";
 
@@ -34,6 +33,7 @@ NSString *const cellIdentifier = @"editableCell";
         (DUTEditableCell *)[DUTEditableCell cellWithIdentifier:cellIdentifier];
     cell.editableText = text;
     cell.placeHolder = placeHolder;
+    cell.cellDelegate = controller;
     controller.cell = cell;
     return controller;
 }
@@ -65,6 +65,15 @@ NSString *const cellIdentifier = @"editableCell";
 
 - (void)setDescriptiveFormat:(NSString *)descriptiveFormat {
     self.cell.descriptiveFormat = descriptiveFormat;
+}
+
+- (id)cellData {
+    return self.cell.editableText;
+}
+
+- (void)cell:(DUTTableViewCell *)cell dataChanged:(id)data {
+    BOOL valid = [self.validator validData:data];
+    [self.eventDelegate cellController:self dataValid:valid];
 }
 
 @end

@@ -72,6 +72,7 @@ const NSInteger kMaxSections = 10;
     if (containerSection == (id)[NSNull null]) {
         return NO;
     }
+    controller.eventDelegate = self;
     [containerSection addCellController:controller];
     return YES;
 }
@@ -85,6 +86,25 @@ const NSInteger kMaxSections = 10;
 }
 
 
+- (void)reloadData {
+    BOOL valid = YES;
+    
+    for (DUTCellContainerSection *section in self.sections) {
+        NSInteger numControllers = section.numberOfControllers;
+        for (NSInteger index = 0; index < numControllers; index++) {
+            DUTCellController *controller = [section controllerAtIndex:index];
+            if (![controller isValidData]) {
+                valid = NO;
+                break;
+            }
+        }
+        if (!valid) {
+            break;
+        }
+    }
+    
+    [self.delegate cellContainer:self dataValidity:valid];
+}
 #pragma mark - TableView delegate
 
 
@@ -130,5 +150,10 @@ const NSInteger kMaxSections = 10;
 
 - (UITableView *)table {
     return self.tableView;
+}
+
+
+- (void)cellController:(DUTCellController *)controller dataValid:(BOOL)dataValid {
+    [self.delegate cellContainer:self dataValidity:dataValid];
 }
 @end

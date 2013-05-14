@@ -35,6 +35,7 @@
     if (self) {
         self.textField = [[DUTDescriptiveTextField alloc]initWithFrame:CGRectZero];
         [self.contentView addSubview:self.textField];
+        self.textField.controlDelegate = self;
     }
     return self;
 }
@@ -79,6 +80,10 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.textField.frame = CGRectMake(10, 10, CGRectGetWidth(self.contentView.frame)-20, CGRectGetHeight(self.contentView.frame)-20);
+}
+
+- (void)control:(id)control dataChanged:(id)data {
+    [self.cellDelegate cell:self dataChanged:data];
 }
 
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DUTRegistrationViewController : UIViewController<UITextFieldDelegate>
+#import "DUTGroupedCellControllerContainer.h"
+
+@interface DUTRegistrationViewController : UIViewController<UITextFieldDelegate,
+                                                            DUTCellControllerContainerDelegate>
 
 @end

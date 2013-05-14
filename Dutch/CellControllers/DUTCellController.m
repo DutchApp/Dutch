@@ -31,4 +31,11 @@
 - (NSString *)cellIdentifier {
     return nil;
 }
+
+- (BOOL)isValidData {
+    if (!self.validator) {
+        return YES;
+    }
+    return [self.validator validData:self.cellData];
+}
 @end

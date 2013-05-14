@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DUTCellDelegate.h"
-@interface DUTEditableCell : UITableViewCell<DUTCellDelegate>
+
+#import "DUTTableViewCell.h"
+
+
+@interface DUTEditableCell : DUTTableViewCell
 
 @property(nonatomic, strong,readwrite) NSString *editableText;
 @property(nonatomic, strong,readwrite) NSString *placeHolder;

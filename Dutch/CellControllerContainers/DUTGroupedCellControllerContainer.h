@@ -8,13 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@class DUTCellController;
+#import "DUTCellControllerDelegate.h"
 
-@interface DUTGroupedCellControllerContainer : NSObject<UITableViewDelegate, UITableViewDataSource>
+@class DUTCellController;
+@class DUTGroupedCellControllerContainer;
+
+
+@protocol DUTCellControllerContainerDelegate <NSObject>
+
+- (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
+         dataValidity:(BOOL)valid;
+@end
+
+@interface DUTGroupedCellControllerContainer : NSObject<UITableViewDelegate, UITableViewDataSource,DUTCellControllerEventDelegate>
 
 #pragma mark - Properties
 
 @property(nonatomic, strong, readonly) UITableView *table;
+@property(nonatomic, weak  , readwrite) id<DUTCellControllerContainerDelegate> delegate;
 
 #pragma mark - Class Methods
 
@@ -25,6 +36,6 @@
 
 - (BOOL)assignSectionWithTitle:(NSString *)title index:(NSInteger)sectionIndex;
 - (BOOL)addCellController:(DUTCellController *)controller section:(NSInteger)sectionIndex;
-
+- (void)reloadData;
 
 @end
