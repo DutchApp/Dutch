@@ -71,9 +71,8 @@ NSString *const cellIdentifier = @"editableCell";
     return self.cell.editableText;
 }
 
-- (void)cell:(DUTTableViewCell *)cell dataChanged:(id)data {
-    BOOL valid = [self.validator validData:data];
-    [self.eventDelegate cellController:self dataValid:valid];
+- (BOOL)isDataValidForCell:(DUTTableViewCell *)cell {
+    return [self isValidData];
 }
 
 @end

@@ -50,6 +50,10 @@ replacementString:(NSString *)string {
         return ;
     }
     [self.textField internalSetText:self.textField.valueText];
+    
+    if ([self.textField.controlDelegate respondsToSelector:@selector(editBegan:)]) {
+        [self.textField.controlDelegate editBegan:textField];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -57,6 +61,9 @@ replacementString:(NSString *)string {
         return ;
     }
     self.textField.text = self.textField.valueText;
+    if ([self.textField.controlDelegate respondsToSelector:@selector(editEnded:)]) {
+        [self.textField.controlDelegate editEnded:textField];
+    }
 }
 
 @end

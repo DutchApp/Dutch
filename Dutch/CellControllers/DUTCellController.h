@@ -15,9 +15,12 @@
 @interface DUTCellController : NSObject<DUTCellControllerDelegate,  DUTTableViewCellDelegate>
 
 
-@property (nonatomic,strong,readwrite) id<DUTValidatorDelegate> validator;
 @property (nonatomic,strong,readonly) id cellData;
 @property (nonatomic,weak,readwrite) id<DUTCellControllerEventDelegate> eventDelegate;
 
+
+- (void)addValidator:(id<DUTValidatorDelegate>)validator;
+- (void)addValidators:(NSArray *)validators;
 - (BOOL)isValidData;
+
 @end

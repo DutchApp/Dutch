@@ -84,6 +84,25 @@
 
 - (void)control:(id)control dataChanged:(id)data {
     [self.cellDelegate cell:self dataChanged:data];
+    BOOL valid = [self.cellDelegate cell:self validData:data];
+    [self setupValidStatus:valid];
+
 }
 
+- (void)editBegan:(id)control  {
+    [self setupValidStatus:[self.cellDelegate isDataValidForCell:self]];
+
+}
+- (void)editEnded:(id)control  {
+    //self.contentView.layer.backgroundColor = [UIColor whiteColor].CGColor;
+}
+
+- (void)setupValidStatus:(BOOL)valid {
+   /* if (valid) {
+        self.contentView.layer.backgroundColor = [UIColor colorWithRed:.7 green:.9 blue:.7 alpha:1].CGColor;
+    }
+    else {
+        self.contentView.layer.backgroundColor = [UIColor colorWithRed:1 green:.9 blue:.9 alpha:1].CGColor;
+    }*/    
+}
 @end

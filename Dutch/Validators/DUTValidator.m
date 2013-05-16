@@ -9,5 +9,7 @@
 #import "DUTValidator.h"
 
 @implementation DUTValidator
-
+- (BOOL)validData:(id)data {
+    return YES;
+}
 @end

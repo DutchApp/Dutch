@@ -12,6 +12,7 @@
 #import "DUTServerOperations.h"
 #import "DUTEditableCellController.h"
 #import "DUTEmailValidator.h"
+#import "DUTTextLengthValidator.h"
 
 
 @interface DUTRegistrationViewController ()
@@ -89,7 +90,7 @@
     self.userName =
         [DUTEditableCellController cellControllerWithText:@""
                                               placeHolder:@"User email" ];
-    self.userName.validator = [[DUTEmailValidator alloc]init];
+    [self.userName addValidator:[[DUTEmailValidator alloc]init]];
     self.userName.descriptiveFormat = @"User email is %@";
     [self.controllerContainer addCellController:self.userName section:0];
     
@@ -98,6 +99,9 @@
                                               placeHolder:@"Name" ];
     self.name.descriptiveFormat = @"User name is %@";
     [self.controllerContainer addCellController:self.name section:0];
+    
+    DUTTextLengthValidator *lengthValidator = [DUTTextLengthValidator validatorWithMinLenth:2 maxLength:10];
+    [self.name addValidator:lengthValidator];
     
     self.pwd =
         [DUTEditableCellController cellControllerWithText:@""
@@ -129,6 +133,7 @@
         id constraint = [NSLayoutConstraint constraintWithItem:self.controllerContainer.table attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
         [self.view addConstraint:constraint];
     }
+    [self.controllerContainer reloadData];
 }
 
 - (UITableView *)table {

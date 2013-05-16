@@ -8,7 +8,7 @@
 
 #import "DUTValidator.h"
 
-#import "DUTValidatorDelegate.h"
-@interface DUTEmailValidator : DUTValidator<DUTValidatorDelegate>
+
+@interface DUTEmailValidator : DUTValidator
 
 @end

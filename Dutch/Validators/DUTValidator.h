@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DUTValidatorDelegate.h"
 
-@interface DUTValidator : NSObject
+@interface DUTValidator : NSObject<DUTValidatorDelegate>
 
 @end

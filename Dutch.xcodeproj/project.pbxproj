@@ -23,6 +23,8 @@
 		A53F727F171A3C9400B61DE7 /* DUTCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F727E171A3C9400B61DE7 /* DUTCellController.m */; };
 		A53F7282171A40C800B61DE7 /* DUTCellContainerSection.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7281171A40C800B61DE7 /* DUTCellContainerSection.m */; };
 		A53F7287171A4DAC00B61DE7 /* DUTEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7286171A4DAC00B61DE7 /* DUTEditableCell.m */; };
+		A54E845E174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m in Sources */ = {isa = PBXBuildFile; fileRef = A54E845D174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m */; };
+		A54E846117449B660003D1B2 /* DUTTextLengthValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A54E846017449B660003D1B2 /* DUTTextLengthValidator.m */; };
 		A597ECB217077825008061B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB117077825008061B2 /* UIKit.framework */; };
 		A597ECB417077825008061B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB317077825008061B2 /* Foundation.framework */; };
 		A597ECB617077825008061B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB517077825008061B2 /* CoreGraphics.framework */; };
@@ -78,6 +80,10 @@
 		A53F7285171A4DAC00B61DE7 /* DUTEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTEditableCell.h; sourceTree = "<group>"; };
 		A53F7286171A4DAC00B61DE7 /* DUTEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTEditableCell.m; sourceTree = "<group>"; };
 		A53F7288171A52F000B61DE7 /* DUTCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUTCellDelegate.h; sourceTree = "<group>"; };
+		A54E845C174492260003D1B2 /* NSMutableSet+WeakZeroingReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableSet+WeakZeroingReference.h"; sourceTree = "<group>"; };
+		A54E845D174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableSet+WeakZeroingReference.m"; sourceTree = "<group>"; };
+		A54E845F17449B660003D1B2 /* DUTTextLengthValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTTextLengthValidator.h; sourceTree = "<group>"; };
+		A54E846017449B660003D1B2 /* DUTTextLengthValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTTextLengthValidator.m; sourceTree = "<group>"; };
 		A597ECAE17077825008061B2 /* Dutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A597ECB117077825008061B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A597ECB317077825008061B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -186,6 +192,8 @@
 				A51FA1FF173F2F69001911B9 /* DUTEmailValidator.h */,
 				A51FA200173F2F69001911B9 /* DUTEmailValidator.m */,
 				A51FA202173F301F001911B9 /* DUTValidatorDelegate.h */,
+				A54E845F17449B660003D1B2 /* DUTTextLengthValidator.h */,
+				A54E846017449B660003D1B2 /* DUTTextLengthValidator.m */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -221,6 +229,22 @@
 			path = Dutch/CellControllerContainers;
 			sourceTree = SOURCE_ROOT;
 		};
+		A54E841F174480C90003D1B2 /* cocoaCategories */ = {
+			isa = PBXGroup;
+			children = (
+				A54E845C174492260003D1B2 /* NSMutableSet+WeakZeroingReference.h */,
+				A54E845D174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m */,
+			);
+			path = cocoaCategories;
+			sourceTree = "<group>";
+		};
+		A54E8423174486330003D1B2 /* cocoaDerived */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cocoaDerived;
+			sourceTree = "<group>";
+		};
 		A597ECA517077825008061B2 = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +275,8 @@
 		A597ECB717077825008061B2 /* Dutch */ = {
 			isa = PBXGroup;
 			children = (
+				A54E8423174486330003D1B2 /* cocoaDerived */,
+				A54E841F174480C90003D1B2 /* cocoaCategories */,
 				A51FA1FB173F2EE4001911B9 /* Validators */,
 				A51FA1EB173EBF5F001911B9 /* CustomControls */,
 				A53F7279171A3AEF00B61DE7 /* CellControllerContainers */,
@@ -414,6 +440,8 @@
 				A51FA205173F4025001911B9 /* DUTDescriptiveTextField.m in Sources */,
 				A51FA209173F42D4001911B9 /* MBProgressHUD.m in Sources */,
 				A51FA20C173F4383001911B9 /* DUTTableViewCell.m in Sources */,
+				A54E845E174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m in Sources */,
+				A54E846117449B660003D1B2 /* DUTTextLengthValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

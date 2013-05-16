@@ -10,6 +10,8 @@
 
 @implementation DUTTableViewCell
 
+@dynamic dataIsValid;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -26,4 +28,13 @@
     // Configure the view for the selected state
 }
 
+
+- (void)setDataIsValid:(BOOL)dataIsValid {
+    if (dataIsValid) {
+            
+    }
+    else {
+        
+    }
+}
 @end
