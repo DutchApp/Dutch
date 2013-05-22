@@ -22,5 +22,6 @@
 - (void)addValidator:(id<DUTValidatorDelegate>)validator;
 - (void)addValidators:(NSArray *)validators;
 - (BOOL)isValidData;
+- (void)updateValidityStatus;
 
 @end

@@ -101,19 +101,17 @@
                                               placeHolder:TXT_REGISTER_PHOLDER_USER_NAME ];
     self.name.descriptiveFormat = TXT_REGISTER_DESC_USER_NAME;
     [self.controllerContainer addCellController:self.name section:0];
-    DUTTextLengthValidator *lengthValidator = [DUTTextLengthValidator validatorWithMinLenth:2 maxLength:10];
+    DUTTextLengthValidator *lengthValidator = [DUTTextLengthValidator validatorWithMinLenth:2 maxLength:20];
     [self.name addValidator:lengthValidator];
     
     self.pwd =
         [DUTEditableCellController cellControllerWithText:@""
                                               placeHolder:TXT_REGISTER_PHOLDER_PASSWORD ];
-    self.pwd.mask = YES;
     [self.controllerContainer addCellController:self.pwd section:0];
     
     self.pwd_confirmation =
         [DUTEditableCellController cellControllerWithText:@""
                                               placeHolder:TXT_REGISTER_PHOLDER_PASSWORD_CONFIRM ];
-    self.pwd_confirmation.mask = YES;
     [self.controllerContainer addCellController:self.pwd_confirmation section:0];
     [self.pwd addValidator:[DUTEqualityValidator validatorWithSource:self.pwd_confirmation selector:@selector(cellData)]];
     [self.pwd_confirmation addValidator:[DUTEqualityValidator validatorWithSource:self.pwd selector:@selector(cellData)]];

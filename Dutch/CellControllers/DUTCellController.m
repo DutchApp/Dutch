@@ -88,4 +88,8 @@
 - (BOOL)isDataValidForCell:(DUTTableViewCell *)cell {
     return [self isValidData];
 }
+
+- (void)updateValidityStatus {
+    
+}
 @end

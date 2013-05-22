@@ -164,14 +164,11 @@ const NSInteger kMaxSections = 10;
             DUTCellController *controller = [section controllerAtIndex:index];
             if (![controller isValidData]) {
                 valid = NO;
-                break;
             }
-        }
-        if (!valid) {
-            break;
+            [controller updateValidityStatus];
         }
     }
-
+    
     [self.delegate cellContainer:self dataValidity:valid];
 }
 @end

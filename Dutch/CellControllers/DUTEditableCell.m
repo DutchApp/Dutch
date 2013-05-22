@@ -100,14 +100,17 @@
 
 - (void)setupValidStatus:(BOOL)valid {
     if (valid) {
-        self.contentView.backgroundColor = [UIColor clearColor];
+        self.textField.textColor = [UIColor blackColor];
         
     }
     else {
-        self.contentView.backgroundColor = [UIColor colorWithRed:1 green:.5 blue:.5 alpha:.4];
-
+        self.textField.textColor = [UIColor redColor];
     }
 }
 
+- (void)updateValidityStatus {
+   BOOL valid = [self.cellDelegate cell:self validData:self.textField.text];
+    [self setupValidStatus:valid];
+}
 
 @end

@@ -60,7 +60,7 @@ NSString *const cellIdentifier = @"editableCell";
 
 
 - (void)setMask:(BOOL)mask {
-    //self.cell.mask = mask;
+    self.cell.mask = mask;
 }
 
 - (void)setDescriptiveFormat:(NSString *)descriptiveFormat {
@@ -78,4 +78,7 @@ NSString *const cellIdentifier = @"editableCell";
     return [self isValidData];
 }
 
+- (void)updateValidityStatus {
+    [self.cell updateValidityStatus];
+}
 @end

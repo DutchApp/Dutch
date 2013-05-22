@@ -27,4 +27,6 @@
 @property(nonatomic,weak,readwrite) id<DUTTableViewCellDelegate> cellDelegate;
 @property(nonatomic,assign,readwrite) BOOL dataIsValid;
 
+- (void)updateValidityStatus;
+
 @end
