@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>PreBuildScripts.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A54716D5174B17FF002B8C0B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A597ECAD17077825008061B2</key>
 		<dict>
 			<key>primary</key>

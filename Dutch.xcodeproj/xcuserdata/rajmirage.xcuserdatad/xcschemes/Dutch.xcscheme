@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A54716D5174B17FF002B8C0B"
+               BuildableName = "PreBuildScripts"
+               BlueprintName = "PreBuildScripts"
+               ReferencedContainer = "container:Dutch.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "A597ECAD17077825008061B2"
                BuildableName = "Dutch.app"
                BlueprintName = "Dutch"

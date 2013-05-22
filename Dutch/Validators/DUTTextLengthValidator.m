@@ -22,10 +22,13 @@
     validator.maxLength = maxLength;
     return validator;
 }
+
+
 - (BOOL)validData:(id)data {
     NSString *text = data;
     NSInteger length = [text length];
     return length >= self.minLength && length <= self.maxLength;
 }
+
 
 @end

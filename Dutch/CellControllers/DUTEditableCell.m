@@ -43,7 +43,8 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
+   
     // Configure the view for the selected state
 }
 
@@ -98,11 +99,15 @@
 }
 
 - (void)setupValidStatus:(BOOL)valid {
-   /* if (valid) {
-        self.contentView.layer.backgroundColor = [UIColor colorWithRed:.7 green:.9 blue:.7 alpha:1].CGColor;
+    if (valid) {
+        self.contentView.backgroundColor = [UIColor clearColor];
+        
     }
     else {
-        self.contentView.layer.backgroundColor = [UIColor colorWithRed:1 green:.9 blue:.9 alpha:1].CGColor;
-    }*/    
+        self.contentView.backgroundColor = [UIColor colorWithRed:1 green:.5 blue:.5 alpha:.4];
+
+    }
 }
+
+
 @end

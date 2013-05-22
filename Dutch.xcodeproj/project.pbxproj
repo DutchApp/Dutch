@@ -6,12 +6,28 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		A54716D5174B17FF002B8C0B /* PreBuildScripts */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A54716D8174B17FF002B8C0B /* Build configuration list for PBXAggregateTarget "PreBuildScripts" */;
+			buildPhases = (
+				A54716D9174B181A002B8C0B /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = PreBuildScripts;
+			productName = PreBuildScripts;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		11901A1E171227A700E5BC8E /* DUTServerOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A1D171227A700E5BC8E /* DUTServerOperations.m */; };
 		11901A2217122ACE00E5BC8E /* DUTRequestEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */; };
 		11901A4917123A9B00E5BC8E /* DUTRequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */; };
 		11901A4C17123D9A00E5BC8E /* DUTServerProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */; };
 		11DF9308171A64010069FA33 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		A516906417480E5400429EBF /* NSData+Document.m in Sources */ = {isa = PBXBuildFile; fileRef = A516906317480E5400429EBF /* NSData+Document.m */; };
+		A516907F1748913A00429EBF /* DUTCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A516907E1748913A00429EBF /* DUTCellBackgroundView.m */; };
 		A51FA1FE173F2F2D001911B9 /* DUTValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA1FD173F2F2D001911B9 /* DUTValidator.m */; };
 		A51FA201173F2F69001911B9 /* DUTEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA200173F2F69001911B9 /* DUTEmailValidator.m */; };
 		A51FA205173F4025001911B9 /* DUTDescriptiveTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA204173F4025001911B9 /* DUTDescriptiveTextField.m */; };
@@ -23,8 +39,12 @@
 		A53F727F171A3C9400B61DE7 /* DUTCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F727E171A3C9400B61DE7 /* DUTCellController.m */; };
 		A53F7282171A40C800B61DE7 /* DUTCellContainerSection.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7281171A40C800B61DE7 /* DUTCellContainerSection.m */; };
 		A53F7287171A4DAC00B61DE7 /* DUTEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7286171A4DAC00B61DE7 /* DUTEditableCell.m */; };
+		A54716DC174B1CDC002B8C0B /* DUTEqualityValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A54716DB174B1CDC002B8C0B /* DUTEqualityValidator.m */; };
 		A54E845E174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m in Sources */ = {isa = PBXBuildFile; fileRef = A54E845D174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m */; };
 		A54E846117449B660003D1B2 /* DUTTextLengthValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A54E846017449B660003D1B2 /* DUTTextLengthValidator.m */; };
+		A58F02F11745C75C0032AE8E /* DUTUtility+Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F02F01745C75C0032AE8E /* DUTUtility+Localization.m */; };
+		A58F02F31745CC0A0032AE8E /* localizedtext_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = A58F02F21745CC0A0032AE8E /* localizedtext_en.plist */; };
+		A58F02F61745D26D0032AE8E /* DUTUtility+FileOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */; };
 		A597ECB217077825008061B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB117077825008061B2 /* UIKit.framework */; };
 		A597ECB417077825008061B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB317077825008061B2 /* Foundation.framework */; };
 		A597ECB617077825008061B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB517077825008061B2 /* CoreGraphics.framework */; };
@@ -53,6 +73,12 @@
 		11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTRequestCreator.m; path = RequestCreator/DUTRequestCreator.m; sourceTree = "<group>"; };
 		11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DUTServerProperties.plist; sourceTree = "<group>"; };
 		A5156B3A1741F1A2006FBC8B /* DUTCellContainerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUTCellContainerDelegate.h; sourceTree = "<group>"; };
+		A516906217480E5400429EBF /* NSData+Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Document.h"; sourceTree = "<group>"; };
+		A516906317480E5400429EBF /* NSData+Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Document.m"; sourceTree = "<group>"; };
+		A51690661748102F00429EBF /* DUTLocalizations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTLocalizations.h; sourceTree = "<group>"; };
+		A516906B17481A8700429EBF /* headerFromPlist.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = headerFromPlist.scpt; sourceTree = "<group>"; };
+		A516907D1748913A00429EBF /* DUTCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTCellBackgroundView.h; sourceTree = "<group>"; };
+		A516907E1748913A00429EBF /* DUTCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTCellBackgroundView.m; sourceTree = "<group>"; };
 		A51FA1FC173F2F2D001911B9 /* DUTValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTValidator.h; sourceTree = "<group>"; };
 		A51FA1FD173F2F2D001911B9 /* DUTValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTValidator.m; sourceTree = "<group>"; };
 		A51FA1FF173F2F69001911B9 /* DUTEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTEmailValidator.h; sourceTree = "<group>"; };
@@ -80,10 +106,18 @@
 		A53F7285171A4DAC00B61DE7 /* DUTEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTEditableCell.h; sourceTree = "<group>"; };
 		A53F7286171A4DAC00B61DE7 /* DUTEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTEditableCell.m; sourceTree = "<group>"; };
 		A53F7288171A52F000B61DE7 /* DUTCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUTCellDelegate.h; sourceTree = "<group>"; };
+		A54716DA174B1CDC002B8C0B /* DUTEqualityValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTEqualityValidator.h; sourceTree = "<group>"; };
+		A54716DB174B1CDC002B8C0B /* DUTEqualityValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTEqualityValidator.m; sourceTree = "<group>"; };
 		A54E845C174492260003D1B2 /* NSMutableSet+WeakZeroingReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableSet+WeakZeroingReference.h"; sourceTree = "<group>"; };
 		A54E845D174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableSet+WeakZeroingReference.m"; sourceTree = "<group>"; };
 		A54E845F17449B660003D1B2 /* DUTTextLengthValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTTextLengthValidator.h; sourceTree = "<group>"; };
 		A54E846017449B660003D1B2 /* DUTTextLengthValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTTextLengthValidator.m; sourceTree = "<group>"; };
+		A58F02EF1745C75C0032AE8E /* DUTUtility+Localization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DUTUtility+Localization.h"; path = "Utility/DUTUtility+Localization.h"; sourceTree = "<group>"; };
+		A58F02F01745C75C0032AE8E /* DUTUtility+Localization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DUTUtility+Localization.m"; path = "Utility/DUTUtility+Localization.m"; sourceTree = "<group>"; };
+		A58F02F21745CC0A0032AE8E /* localizedtext_en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = localizedtext_en.plist; sourceTree = "<group>"; };
+		A58F02F41745D26D0032AE8E /* DUTUtility+FileOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DUTUtility+FileOperations.h"; path = "Utility/DUTUtility+FileOperations.h"; sourceTree = "<group>"; };
+		A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DUTUtility+FileOperations.m"; path = "Utility/DUTUtility+FileOperations.m"; sourceTree = "<group>"; };
+		A58F02F81745E4DA0032AE8E /* DUTStringIds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DUTStringIds.h; path = Constants/DUTStringIds.h; sourceTree = "<group>"; };
 		A597ECAE17077825008061B2 /* Dutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A597ECB117077825008061B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A597ECB317077825008061B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -150,6 +184,7 @@
 				11901A361712353900E5BC8E /* DUTConstants.h */,
 				11901A37171235C000E5BC8E /* DUTConstantVariables.h */,
 				A53F7274171A0D0500B61DE7 /* DUTServerOperationConstants.h */,
+				A58F02F81745E4DA0032AE8E /* DUTStringIds.h */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -163,6 +198,23 @@
 			name = RequestCreation;
 			sourceTree = "<group>";
 		};
+		A516906517480FD400429EBF /* Dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				A51690661748102F00429EBF /* DUTLocalizations.h */,
+			);
+			path = Dynamic;
+			sourceTree = "<group>";
+		};
+		A516906A17481A8700429EBF /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				A516906B17481A8700429EBF /* headerFromPlist.scpt */,
+			);
+			name = scripts;
+			path = Dutch/scripts;
+			sourceTree = "<group>";
+		};
 		A51FA1EB173EBF5F001911B9 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +222,8 @@
 				A51FA204173F4025001911B9 /* DUTDescriptiveTextField.m */,
 				A51FA1F7173F10FF001911B9 /* ActivityView */,
 				A51FA206173F404A001911B9 /* DUTControlDelegate.h */,
+				A516907D1748913A00429EBF /* DUTCellBackgroundView.h */,
+				A516907E1748913A00429EBF /* DUTCellBackgroundView.m */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -194,6 +248,8 @@
 				A51FA202173F301F001911B9 /* DUTValidatorDelegate.h */,
 				A54E845F17449B660003D1B2 /* DUTTextLengthValidator.h */,
 				A54E846017449B660003D1B2 /* DUTTextLengthValidator.m */,
+				A54716DA174B1CDC002B8C0B /* DUTEqualityValidator.h */,
+				A54716DB174B1CDC002B8C0B /* DUTEqualityValidator.m */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -234,6 +290,8 @@
 			children = (
 				A54E845C174492260003D1B2 /* NSMutableSet+WeakZeroingReference.h */,
 				A54E845D174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m */,
+				A516906217480E5400429EBF /* NSData+Document.h */,
+				A516906317480E5400429EBF /* NSData+Document.m */,
 			);
 			path = cocoaCategories;
 			sourceTree = "<group>";
@@ -248,6 +306,7 @@
 		A597ECA517077825008061B2 = {
 			isa = PBXGroup;
 			children = (
+				A516906A17481A8700429EBF /* scripts */,
 				A597ECB717077825008061B2 /* Dutch */,
 				A597ECB017077825008061B2 /* Frameworks */,
 				A597ECAF17077825008061B2 /* Products */,
@@ -275,6 +334,7 @@
 		A597ECB717077825008061B2 /* Dutch */ = {
 			isa = PBXGroup;
 			children = (
+				A516906517480FD400429EBF /* Dynamic */,
 				A54E8423174486330003D1B2 /* cocoaDerived */,
 				A54E841F174480C90003D1B2 /* cocoaCategories */,
 				A51FA1FB173F2EE4001911B9 /* Validators */,
@@ -313,6 +373,7 @@
 			children = (
 				A597ECD017077A84008061B2 /* MainStoryboard.storyboard */,
 				11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */,
+				A58F02F21745CC0A0032AE8E /* localizedtext_en.plist */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -346,6 +407,10 @@
 				A5C3CB02171227A100724C25 /* DUTUtility.m */,
 				A5C3CB04171227C200724C25 /* DUTUtility+Validation.h */,
 				A5C3CB05171227C200724C25 /* DUTUtility+Validation.m */,
+				A58F02EF1745C75C0032AE8E /* DUTUtility+Localization.h */,
+				A58F02F01745C75C0032AE8E /* DUTUtility+Localization.m */,
+				A58F02F41745D26D0032AE8E /* DUTUtility+FileOperations.h */,
+				A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -393,6 +458,7 @@
 			projectRoot = "";
 			targets = (
 				A597ECAD17077825008061B2 /* Dutch */,
+				A54716D5174B17FF002B8C0B /* PreBuildScripts */,
 			);
 		};
 /* End PBXProject section */
@@ -408,10 +474,27 @@
 				A597ECC817077825008061B2 /* Default-568h@2x.png in Resources */,
 				A597ECD117077A84008061B2 /* MainStoryboard.storyboard in Resources */,
 				11901A4C17123D9A00E5BC8E /* DUTServerProperties.plist in Resources */,
+				A58F02F31745CC0A0032AE8E /* localizedtext_en.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A54716D9174B181A002B8C0B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "osascript ${PROJECT_DIR}/${PROJECT_NAME}/scripts/headerFromPlist.scpt";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A597ECAA17077825008061B2 /* Sources */ = {
@@ -442,6 +525,11 @@
 				A51FA20C173F4383001911B9 /* DUTTableViewCell.m in Sources */,
 				A54E845E174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m in Sources */,
 				A54E846117449B660003D1B2 /* DUTTextLengthValidator.m in Sources */,
+				A58F02F11745C75C0032AE8E /* DUTUtility+Localization.m in Sources */,
+				A58F02F61745D26D0032AE8E /* DUTUtility+FileOperations.m in Sources */,
+				A516906417480E5400429EBF /* NSData+Document.m in Sources */,
+				A516907F1748913A00429EBF /* DUTCellBackgroundView.m in Sources */,
+				A54716DC174B1CDC002B8C0B /* DUTEqualityValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +547,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A54716D6174B17FF002B8C0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A54716D7174B17FF002B8C0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A597ECC917077825008061B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -486,6 +588,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -511,6 +614,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -542,6 +646,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A54716D8174B17FF002B8C0B /* Build configuration list for PBXAggregateTarget "PreBuildScripts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A54716D6174B17FF002B8C0B /* Debug */,
+				A54716D7174B17FF002B8C0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A597ECA917077825008061B2 /* Build configuration list for PBXProject "Dutch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

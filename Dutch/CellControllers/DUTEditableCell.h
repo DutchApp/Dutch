@@ -10,7 +10,6 @@
 
 #import "DUTTableViewCell.h"
 
-
 @interface DUTEditableCell : DUTTableViewCell
 
 @property(nonatomic, strong,readwrite) NSString *editableText;

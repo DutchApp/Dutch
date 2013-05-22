@@ -9,6 +9,7 @@
 #import "DUTAppDelegate.h"
 
 
+
 // *************************************************************************************************
 #pragma mark -
 #pragma mark Private Interface
@@ -34,6 +35,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.navigationController = (UINavigationController *)self.window.rootViewController;
     [self.window makeKeyAndVisible];
+    [DUTUtility localizedStringWithId:nil];
     return YES;
 }
 

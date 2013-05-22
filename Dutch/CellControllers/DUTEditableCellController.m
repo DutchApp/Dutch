@@ -60,7 +60,7 @@ NSString *const cellIdentifier = @"editableCell";
 
 
 - (void)setMask:(BOOL)mask {
-    self.cell.mask = mask;
+    //self.cell.mask = mask;
 }
 
 - (void)setDescriptiveFormat:(NSString *)descriptiveFormat {
@@ -68,6 +68,9 @@ NSString *const cellIdentifier = @"editableCell";
 }
 
 - (id)cellData {
+    if (!self.cell.editableText.length) {
+        return nil;
+    }
     return self.cell.editableText;
 }
 

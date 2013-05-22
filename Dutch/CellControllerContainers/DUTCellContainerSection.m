@@ -7,6 +7,7 @@
 //
 
 #import "DUTCellContainerSection.h"
+#import "DUTCellController.h"
 
 @interface DUTCellContainerSection  ()
 @property(nonatomic,strong,readwrite) NSMutableArray *controllers;
