@@ -95,16 +95,26 @@
 
 }
 - (void)editEnded:(id)control  {
-    //self.contentView.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.accessoryView = nil;
 }
 
 - (void)setupValidStatus:(BOOL)valid {
+    if (![self.textField isFirstResponder]) {
+        self.accessoryView = nil;
+        return;
+    }
     if (valid) {
-        self.textField.textColor = [UIColor blackColor];
+        UIImageView *iview = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"dotgreen"]];
+        iview.contentMode = UIViewContentModeScaleAspectFit;
+        iview.frame = CGRectMake(0, 0, 20, 20);
+        self.accessoryView = iview ;
         
     }
     else {
-        self.textField.textColor = [UIColor redColor];
+        UIImageView *iview = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"dotred"]];
+        iview.contentMode = UIViewContentModeScaleAspectFit;
+        iview.frame = CGRectMake(0, 0, 20, 20);
+        self.accessoryView = iview ;
     }
 }
 

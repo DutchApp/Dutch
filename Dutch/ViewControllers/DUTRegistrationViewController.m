@@ -87,7 +87,7 @@
     self.controllerContainer.delegate = self;
     self.controllerContainer.table.translatesAutoresizingMaskIntoConstraints = NO;
     self.navigationBar.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.controllerContainer assignSectionWithTitle:TXT_REGISTER_SECTION_TITLE index:0];
+    [self.controllerContainer assignSectionWithTitle:nil index:0];
     
     self.userName =
         [DUTEditableCellController cellControllerWithText:@""

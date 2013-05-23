@@ -45,6 +45,8 @@
 		A58F02F11745C75C0032AE8E /* DUTUtility+Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F02F01745C75C0032AE8E /* DUTUtility+Localization.m */; };
 		A58F02F31745CC0A0032AE8E /* localizedtext_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = A58F02F21745CC0A0032AE8E /* localizedtext_en.plist */; };
 		A58F02F61745D26D0032AE8E /* DUTUtility+FileOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */; };
+		A5925E7F174DB9DF0024FBAD /* dotgreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A5925E7D174DB9DF0024FBAD /* dotgreen.png */; };
+		A5925E80174DB9DF0024FBAD /* dotred.png in Resources */ = {isa = PBXBuildFile; fileRef = A5925E7E174DB9DF0024FBAD /* dotred.png */; };
 		A597ECB217077825008061B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB117077825008061B2 /* UIKit.framework */; };
 		A597ECB417077825008061B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB317077825008061B2 /* Foundation.framework */; };
 		A597ECB617077825008061B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB517077825008061B2 /* CoreGraphics.framework */; };
@@ -118,6 +120,8 @@
 		A58F02F41745D26D0032AE8E /* DUTUtility+FileOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DUTUtility+FileOperations.h"; path = "Utility/DUTUtility+FileOperations.h"; sourceTree = "<group>"; };
 		A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DUTUtility+FileOperations.m"; path = "Utility/DUTUtility+FileOperations.m"; sourceTree = "<group>"; };
 		A58F02F81745E4DA0032AE8E /* DUTStringIds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DUTStringIds.h; path = Constants/DUTStringIds.h; sourceTree = "<group>"; };
+		A5925E7D174DB9DF0024FBAD /* dotgreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotgreen.png; sourceTree = "<group>"; };
+		A5925E7E174DB9DF0024FBAD /* dotred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotred.png; sourceTree = "<group>"; };
 		A597ECAE17077825008061B2 /* Dutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A597ECB117077825008061B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A597ECB317077825008061B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -303,6 +307,15 @@
 			path = cocoaDerived;
 			sourceTree = "<group>";
 		};
+		A5925E7C174DB9DF0024FBAD /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A5925E7D174DB9DF0024FBAD /* dotgreen.png */,
+				A5925E7E174DB9DF0024FBAD /* dotred.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		A597ECA517077825008061B2 = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +347,7 @@
 		A597ECB717077825008061B2 /* Dutch */ = {
 			isa = PBXGroup;
 			children = (
+				A5925E7C174DB9DF0024FBAD /* images */,
 				A516906517480FD400429EBF /* Dynamic */,
 				A54E8423174486330003D1B2 /* cocoaDerived */,
 				A54E841F174480C90003D1B2 /* cocoaCategories */,
@@ -475,6 +489,8 @@
 				A597ECD117077A84008061B2 /* MainStoryboard.storyboard in Resources */,
 				11901A4C17123D9A00E5BC8E /* DUTServerProperties.plist in Resources */,
 				A58F02F31745CC0A0032AE8E /* localizedtext_en.plist in Resources */,
+				A5925E7F174DB9DF0024FBAD /* dotgreen.png in Resources */,
+				A5925E80174DB9DF0024FBAD /* dotred.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +669,7 @@
 				A54716D7174B17FF002B8C0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A597ECA917077825008061B2 /* Build configuration list for PBXProject "Dutch" */ = {
 			isa = XCConfigurationList;

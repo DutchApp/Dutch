@@ -130,9 +130,14 @@ replacementString:(NSString *)string {
 
 -(NSAttributedString *)attributedTextWithValue:(NSString *)text {
     NSRange loc = [self.formatText rangeOfString:@"%@"];
-    NSDictionary *valueAttr = @{NSForegroundColorAttributeName:[UIColor blueColor]};
+
+    NSDictionary *valueAttr = @{NSForegroundColorAttributeName:[UIColor blackColor]};
     NSAttributedString *valueAttrText = [[NSAttributedString alloc]initWithString:text attributes:valueAttr];
-    NSMutableAttributedString *completeText = [[NSMutableAttributedString alloc]initWithString:self.formatText];
+    
+    NSDictionary *formatAttr = @{NSForegroundColorAttributeName:[UIColor lightGrayColor]};
+    NSMutableAttributedString *completeText = [[NSMutableAttributedString alloc]initWithString:self.formatText attributes:formatAttr];
+
+    
     [completeText replaceCharactersInRange:loc withAttributedString:valueAttrText];
     return [[NSAttributedString alloc]initWithAttributedString:completeText];
 }
