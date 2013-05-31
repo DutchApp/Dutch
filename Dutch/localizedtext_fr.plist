@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TXT_LOGIN_BUTTON_LOGIN</key>
+	<string>Connexion</string>
+	<key>TXT_LOGIN_BUTTON_REGISTER</key>
+	<string>S&apos;inscrire</string>
+	<key>TXT_LOGIN_PHOLDER_PASSWORD</key>
+	<string>Mot de passe</string>
+	<key>TXT_LOGIN_PHOLDER_USER_EMAIL</key>
+	<string>EMail de l&apos;utilisateur</string>
+	<key>TXT_LOGIN_TITLE</key>
+	<string>DUTCH</string>
+	<key>TXT_REGISTER_PHOLDER_USER_EMAIL</key>
+	<string>EMail de l&apos;utilisateur</string>
+	<key>TXT_REGISTER_TITLE</key>
+	<string>S&apos;inscrire</string>
+	<key>TXT_REGISTER_SECTION_TITLE</key>
+	<string>Info</string>
+	<key>TXT_REGISTER_PHOLDER_USER_NAME</key>
+	<string>Nom</string>
+	<key>TXT_REGISTER_PHOLDER_PASSWORD</key>
+	<string>Mot de passe</string>
+	<key>TXT_REGISTER_PHOLDER_PASSWORD_CONFIRM</key>
+	<string>Confirmez mot de passe</string>
+	<key>TXT_REGISTER_DESC_USER_EMAIL</key>
+	<string>EMail: %@</string>
+	<key>TXT_REGISTER_DESC_USER_NAME</key>
+	<string>Nom: %@</string>
+	<key>TXT_HOME_TITLE</key>
+	<string>Maison</string>
+	<key>VERSION</key>
+	<string>4</string>
+</dict>
+</plist>

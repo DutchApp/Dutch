@@ -16,7 +16,8 @@ static NSDictionary *sLocaleData = nil;
 + (void)load {
     NSError *error;
     [DUTUtility createDocumentDirectory];
-    NSData *binJSONData = [DUTUtility dataFromDocument:@"localizedtext_en"];
+    NSData *binJSONData =
+        [DUTUtility dataFromDocument:[self localizationFileName]];
 
 
     if (![binJSONData length]) {
@@ -25,12 +26,14 @@ static NSDictionary *sLocaleData = nil;
     else {
         sLocaleData =
             [NSJSONSerialization JSONObjectWithData:binJSONData options:0 error:&error];
-        
-        NSString *bundleLocVersion = [self localizationDictFromBundle][@"VERSION"];
-        if (bundleLocVersion.integerValue > [self txtVersion].integerValue) {
-            //Recreate file with localization in bundle
-            error = [self createLocalizationFileWithBuiltinLocalization];
-            sLocaleData = [self localizationDictFromBundle];
+        NSDictionary *bundleDict = [self localizationDictFromBundle];
+        if (bundleDict) {
+            NSString *bundleLocVersion = bundleDict[@"VERSION"];
+            if (bundleLocVersion.integerValue > [self txtVersion].integerValue) {
+                //Recreate file with localization in bundle
+                error = [self createLocalizationFileWithBuiltinLocalization];
+                sLocaleData = [self localizationDictFromBundle];
+            }
         }
         NSLog(@"Read Locale data VERSION: %@\n%@",[self txtVersion],sLocaleData);
     }
@@ -46,17 +49,56 @@ static NSDictionary *sLocaleData = nil;
 
 + (NSError *)createLocalizationFileWithBuiltinLocalization {
     NSError *error;
+    BOOL plistMissing = NO;
     NSDictionary *dict = [self localizationDictFromBundle];
+    if (!dict) {
+        plistMissing = YES;
+        dict = [self systemDefaultLocalizationDictFromBundle];
+    }
     NSLog(@"Writing Locale data %@",dict);
     NSData *binJSONData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&error];
-    [binJSONData writeToDocument:@"localizedtext_en"];
+    [binJSONData writeToDocument:plistMissing ? [self systemDefaultLocalizationFileName]:[self localizationFileName]];
+    sLocaleData =
+        [NSJSONSerialization JSONObjectWithData:binJSONData options:0 error:&error];
     return error;
 }
 
 + (NSDictionary *)localizationDictFromBundle {
     NSURL *bundleLocalizationFile =
-        [[NSBundle mainBundle]URLForResource:@"localizedtext_en" withExtension:@"plist"];
-    NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfURL:bundleLocalizationFile];
+        [[NSBundle mainBundle]URLForResource:[self localizationFileName]  withExtension:@"plist"];
+    if (!bundleLocalizationFile) {
+        return nil;
+    }
+    NSDictionary *dict =
+        [[NSDictionary alloc]initWithContentsOfURL:bundleLocalizationFile];
     return dict;
 }
+
++ (NSString *)currentLanguage {
+    NSString *languageCode =
+        [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+    return languageCode;
+}
+
++ (NSString *)localizationFileName {
+    return [NSString stringWithFormat:@"localizedtext_%@",[self currentLanguage]];
+}
+
++ (NSString *)systemDefaultLocalizationFileName {
+    return @"localizedtext_en";
+}
+
++ (NSDictionary *)systemDefaultLocalizationDictFromBundle {
+    NSURL *bundleLocalizationFile =
+    [[NSBundle mainBundle]URLForResource:[self systemDefaultLocalizationFileName]  withExtension:@"plist"];
+    if (!bundleLocalizationFile) {
+        return nil;
+    }
+    NSDictionary *dict =
+    [[NSDictionary alloc]initWithContentsOfURL:bundleLocalizationFile];
+    return dict;
+}
+
+
+
 @end

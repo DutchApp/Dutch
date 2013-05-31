@@ -19,8 +19,6 @@
 
 - (void) internalSetText:(NSString *)text;
 - (NSString *)internalText;
-- (NSUInteger)positionOfValue;
-- (void)setCursorAtPosition:(NSUInteger)location;
 @end
 
 
@@ -46,11 +44,10 @@ replacementString:(NSString *)string {
 
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    if (!self.textField.formatText.length) {
-        return ;
+    if (self.textField.formatText.length) {
+        [self.textField internalSetText:self.textField.valueText];
     }
-    [self.textField internalSetText:self.textField.valueText];
-    
+
     if ([self.textField.controlDelegate respondsToSelector:@selector(editBegan:)]) {
         [self.textField.controlDelegate editBegan:textField];
     }
@@ -58,10 +55,9 @@ replacementString:(NSString *)string {
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (!self.textField.formatText.length) {
-        return ;
+    if (self.textField.formatText.length) {
+        self.textField.text = self.textField.valueText;
     }
-    self.textField.text = self.textField.valueText;
     if ([self.textField.controlDelegate respondsToSelector:@selector(editEnded:)]) {
         [self.textField.controlDelegate editEnded:textField];
     }
@@ -84,6 +80,7 @@ replacementString:(NSString *)string {
         self.autocorrectionType = UITextAutocorrectionTypeNo;
         self.autocapitalizationType = UITextAutocapitalizationTypeNone;
         self.spellCheckingType = UITextSpellCheckingTypeNo;
+        self.textColor = [UIColor darkGrayColor];
     }
     return self;
 }
@@ -131,7 +128,7 @@ replacementString:(NSString *)string {
 -(NSAttributedString *)attributedTextWithValue:(NSString *)text {
     NSRange loc = [self.formatText rangeOfString:@"%@"];
 
-    NSDictionary *valueAttr = @{NSForegroundColorAttributeName:[UIColor blackColor]};
+    NSDictionary *valueAttr = @{NSForegroundColorAttributeName:[UIColor darkGrayColor]};
     NSAttributedString *valueAttrText = [[NSAttributedString alloc]initWithString:text attributes:valueAttr];
     
     NSDictionary *formatAttr = @{NSForegroundColorAttributeName:[UIColor lightGrayColor]};
@@ -140,30 +137,6 @@ replacementString:(NSString *)string {
     
     [completeText replaceCharactersInRange:loc withAttributedString:valueAttrText];
     return [[NSAttributedString alloc]initWithAttributedString:completeText];
-}
-
-
-- (void)setCursorAtPosition:(NSUInteger)location {
-    UITextPosition *start = [self positionFromPosition:[self beginningOfDocument]
-                                                 offset:location];
-    UITextPosition *end = [self positionFromPosition:start
-                                               offset:0];
-    [self setSelectedTextRange:[self textRangeFromPosition:start toPosition:end]];
-}
-
-- (NSUInteger)positionOfValue {
-    if (self.formatText.length) {
-        NSRange range = [self.formatText rangeOfString:@"@"];
-        if (range.location != NSNotFound) {
-            return range.location + self.valueText.length;
-        }
-    }
-    return self.text.length;
-}
-
-
-- (NSString *)valueTextFromFullText {
-    NSRange range = [self.formatText rangeOfString:@"@"];
 }
 
 
