@@ -13,19 +13,24 @@
 #import "DUTLocalizations.h"
 #import "DUTServerOperations.h"
 
+
 @interface DUTLoginTableViewController ()
+
+
 @property(nonatomic,strong,readwrite) DUTGroupedCellControllerContainer *controllerContainer;
 @property(nonatomic,strong,readwrite) DUTEditableCellController *userName;
 @property(nonatomic,strong,readwrite) DUTEditableCellController *password;
 @property(nonatomic,strong,readwrite) IBOutlet UINavigationBar *navigationBar;
 @property(nonatomic,strong,readwrite) IBOutlet UIButton *btnLogin;
+
+
 @end
+
 
 @implementation DUTLoginTableViewController
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationBar.topItem.title = TXT_LOGIN_TITLE;
     [self setupSections];
@@ -33,18 +38,21 @@
     [self.controllerContainer reloadData];       
 }
 
-- (void)didReceiveMemoryWarning
-{
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 
+// *************************************************************************************************
+#pragma mark
 #pragma mark - Private Methods
 
 
 - (void)setupSections {
-    self.controllerContainer =[DUTGroupedCellControllerContainer containerForViewController:self frame:CGRectZero];
+    self.controllerContainer =
+        [DUTGroupedCellControllerContainer containerForViewController:self frame:CGRectZero];
     self.controllerContainer.delegate = self;
     self.controllerContainer.table.translatesAutoresizingMaskIntoConstraints = NO;
     self.navigationBar.translatesAutoresizingMaskIntoConstraints = NO;
@@ -99,7 +107,7 @@
 }
 
 - (UIView *)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
- footerViewForSection:(NSInteger)section {
+            footerViewForSection:(NSInteger)section {
     UIView *v = nil;
     if (section == 0) {
         self.btnLogin.frame = CGRectMake(10, 10, 300, 50);
@@ -114,15 +122,24 @@
 }
 
 - (CGFloat)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
-heightForFooterInSection:(NSInteger)section {
+           heightForFooterInSection:(NSInteger)section {
     return 50;
 }
 
+
+// *************************************************************************************************
+#pragma mark
 #pragma mark - UI Action methods
 
 
 - (IBAction)actionLogin:(id)sender {
-    
+    NSDictionary *loginUserInformation =
+        @{@"email": self.userName.text, @"password" : self.password.text};
+    [DUTServerOperations loginUserWithInformation:loginUserInformation successBlock:^(id object) {
+        NSLog(@"Success Response: %@", object);
+    } failureBlock:^(id object) {
+        NSLog(@"Failure Response: %@", object);
+    }];
 }
 
 
