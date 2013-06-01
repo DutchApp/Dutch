@@ -33,6 +33,7 @@
 		A51FA205173F4025001911B9 /* DUTDescriptiveTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA204173F4025001911B9 /* DUTDescriptiveTextField.m */; };
 		A51FA209173F42D4001911B9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA208173F42D4001911B9 /* MBProgressHUD.m */; };
 		A51FA20C173F4383001911B9 /* DUTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A51FA20B173F4382001911B9 /* DUTTableViewCell.m */; };
+		A53CE54C175AB8C800E692EE /* button_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = A53CE54B175AB8C800E692EE /* button_gradient.png */; };
 		A53F7273171A09CE00B61DE7 /* DUTResponseDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7272171A09CE00B61DE7 /* DUTResponseDecoder.m */; };
 		A53F7278171A29E900B61DE7 /* DUTEditableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F7277171A29E900B61DE7 /* DUTEditableCellController.m */; };
 		A53F727C171A3B9200B61DE7 /* DUTGroupedCellControllerContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F727B171A3B9200B61DE7 /* DUTGroupedCellControllerContainer.m */; };
@@ -94,6 +95,7 @@
 		A51FA208173F42D4001911B9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		A51FA20A173F4382001911B9 /* DUTTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTTableViewCell.h; sourceTree = "<group>"; };
 		A51FA20B173F4382001911B9 /* DUTTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTTableViewCell.m; sourceTree = "<group>"; };
+		A53CE54B175AB8C800E692EE /* button_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_gradient.png; sourceTree = "<group>"; };
 		A53F7271171A09CE00B61DE7 /* DUTResponseDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTResponseDecoder.h; path = DutchRequestData/DUTResponseDecoder.h; sourceTree = "<group>"; };
 		A53F7272171A09CE00B61DE7 /* DUTResponseDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTResponseDecoder.m; path = DutchRequestData/DUTResponseDecoder.m; sourceTree = "<group>"; };
 		A53F7274171A0D0500B61DE7 /* DUTServerOperationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DUTServerOperationConstants.h; path = DutchOperations/DUTServerOperationConstants.h; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		A5925E7C174DB9DF0024FBAD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A53CE54B175AB8C800E692EE /* button_gradient.png */,
 				A5925E7D174DB9DF0024FBAD /* dotgreen.png */,
 				A5925E7E174DB9DF0024FBAD /* dotred.png */,
 			);
@@ -495,6 +498,7 @@
 				A5925E7F174DB9DF0024FBAD /* dotgreen.png in Resources */,
 				A5925E80174DB9DF0024FBAD /* dotred.png in Resources */,
 				A5B57A491758480D00DFE16B /* localizedtext_fr.plist in Resources */,
+				A53CE54C175AB8C800E692EE /* button_gradient.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

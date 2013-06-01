@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DUTGroupedCellControllerContainer.h"
 
-@interface DUTLoginTableViewController : UITableViewController
+@interface DUTLoginTableViewController : UIViewController<DUTCellControllerContainerDelegate>
 
 @end

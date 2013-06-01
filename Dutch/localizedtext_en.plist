@@ -10,6 +10,10 @@
 	<string>Password</string>
 	<key>TXT_LOGIN_PHOLDER_USER_EMAIL</key>
 	<string>User email</string>
+	<key>TXT_LOGIN_DESC_USER_EMAIL</key>
+	<string>EMail: %@</string>
+	<key>TXT_LOGIN_DESC_USER_PASSWORD</key>
+	<string>Password: %@</string>
 	<key>TXT_LOGIN_TITLE</key>
 	<string>DUTCH</string>
 	<key>TXT_REGISTER_PHOLDER_USER_EMAIL</key>
@@ -31,6 +35,6 @@
 	<key>TXT_HOME_TITLE</key>
 	<string>Home</string>
 	<key>VERSION</key>
-	<string>3</string>
+	<string>4</string>
 </dict>
 </plist>

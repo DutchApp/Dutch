@@ -7,33 +7,30 @@
 //
 
 #import "DUTLoginTableViewController.h"
+
+#import "DUTEditableCellController.h"
+#import "DUTEmailValidator.h"
 #import "DUTLocalizations.h"
+#import "DUTServerOperations.h"
 
 @interface DUTLoginTableViewController ()
-
+@property(nonatomic,strong,readwrite) DUTGroupedCellControllerContainer *controllerContainer;
+@property(nonatomic,strong,readwrite) DUTEditableCellController *userName;
+@property(nonatomic,strong,readwrite) DUTEditableCellController *password;
+@property(nonatomic,strong,readwrite) IBOutlet UINavigationBar *navigationBar;
+@property(nonatomic,strong,readwrite) IBOutlet UIButton *btnLogin;
 @end
 
 @implementation DUTLoginTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.title = TXT_LOGIN_TITLE;
+    self.navigationBar.topItem.title = TXT_LOGIN_TITLE;
+    [self setupSections];
+    [self autolayout];
+    [self.controllerContainer reloadData];       
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,60 +39,91 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+
+#pragma mark - Private Methods
 
 
+- (void)setupSections {
+    self.controllerContainer =[DUTGroupedCellControllerContainer containerForViewController:self frame:CGRectZero];
+    self.controllerContainer.delegate = self;
+    self.controllerContainer.table.translatesAutoresizingMaskIntoConstraints = NO;
+    self.navigationBar.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.controllerContainer assignSectionWithTitle:nil index:0];
+    
+    self.userName =
+    [DUTEditableCellController cellControllerWithText:@""
+                                          placeHolder:TXT_LOGIN_PHOLDER_USER_EMAIL];
+    self.userName.descriptiveFormat = TXT_LOGIN_DESC_USER_EMAIL;
+    [self.userName addValidator:[DUTEmailValidator validator]];
+    [self.controllerContainer addCellController:self.userName section:0];
+    
+    self.password =
+    [DUTEditableCellController cellControllerWithText:@""
+                                          placeHolder:TXT_LOGIN_PHOLDER_PASSWORD];
+    self.password.mask = YES;
+    self.password.descriptiveFormat = TXT_LOGIN_DESC_USER_PASSWORD;
+    [self.controllerContainer addCellController:self.password section:0];
+    
+    
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+- (void)autolayout {
+    // Autolayout
+    
+    {
+        id constraint = [NSLayoutConstraint constraintWithItem:self.controllerContainer.table attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.navigationBar attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+        [self.view addConstraint:constraint];
+    }
+    {
+        id constraint = [NSLayoutConstraint constraintWithItem:self.controllerContainer.table attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+        [self.view addConstraint:constraint];
+    }
+    {
+        id constraint = [NSLayoutConstraint constraintWithItem:self.controllerContainer.table attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
+        [self.view addConstraint:constraint];
+    }
+    {
+        id constraint = [NSLayoutConstraint constraintWithItem:self.controllerContainer.table attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
+        [self.view addConstraint:constraint];
+    }
+    
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
+
+#pragma mark - DUTCellControllerContainerDelegate
+
+- (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer dataValidity:(BOOL)valid {
+    
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+- (UIView *)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
+ footerViewForSection:(NSInteger)section {
+    UIView *v = nil;
+    if (section == 0) {
+        self.btnLogin.frame = CGRectMake(10, 10, 300, 50);
+        self.btnLogin.layer.cornerRadius = 10;
+        self.btnLogin.layer.borderWidth = 2;
+        self.btnLogin.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        v = [[UIView alloc]initWithFrame:CGRectZero];
+        [v addSubview:self.btnLogin];
+    }
+    
+    return v;
 }
-*/
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (CGFloat)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
+heightForFooterInSection:(NSInteger)section {
+    return 50;
 }
+
+#pragma mark - UI Action methods
+
+
+- (IBAction)actionLogin:(id)sender {
+    
+}
+
 
 @end

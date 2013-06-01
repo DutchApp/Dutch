@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iV6-aI-unD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dnY-Q8-gUx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -14,20 +14,67 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="XhG-zG-vZV" kind="relationship" relationship="rootViewController" id="SF8-Zc-7dJ"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aef-gy-QAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-159" y="-336"/>
+        </scene>
+        <!--Login Table View Controller-->
+        <scene sceneID="7aa-Dc-atz">
+            <objects>
+                <viewController id="dnY-Q8-gUx" customClass="DUTLoginTableViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gaw-AP-19e">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="Rod-CH-AVz">
+                                <color key="tintColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem id="jI0-oE-9fZ"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rod-CH-AVz" firstAttribute="leading" secondItem="gaw-AP-19e" secondAttribute="leading" type="default" id="TuV-XX-tNx"/>
+                            <constraint firstItem="Rod-CH-AVz" firstAttribute="top" secondItem="gaw-AP-19e" secondAttribute="top" type="default" id="a56-Yu-flW"/>
+                            <constraint firstItem="Rod-CH-AVz" firstAttribute="trailing" secondItem="gaw-AP-19e" secondAttribute="trailing" type="default" id="ij0-MU-fT4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="sc4-58-lG4" id="1et-SV-fck"/>
+                        <outlet property="navigationBar" destination="Rod-CH-AVz" id="CkV-Rs-ehd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ov-nd-TVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="sc4-58-lG4">
+                    <rect key="frame" x="0.0" y="0.0" width="73" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" backgroundImage="button_gradient.png">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Login">
+                                <attributes>
+                                    <color key="NSColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="15" name="Helvetica"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="actionLogin:" destination="dnY-Q8-gUx" eventType="touchUpInside" id="eu7-gJ-o3T"/>
+                    </connections>
+                </button>
+            </objects>
+            <point key="canvasLocation" x="743" y="-461"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="vXO-uQ-3eW">
             <objects>
                 <viewController id="2At-dv-lkN" customClass="DUTRegistrationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vqo-1m-SQk">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="HCw-vc-jh2">
@@ -66,125 +113,18 @@
             </objects>
             <point key="canvasLocation" x="-21" y="272"/>
         </scene>
-        <!--Login Table View Controller - Dutch-->
-        <scene sceneID="ih6-To-7Yv">
-            <objects>
-                <tableViewController storyboardIdentifier="login" id="XhG-zG-vZV" customClass="DUTLoginTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="30" sectionFooterHeight="10" id="Pha-lT-lEZ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="QzI-qH-cmd">
-                            <rect key="frame" x="0.0" y="130" width="320" height="73"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3l-cD-zNO">
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="73" id="8Vh-ud-tu0"/>
-                                        <constraint firstAttribute="height" constant="35" id="F82-D1-60S"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="Login">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wml-BS-xYl">
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="27" id="o6C-LD-GQI"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="Register">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <segue destination="2At-dv-lkN" kind="modal" id="E5z-vT-2JJ"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstItem="g3l-cD-zNO" firstAttribute="top" secondItem="QzI-qH-cmd" secondAttribute="top" constant="-6" id="Hjc-Kh-6Pn"/>
-                                <constraint firstItem="g3l-cD-zNO" firstAttribute="trailing" secondItem="Wml-BS-xYl" secondAttribute="trailing" type="default" id="LLx-Eb-b72"/>
-                                <constraint firstItem="g3l-cD-zNO" firstAttribute="leading" secondItem="Wml-BS-xYl" secondAttribute="leading" type="default" id="Q6Q-hI-b4Z"/>
-                                <constraint firstAttribute="bottom" secondItem="Wml-BS-xYl" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="WjA-iB-9mb"/>
-                                <constraint firstItem="g3l-cD-zNO" firstAttribute="leading" secondItem="QzI-qH-cmd" secondAttribute="leading" constant="123" id="kMU-zU-dNk"/>
-                            </constraints>
-                        </view>
-                        <sections>
-                            <tableViewSection id="P9a-wM-wTm">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fE4-6U-hHv">
-                                        <rect key="frame" x="0.0" y="30" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User e-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O0O-HG-9EG">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="XCd-61-8Ux"/>
-                                                        <constraint firstAttribute="width" constant="273" id="eCG-As-cVE"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                                </textField>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="O0O-HG-9EG" firstAttribute="leading" secondItem="fE4-6U-hHv" secondAttribute="leading" constant="17" id="G8c-m4-MhI"/>
-                                            <constraint firstItem="O0O-HG-9EG" firstAttribute="top" secondItem="fE4-6U-hHv" secondAttribute="top" constant="8" id="jYr-uO-sXS"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3YA-IQ-Ecm">
-                                        <rect key="frame" x="0.0" y="75" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="plm-5A-vKj">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="0GO-nY-JTa"/>
-                                                        <constraint firstAttribute="width" constant="267" id="g0g-0i-WM1"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                </textField>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="plm-5A-vKj" firstAttribute="top" secondItem="3YA-IQ-Ecm" secondAttribute="top" constant="8" id="Fly-6Q-cAH"/>
-                                            <constraint firstItem="plm-5A-vKj" firstAttribute="leading" secondItem="3YA-IQ-Ecm" secondAttribute="leading" constant="17" id="eof-Ll-whf"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="XhG-zG-vZV" id="d28-AX-3TU"/>
-                            <outlet property="delegate" destination="XhG-zG-vZV" id="LGK-RD-ift"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Dutch" id="Keu-xM-Kmx"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R9r-an-sIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="759" y="-408"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="button_gradient.png" width="32" height="75"/>
+    </resources>
     <classes>
-        <class className="DUTLoginTableViewController" superclassName="UITableViewController">
+        <class className="DUTLoginTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DUTLoginTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="actionLogin:"/>
+                <relationship kind="outlet" name="btnLogin" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
+            </relationships>
         </class>
         <class className="DUTRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DUTRegistrationViewController.h"/>
@@ -202,6 +142,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

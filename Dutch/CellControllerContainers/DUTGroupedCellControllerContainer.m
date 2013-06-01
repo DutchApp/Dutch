@@ -35,6 +35,9 @@ const NSInteger kMaxSections = 10;
 - (id)initWithTableView:(UITableView *)tableView {
     self = [super init];
     if (self) {
+        if (!tableView) {
+            tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        }
         self.tableView = tableView;
         tableView.delegate = self;
         tableView.dataSource = self;
@@ -42,6 +45,8 @@ const NSInteger kMaxSections = 10;
         for (NSInteger index = 0; index < kMaxSections; index++) {
             [self.sections addObject:[NSNull null]];
         }
+        tableView.backgroundView = nil;
+        tableView.backgroundColor = [UIColor lightGrayColor];
     }
     return self;
 }
@@ -90,6 +95,9 @@ const NSInteger kMaxSections = 10;
     BOOL valid = YES;
     
     for (DUTCellContainerSection *section in self.sections) {
+        if ((id)section == [NSNull null]) {
+            continue;
+        }
         NSInteger numControllers = section.numberOfControllers;
         for (NSInteger index = 0; index < numControllers; index++) {
             DUTCellController *controller = [section controllerAtIndex:index];
@@ -103,7 +111,10 @@ const NSInteger kMaxSections = 10;
         }
     }
     
-    [self.delegate cellContainer:self dataValidity:valid];
+    if ([self.delegate respondsToSelector:@selector(cellController:dataValid:)]) {
+        [self.delegate cellContainer:self dataValidity:valid];
+    }
+
 }
 #pragma mark - TableView delegate
 
@@ -148,6 +159,22 @@ const NSInteger kMaxSections = 10;
     return containerSection.title;
 }
 
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *v = nil;
+    if ([self.delegate respondsToSelector:@selector(cellContainer:footerViewForSection:)]) {
+        v = [self.delegate cellContainer:self footerViewForSection:section];
+    }
+    return v;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    CGFloat h = UITableViewAutomaticDimension;
+    if ([self.delegate respondsToSelector:@selector(cellContainer:heightForFooterInSection:)]) {
+        h = [self.delegate cellContainer:self heightForFooterInSection:section];
+    }
+    return h;
+}
 - (UITableView *)table {
     return self.tableView;
 }
@@ -168,7 +195,9 @@ const NSInteger kMaxSections = 10;
             [controller updateValidityStatus];
         }
     }
-    
-    [self.delegate cellContainer:self dataValidity:valid];
+    if ([self.delegate respondsToSelector:@selector(cellController:dataValidity:)]) {
+        [self.delegate cellContainer:self dataValidity:valid];
+    }
+
 }
 @end

@@ -18,6 +18,12 @@
 
 - (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
          dataValidity:(BOOL)valid;
+
+- (UIView *)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
+         footerViewForSection:(NSInteger)section;
+
+- (CGFloat)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
+     heightForFooterInSection:(NSInteger)section;
 @end
 
 @interface DUTGroupedCellControllerContainer : NSObject<UITableViewDelegate, UITableViewDataSource,DUTCellControllerEventDelegate>

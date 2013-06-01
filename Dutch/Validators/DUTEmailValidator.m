@@ -12,6 +12,9 @@
 
 @implementation DUTEmailValidator
 
++ (id)validator {
+    return [[DUTEmailValidator alloc]init];
+}
 
 - (BOOL)validData:(id)data {
     NSString *email = data;

@@ -82,8 +82,6 @@
 - (void)setupSections {
 
     self.controllerContainer =[DUTGroupedCellControllerContainer containerForViewController:self frame:CGRectZero];
-    self.controllerContainer.table.backgroundColor = [UIColor lightGrayColor];
-    self.controllerContainer.table.backgroundView = nil;
     self.controllerContainer.delegate = self;
     self.controllerContainer.table.translatesAutoresizingMaskIntoConstraints = NO;
     self.navigationBar.translatesAutoresizingMaskIntoConstraints = NO;
@@ -92,7 +90,7 @@
     self.userName =
         [DUTEditableCellController cellControllerWithText:@""
                                               placeHolder:TXT_REGISTER_PHOLDER_USER_EMAIL];
-    [self.userName addValidator:[[DUTEmailValidator alloc]init]];
+    [self.userName addValidator:[DUTEmailValidator validator]];
     self.userName.descriptiveFormat = TXT_REGISTER_DESC_USER_EMAIL;
     [self.controllerContainer addCellController:self.userName section:0];
     
