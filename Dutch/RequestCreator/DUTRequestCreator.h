@@ -16,4 +16,10 @@
  */
 + (NSMutableURLRequest *)urlRequestForRegisterUser;
 
+
+/**
+ * Method to create the URL request for login.
+ */
++ (NSMutableURLRequest *)urlRequestForLoginUser;
+
 @end
