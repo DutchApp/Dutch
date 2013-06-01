@@ -52,9 +52,28 @@
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSMutableURLRequest *urlRequest =
-    [[NSMutableURLRequest alloc] initWithURL:url
-                                 cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                             timeoutInterval:[self requestTimeOut]];
+        [[NSMutableURLRequest alloc] initWithURL:url
+                                     cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                 timeoutInterval:[self requestTimeOut]];
+    [urlRequest setValue:[self contentTypeForHTTPHeader]
+                forHTTPHeaderField:kContentTypeHTTPHeaderField];
+    [urlRequest setHTTPMethod:kHTTPPostMethod];
+    return urlRequest;
+}
+
+
++ (NSMutableURLRequest *)urlRequestForLoginUser {
+    NSString *urlString = [NSString stringWithFormat:@"%@://%@/users/sign_in.%@",
+                                    [self httpProtocol],
+                                    [self host],
+                                    [self serverContentType]];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *urlRequest =
+        [[NSMutableURLRequest alloc] initWithURL:url
+                                     cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                 timeoutInterval:[self requestTimeOut]];
     [urlRequest setValue:[self contentTypeForHTTPHeader]
                 forHTTPHeaderField:kContentTypeHTTPHeaderField];
     [urlRequest setHTTPMethod:kHTTPPostMethod];

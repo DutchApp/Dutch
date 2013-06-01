@@ -27,4 +27,18 @@
                            successBlock:(BlockWithParameter)successBlock
                            failureBlock:(BlockWithParameter)failureBlock;
 
+
+/**
+ * This function will accept a NSDisctionary with user information and responsible for calling
+ * server logging in.
+ *
+ * @successBlock to be executed in case of success.
+ * @failureBlock to be executed in case of failure
+ *
+ */
++ (void)loginUserWithInformation:(NSDictionary *)userInformation
+                    successBlock:(BlockWithParameter)successBlock
+                    failureBlock:(BlockWithParameter)failureBlock;
+
+
 @end
