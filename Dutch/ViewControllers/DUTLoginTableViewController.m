@@ -119,10 +119,10 @@
 
 - (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer dataValidity:(BOOL)valid {
     if (valid) {
-        self.btnLogin.userInteractionEnabled = YES;
+        self.btnLogin.enabled = YES;
     }
     else {
-        self.btnLogin.userInteractionEnabled = NO;
+        self.btnLogin.enabled = NO;
     }
 }
 
