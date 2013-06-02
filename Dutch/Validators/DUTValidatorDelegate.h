@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @protocol DUTValidatorDelegate <NSObject>
-
+@optional
 + (id)validator;
 
+@required
 - (BOOL)validData:(id)data;
 
 @end

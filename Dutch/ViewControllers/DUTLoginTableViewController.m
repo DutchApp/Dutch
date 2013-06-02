@@ -10,8 +10,10 @@
 
 #import "DUTEditableCellController.h"
 #import "DUTEmailValidator.h"
+#import "DUTTextLengthValidator.h"
 #import "DUTLocalizations.h"
 #import "DUTServerOperations.h"
+#import "DUTAmountCellController.h"
 
 
 @interface DUTLoginTableViewController ()
@@ -69,9 +71,13 @@
                                           placeHolder:TXT_LOGIN_PHOLDER_PASSWORD];
     self.password.mask = YES;
     self.password.descriptiveFormat = TXT_LOGIN_DESC_USER_PASSWORD;
+    [self.password addValidator:[DUTTextLengthValidator validatorWithMinLenth:8 maxLength:10]];
     [self.controllerContainer addCellController:self.password section:0];
     
-    
+#if 0 // Code to test amount cell
+    DUTAmountCellController *controller = [DUTAmountCellController cellControllerWithAmount:[NSDecimalNumber decimalNumberWithString:@"100.23"] currencyCode:nil];
+    [self.controllerContainer addCellController:controller section:0];
+#endif
 
 }
 
@@ -102,7 +108,12 @@
 #pragma mark - DUTCellControllerContainerDelegate
 
 - (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer dataValidity:(BOOL)valid {
-    
+    if (valid) {
+        self.btnLogin.userInteractionEnabled = YES;
+    }
+    else {
+        self.btnLogin.userInteractionEnabled = NO;
+    }
 }
 
 - (UIView *)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
@@ -111,9 +122,15 @@
     if (section == 0) {
         self.btnLogin.translatesAutoresizingMaskIntoConstraints = NO;
         self.btnLogin.frame = CGRectMake(10, 10, 300, 50);
-        self.btnLogin.layer.cornerRadius = 10;
-        self.btnLogin.layer.borderWidth = 2;
-        self.btnLogin.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        CGRect roundedRect = CGRectMake(0, 0, 300, 50);
+        
+        UIBezierPath *bezPath;
+        CAShapeLayer *shapeLayer;
+        shapeLayer = [[CAShapeLayer alloc]init];
+        bezPath = [UIBezierPath bezierPathWithRoundedRect:roundedRect cornerRadius:5];
+        shapeLayer.path = bezPath.CGPath;
+        self.btnLogin.layer.mask = shapeLayer;        
+        
         [self.btnLogin setTitle:TXT_LOGIN_BUTTON_LOGIN forState:UIControlStateNormal];
         v = [[UIView alloc]initWithFrame:CGRectZero];
         [v addSubview:self.btnLogin];

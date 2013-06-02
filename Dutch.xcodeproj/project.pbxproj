@@ -47,6 +47,8 @@
 		A58F02F11745C75C0032AE8E /* DUTUtility+Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F02F01745C75C0032AE8E /* DUTUtility+Localization.m */; };
 		A58F02F31745CC0A0032AE8E /* localizedtext_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = A58F02F21745CC0A0032AE8E /* localizedtext_en.plist */; };
 		A58F02F61745D26D0032AE8E /* DUTUtility+FileOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */; };
+		A591B906175ACEB100FEAA93 /* DUTAmountCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = A591B905175ACEB100FEAA93 /* DUTAmountCellController.m */; };
+		A591B908175AF14200FEAA93 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A591B907175AF14200FEAA93 /* QuartzCore.framework */; };
 		A5925E7F174DB9DF0024FBAD /* dotgreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A5925E7D174DB9DF0024FBAD /* dotgreen.png */; };
 		A5925E80174DB9DF0024FBAD /* dotred.png in Resources */ = {isa = PBXBuildFile; fileRef = A5925E7E174DB9DF0024FBAD /* dotred.png */; };
 		A597ECB217077825008061B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A597ECB117077825008061B2 /* UIKit.framework */; };
@@ -126,6 +128,9 @@
 		A58F02F41745D26D0032AE8E /* DUTUtility+FileOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DUTUtility+FileOperations.h"; path = "Utility/DUTUtility+FileOperations.h"; sourceTree = "<group>"; };
 		A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DUTUtility+FileOperations.m"; path = "Utility/DUTUtility+FileOperations.m"; sourceTree = "<group>"; };
 		A58F02F81745E4DA0032AE8E /* DUTStringIds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DUTStringIds.h; path = Constants/DUTStringIds.h; sourceTree = "<group>"; };
+		A591B904175ACEB100FEAA93 /* DUTAmountCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTAmountCellController.h; sourceTree = "<group>"; };
+		A591B905175ACEB100FEAA93 /* DUTAmountCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTAmountCellController.m; sourceTree = "<group>"; };
+		A591B907175AF14200FEAA93 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A5925E7D174DB9DF0024FBAD /* dotgreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotgreen.png; sourceTree = "<group>"; };
 		A5925E7E174DB9DF0024FBAD /* dotred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotred.png; sourceTree = "<group>"; };
 		A597ECAE17077825008061B2 /* Dutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A591B908175AF14200FEAA93 /* QuartzCore.framework in Frameworks */,
 				A597ECB217077825008061B2 /* UIKit.framework in Frameworks */,
 				A597ECB417077825008061B2 /* Foundation.framework in Frameworks */,
 				A597ECB617077825008061B2 /* CoreGraphics.framework in Frameworks */,
@@ -287,6 +293,8 @@
 				A53F7288171A52F000B61DE7 /* DUTCellDelegate.h */,
 				A51FA20A173F4382001911B9 /* DUTTableViewCell.h */,
 				A51FA20B173F4382001911B9 /* DUTTableViewCell.m */,
+				A591B904175ACEB100FEAA93 /* DUTAmountCellController.h */,
+				A591B905175ACEB100FEAA93 /* DUTAmountCellController.m */,
 			);
 			name = CellControllers;
 			path = Dutch/CellControllers;
@@ -336,6 +344,7 @@
 		A597ECA517077825008061B2 = {
 			isa = PBXGroup;
 			children = (
+				A591B907175AF14200FEAA93 /* QuartzCore.framework */,
 				A516906A17481A8700429EBF /* scripts */,
 				A597ECB717077825008061B2 /* Dutch */,
 				A597ECB017077825008061B2 /* Frameworks */,
@@ -568,6 +577,7 @@
 				A516907F1748913A00429EBF /* DUTCellBackgroundView.m in Sources */,
 				A54716DC174B1CDC002B8C0B /* DUTEqualityValidator.m in Sources */,
 				11719A31175AC1C400A1EE26 /* DUTSession.m in Sources */,
+				A591B906175ACEB100FEAA93 /* DUTAmountCellController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

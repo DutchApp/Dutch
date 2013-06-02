@@ -111,7 +111,7 @@ const NSInteger kMaxSections = 10;
         }
     }
     
-    if ([self.delegate respondsToSelector:@selector(cellController:dataValid:)]) {
+    if ([self.delegate respondsToSelector:@selector(cellContainer:dataValidity:)]) {
         [self.delegate cellContainer:self dataValidity:valid];
     }
 
@@ -195,7 +195,7 @@ const NSInteger kMaxSections = 10;
             [controller updateValidityStatus];
         }
     }
-    if ([self.delegate respondsToSelector:@selector(cellController:dataValidity:)]) {
+    if ([self.delegate respondsToSelector:@selector(cellContainer:dataValidity:)]) {
         [self.delegate cellContainer:self dataValidity:valid];
     }
 

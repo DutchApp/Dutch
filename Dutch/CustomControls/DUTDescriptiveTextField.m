@@ -126,6 +126,10 @@ replacementString:(NSString *)string {
 
 
 -(NSAttributedString *)attributedTextWithValue:(NSString *)text {
+    
+    if (!text) {
+        text = @"";
+    }
     NSRange loc = [self.formatText rangeOfString:@"%@"];
 
     NSDictionary *valueAttr = @{NSForegroundColorAttributeName:[UIColor darkGrayColor]};

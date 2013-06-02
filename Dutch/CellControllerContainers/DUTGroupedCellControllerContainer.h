@@ -15,7 +15,7 @@
 
 
 @protocol DUTCellControllerContainerDelegate <NSObject>
-
+@optional
 - (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
          dataValidity:(BOOL)valid;
 

@@ -12,4 +12,9 @@
 @interface DUTUtility (Localization)
 
 + (NSString *)localizedStringWithId:(NSString *)stringId;
+
++ (NSString *)currentLocaleCurrencySymbol;
+
++ (NSString *)currencySymbolForCurrencyCode:(NSString *)currencyCode;
+
 @end

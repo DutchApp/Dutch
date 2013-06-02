@@ -99,6 +99,35 @@ static NSDictionary *sLocaleData = nil;
     return dict;
 }
 
+#pragma mark - Currency
+
+
++ (NSString *)currentLocaleCurrencySymbol {
+    NSLocale *currentLocale = [NSLocale currentLocale];
+    return [currentLocale objectForKey:NSLocaleCurrencySymbol];
+}
+
+
++ (NSString *)currencySymbolForCurrencyCode:(NSString *)currencyCode {
+    if (!currencyCode) {
+        return [self currentLocaleCurrencySymbol];
+    }
+    NSSet *localeIds = [NSSet setWithArray:[NSLocale availableLocaleIdentifiers]];
+    NSSet *match = [localeIds objectsPassingTest:^BOOL(id obj, BOOL *stop) {
+        NSString *localeId = obj;
+        BOOL passed = NO;
+        NSLocale *locale = [[NSLocale alloc]initWithLocaleIdentifier:localeId];
+        NSString *localeCurrencyCode = [locale objectForKey:NSLocaleCurrencyCode];
+        if ([currencyCode isEqualToString:localeCurrencyCode]) {
+            *stop = YES;
+            passed = YES;
+        }
+        return passed;
+    }];
+    NSString *localeId = [match anyObject];
+    NSLocale *locale = [[NSLocale alloc]initWithLocaleIdentifier:localeId];
+    return [locale objectForKey:NSLocaleCurrencySymbol];
+}
 
 
 @end

@@ -8,7 +8,7 @@
 
 #import "DUTEditableCellController.h"
 
-NSString *const cellIdentifier = @"editableCell";
+static NSString *const cellIdentifier = @"editableCell";
 
 @interface DUTEditableCellController ()
 
