@@ -12,6 +12,8 @@
 #import "DUTRequestCreator.h"
 #import "DUTResponseDecoder.h"
 #import "DUTRequestEncoder.h"
+#import "DUTSession.h"
+
 
 // *************************************************************************************************
 #pragma mark -
@@ -133,8 +135,13 @@ NSString * const kServerOpRequestData = @"requestDict";
                     failureBlock(errorDict);
                 }
                 else {
+                    // Store authToken in session.
+                    [[DUTSession sharedSession]
+                        setAuthToken:[responseDictionary valueForKey:@"auth_token"]];
+                    
                     responseDictionary = @{kServerOpRequestData:userInformation,
                                            kServerOpResponseData:responseDictionary};
+                    
                     successBlock(responseDictionary);
                 }
             }
