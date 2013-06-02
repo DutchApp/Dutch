@@ -27,6 +27,7 @@
 #pragma mark -
 #pragma mark Singleton Methods
 
+
 + (DUTSession *)sharedSession {
     static DUTSession *sharedSession = nil;
     static dispatch_once_t onceToken;
