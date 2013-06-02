@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		11719A31175AC1C400A1EE26 /* DUTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 11719A30175AC1C400A1EE26 /* DUTSession.m */; };
 		11901A1E171227A700E5BC8E /* DUTServerOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A1D171227A700E5BC8E /* DUTServerOperations.m */; };
 		11901A2217122ACE00E5BC8E /* DUTRequestEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */; };
 		11901A4917123A9B00E5BC8E /* DUTRequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A4817123A9B00E5BC8E /* DUTRequestCreator.m */; };
@@ -67,6 +68,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11719A2F175AC1C400A1EE26 /* DUTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTSession.h; path = Models/DUTSession.h; sourceTree = "<group>"; };
+		11719A30175AC1C400A1EE26 /* DUTSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTSession.m; path = Models/DUTSession.m; sourceTree = "<group>"; };
 		11901A1C171227A700E5BC8E /* DUTServerOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTServerOperations.h; path = DutchOperations/DUTServerOperations.h; sourceTree = "<group>"; };
 		11901A1D171227A700E5BC8E /* DUTServerOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTServerOperations.m; path = DutchOperations/DUTServerOperations.m; sourceTree = "<group>"; };
 		11901A2017122ACE00E5BC8E /* DUTRequestEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTRequestEncoder.h; path = DutchRequestData/DUTRequestEncoder.h; sourceTree = "<group>"; };
@@ -166,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11719A2E175AC18800A1EE26 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11719A2F175AC1C400A1EE26 /* DUTSession.h */,
+				11719A30175AC1C400A1EE26 /* DUTSession.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		11901A1B1712273300E5BC8E /* DutchOperations */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +364,7 @@
 		A597ECB717077825008061B2 /* Dutch */ = {
 			isa = PBXGroup;
 			children = (
+				11719A2E175AC18800A1EE26 /* Models */,
 				A5925E7C174DB9DF0024FBAD /* images */,
 				A516906517480FD400429EBF /* Dynamic */,
 				A54E8423174486330003D1B2 /* cocoaDerived */,
@@ -554,6 +567,7 @@
 				A516906417480E5400429EBF /* NSData+Document.m in Sources */,
 				A516907F1748913A00429EBF /* DUTCellBackgroundView.m in Sources */,
 				A54716DC174B1CDC002B8C0B /* DUTEqualityValidator.m in Sources */,
+				11719A31175AC1C400A1EE26 /* DUTSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
