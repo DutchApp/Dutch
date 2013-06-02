@@ -5,7 +5,7 @@
 	<key>TXT_LOGIN_BUTTON_LOGIN</key>
 	<string>Login</string>
 	<key>TXT_LOGIN_BUTTON_REGISTER</key>
-	<string>Register</string>
+	<string>Want to create a new account?</string>
 	<key>TXT_LOGIN_PHOLDER_PASSWORD</key>
 	<string>Password</string>
 	<key>TXT_LOGIN_PHOLDER_USER_EMAIL</key>
@@ -35,6 +35,6 @@
 	<key>TXT_HOME_TITLE</key>
 	<string>Home</string>
 	<key>VERSION</key>
-	<string>4</string>
+	<string>6</string>
 </dict>
 </plist>

@@ -19,6 +19,7 @@
 @property(nonatomic,strong,readwrite) DUTEditableCellController *password;
 @property(nonatomic,strong,readwrite) IBOutlet UINavigationBar *navigationBar;
 @property(nonatomic,strong,readwrite) IBOutlet UIButton *btnLogin;
+@property(nonatomic,strong,readwrite) IBOutlet UIButton *btnNewUser;
 @end
 
 @implementation DUTLoginTableViewController
@@ -102,12 +103,20 @@
  footerViewForSection:(NSInteger)section {
     UIView *v = nil;
     if (section == 0) {
+        self.btnLogin.translatesAutoresizingMaskIntoConstraints = NO;
         self.btnLogin.frame = CGRectMake(10, 10, 300, 50);
         self.btnLogin.layer.cornerRadius = 10;
         self.btnLogin.layer.borderWidth = 2;
         self.btnLogin.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        [self.btnLogin setTitle:TXT_LOGIN_BUTTON_LOGIN forState:UIControlStateNormal];
         v = [[UIView alloc]initWithFrame:CGRectZero];
         [v addSubview:self.btnLogin];
+        
+        self.btnNewUser.translatesAutoresizingMaskIntoConstraints = NO;
+        self.btnNewUser.frame = CGRectMake(10, 80, 300, 20);
+        [self.btnNewUser setTitle:TXT_LOGIN_BUTTON_REGISTER forState:UIControlStateNormal];
+        
+        [v addSubview:self.btnNewUser];   
     }
     
     return v;
@@ -115,7 +124,7 @@
 
 - (CGFloat)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
 heightForFooterInSection:(NSInteger)section {
-    return 50;
+    return 140.0f;
 }
 
 #pragma mark - UI Action methods
