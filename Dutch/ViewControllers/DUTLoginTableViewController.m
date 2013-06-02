@@ -14,6 +14,7 @@
 #import "DUTLocalizations.h"
 #import "DUTServerOperations.h"
 #import "DUTAmountCellController.h"
+#import "DUTUtility+Controls.h"
 
 
 @interface DUTLoginTableViewController ()
@@ -33,10 +34,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBar.topItem.title = TXT_LOGIN_TITLE;
+    [self setupNavBar];
     [self setupSections];
     [self autolayout];
-    [self.controllerContainer reloadData];       
+    [self.controllerContainer reloadData];
+    [self.userName performSelector:@selector(becomeFirstResponder)];
 }
 
 
@@ -71,7 +73,7 @@
                                           placeHolder:TXT_LOGIN_PHOLDER_PASSWORD];
     self.password.mask = YES;
     self.password.descriptiveFormat = TXT_LOGIN_DESC_USER_PASSWORD;
-    [self.password addValidator:[DUTTextLengthValidator validatorWithMinLenth:8 maxLength:10]];
+    [self.password addValidator:[DUTTextLengthValidator validatorWithMinLenth:8 maxLength:20]];
     [self.controllerContainer addCellController:self.password section:0];
     
 #if 0 // Code to test amount cell
@@ -105,6 +107,14 @@
 }
 
 
+- (void)setupNavBar {
+    self.navigationBar.topItem.title = TXT_LOGIN_TITLE;
+    self.navigationBar.titleTextAttributes =
+    @{UITextAttributeTextColor:[UIColor darkGrayColor],
+      UITextAttributeFont:[UIFont systemFontOfSize:18]};
+}
+
+
 #pragma mark - DUTCellControllerContainerDelegate
 
 - (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer dataValidity:(BOOL)valid {
@@ -121,22 +131,16 @@
     UIView *v = nil;
     if (section == 0) {
         self.btnLogin.translatesAutoresizingMaskIntoConstraints = NO;
-        self.btnLogin.frame = CGRectMake(10, 10, 300, 50);
-        CGRect roundedRect = CGRectMake(0, 0, 300, 50);
+        self.btnLogin.frame = CGRectMake(10, 20, 300, 50);
         
-        UIBezierPath *bezPath;
-        CAShapeLayer *shapeLayer;
-        shapeLayer = [[CAShapeLayer alloc]init];
-        bezPath = [UIBezierPath bezierPathWithRoundedRect:roundedRect cornerRadius:5];
-        shapeLayer.path = bezPath.CGPath;
-        self.btnLogin.layer.mask = shapeLayer;        
+        [DUTUtility roundButton:self.btnLogin width:300.0f];
         
         [self.btnLogin setTitle:TXT_LOGIN_BUTTON_LOGIN forState:UIControlStateNormal];
         v = [[UIView alloc]initWithFrame:CGRectZero];
         [v addSubview:self.btnLogin];
         
         self.btnNewUser.translatesAutoresizingMaskIntoConstraints = NO;
-        self.btnNewUser.frame = CGRectMake(10, 80, 300, 20);
+        self.btnNewUser.frame = CGRectMake(10, 70, 300, 20);
         [self.btnNewUser setTitle:TXT_LOGIN_BUTTON_REGISTER forState:UIControlStateNormal];
         
         [v addSubview:self.btnNewUser];   

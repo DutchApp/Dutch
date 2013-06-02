@@ -81,4 +81,10 @@ static NSString *const cellIdentifier = @"editableCell";
 - (void)updateValidityStatus {
     [self.cell updateValidityStatus];
 }
+
+
+- (void)becomeFirstResponder {
+    [self.cell becomeFirstResponder];
+}
+
 @end

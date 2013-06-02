@@ -38,7 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBar.topItem.title = TXT_REGISTER_TITLE;
+    [self setupNavBar];
     [self setupSections];
     [self autolayout];
     [self.controllerContainer reloadData];    
@@ -146,6 +146,16 @@
 
 - (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer dataValidity:(BOOL)valid {
     self.navigationBar.topItem.rightBarButtonItem = valid ? self.applyButton:nil;
+}
+
+
+#pragma mark - Private 
+
+- (void)setupNavBar {
+    self.navigationBar.topItem.title = TXT_REGISTER_TITLE;
+    self.navigationBar.titleTextAttributes =
+    @{UITextAttributeTextColor:[UIColor darkGrayColor],
+      UITextAttributeFont:[UIFont systemFontOfSize:18]};
 }
 
 @end

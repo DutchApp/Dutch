@@ -67,6 +67,7 @@
 		A5B57A491758480D00DFE16B /* localizedtext_fr.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5B57A481758480D00DFE16B /* localizedtext_fr.plist */; };
 		A5C3CB03171227A100724C25 /* DUTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C3CB02171227A100724C25 /* DUTUtility.m */; };
 		A5C3CB06171227C200724C25 /* DUTUtility+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C3CB05171227C200724C25 /* DUTUtility+Validation.m */; };
+		A5C422B3175BD1CF006825F6 /* DUTUtility+Controls.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C422B2175BD1CF006825F6 /* DUTUtility+Controls.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +159,8 @@
 		A5C3CB02171227A100724C25 /* DUTUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTUtility.m; path = Utility/DUTUtility.m; sourceTree = "<group>"; };
 		A5C3CB04171227C200724C25 /* DUTUtility+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DUTUtility+Validation.h"; path = "Utility/DUTUtility+Validation.h"; sourceTree = "<group>"; };
 		A5C3CB05171227C200724C25 /* DUTUtility+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DUTUtility+Validation.m"; path = "Utility/DUTUtility+Validation.m"; sourceTree = "<group>"; };
+		A5C422B1175BD1CF006825F6 /* DUTUtility+Controls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DUTUtility+Controls.h"; path = "Utility/DUTUtility+Controls.h"; sourceTree = "<group>"; };
+		A5C422B2175BD1CF006825F6 /* DUTUtility+Controls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DUTUtility+Controls.m"; path = "Utility/DUTUtility+Controls.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,6 +456,8 @@
 				A58F02F01745C75C0032AE8E /* DUTUtility+Localization.m */,
 				A58F02F41745D26D0032AE8E /* DUTUtility+FileOperations.h */,
 				A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */,
+				A5C422B1175BD1CF006825F6 /* DUTUtility+Controls.h */,
+				A5C422B2175BD1CF006825F6 /* DUTUtility+Controls.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -578,6 +583,7 @@
 				A54716DC174B1CDC002B8C0B /* DUTEqualityValidator.m in Sources */,
 				11719A31175AC1C400A1EE26 /* DUTSession.m in Sources */,
 				A591B906175ACEB100FEAA93 /* DUTAmountCellController.m in Sources */,
+				A5C422B3175BD1CF006825F6 /* DUTUtility+Controls.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
