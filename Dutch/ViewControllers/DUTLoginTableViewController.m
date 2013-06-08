@@ -16,6 +16,7 @@
 #import "DUTAmountCellController.h"
 #import "DUTUtility+Controls.h"
 #import "DUTHomeViewController.h"
+#import "DUTUtility+DUTAlertView.h"
 
 
 @interface DUTLoginTableViewController ()
