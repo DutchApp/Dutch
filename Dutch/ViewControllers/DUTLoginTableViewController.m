@@ -167,8 +167,8 @@ heightForFooterInSection:(NSInteger)section {
     
 #if 1 //Alert test code. Remove when stable
 
-    DUTAlertView *alertView = [DUTAlertView alertViewWithTitle:@"VeryAlert" message:@"In the not very very distant past, the corridors of the U.S. Senate were alive with men who had served in World War II, among them such powerful icons as John Warner of Virginia, Ted Stevens of Alaska, Daniel Inouye of Hawaii and Ernest Hollings"];
-
+    //DUTAlertView *alertView = [DUTAlertView alertViewWithTitle:@"VeryAlert" message:@"In the not very very distant past, the corridors of the U.S. Senate were alive with men who had served in World War II, among them such powerful icons as John Warner of Virginia, Ted Stevens of Alaska, Daniel Inouye of Hawaii and Ernest Hollings"];
+    DUTAlertView *alertView = [DUTAlertView alertViewWithTitle:@"VeryAlert" message:@"A very short message"];
     [alertView addButtonWithTitle:@"Go!" action:nil];
     [alertView addCancelButtonWithAction:^{
         NSLog(@"Cancel clicked");

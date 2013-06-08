@@ -12,4 +12,6 @@
 
 - (void)fitToWidth:(CGFloat)fixedWidth;
 
+- (NSInteger)computeNumberOfLines;
+
 @end
