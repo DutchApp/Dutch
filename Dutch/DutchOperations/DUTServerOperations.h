@@ -41,4 +41,17 @@
                     failureBlock:(BlockWithParameter)failureBlock;
 
 
+/**
+ * This function will accept a NSDisctionary with expense information and responsible for calling
+ * server for creating new expense.
+ *
+ * @successBlock to be executed in case of success.
+ * @failureBlock to be executed in case of failure
+ *
+ */
++ (void)createExpenseInformation:(NSDictionary *)expenseInformation
+                    successBlock:(BlockWithParameter)successBlock
+                    failureBlock:(BlockWithParameter)failureBlock;
+
+
 @end

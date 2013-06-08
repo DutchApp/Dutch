@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>host</key>
-	<string>localhost:3000</string>
+	<string>172.16.42.3:3000</string>
 	<key>secure</key>
 	<false/>
 	<key>port</key>
