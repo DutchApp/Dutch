@@ -44,6 +44,7 @@
 		A54716DC174B1CDC002B8C0B /* DUTEqualityValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A54716DB174B1CDC002B8C0B /* DUTEqualityValidator.m */; };
 		A54E845E174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m in Sources */ = {isa = PBXBuildFile; fileRef = A54E845D174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m */; };
 		A54E846117449B660003D1B2 /* DUTTextLengthValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A54E846017449B660003D1B2 /* DUTTextLengthValidator.m */; };
+		A55F7E831763C64D006C86B8 /* DUTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55F7E821763C64D006C86B8 /* DUTAlertView.m */; };
 		A58F02F11745C75C0032AE8E /* DUTUtility+Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F02F01745C75C0032AE8E /* DUTUtility+Localization.m */; };
 		A58F02F31745CC0A0032AE8E /* localizedtext_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = A58F02F21745CC0A0032AE8E /* localizedtext_en.plist */; };
 		A58F02F61745D26D0032AE8E /* DUTUtility+FileOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */; };
@@ -72,7 +73,6 @@
 		A5C422B3175BD1CF006825F6 /* DUTUtility+Controls.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C422B2175BD1CF006825F6 /* DUTUtility+Controls.m */; };
 		A5C422B7175BEE9C006825F6 /* DUTAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C422B5175BEE9C006825F6 /* DUTAlertViewController.m */; };
 		A5C422B8175BEE9C006825F6 /* DUTAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C422B6175BEE9C006825F6 /* DUTAlertViewController.xib */; };
-		A5C422BB175BEF8F006825F6 /* DUTUtility+DUTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C422BA175BEF8F006825F6 /* DUTUtility+DUTAlertView.m */; };
 		A5C422BD175BF80A006825F6 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C422BC175BF80A006825F6 /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +129,8 @@
 		A54E845D174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableSet+WeakZeroingReference.m"; sourceTree = "<group>"; };
 		A54E845F17449B660003D1B2 /* DUTTextLengthValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTTextLengthValidator.h; sourceTree = "<group>"; };
 		A54E846017449B660003D1B2 /* DUTTextLengthValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTTextLengthValidator.m; sourceTree = "<group>"; };
+		A55F7E811763C64D006C86B8 /* DUTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTAlertView.h; path = Utility/DUTAlertView.h; sourceTree = "<group>"; };
+		A55F7E821763C64D006C86B8 /* DUTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTAlertView.m; path = Utility/DUTAlertView.m; sourceTree = "<group>"; };
 		A58F02EF1745C75C0032AE8E /* DUTUtility+Localization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DUTUtility+Localization.h"; path = "Utility/DUTUtility+Localization.h"; sourceTree = "<group>"; };
 		A58F02F01745C75C0032AE8E /* DUTUtility+Localization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DUTUtility+Localization.m"; path = "Utility/DUTUtility+Localization.m"; sourceTree = "<group>"; };
 		A58F02F21745CC0A0032AE8E /* localizedtext_en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = localizedtext_en.plist; sourceTree = "<group>"; };
@@ -173,8 +175,6 @@
 		A5C422B4175BEE9C006825F6 /* DUTAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTAlertViewController.h; path = ViewControllers/DUTAlertViewController.h; sourceTree = "<group>"; };
 		A5C422B5175BEE9C006825F6 /* DUTAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTAlertViewController.m; path = ViewControllers/DUTAlertViewController.m; sourceTree = "<group>"; };
 		A5C422B6175BEE9C006825F6 /* DUTAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DUTAlertViewController.xib; path = ViewControllers/DUTAlertViewController.xib; sourceTree = "<group>"; };
-		A5C422B9175BEF8F006825F6 /* DUTUtility+DUTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DUTUtility+DUTAlertView.h"; path = "Utility/DUTUtility+DUTAlertView.h"; sourceTree = "<group>"; };
-		A5C422BA175BEF8F006825F6 /* DUTUtility+DUTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DUTUtility+DUTAlertView.m"; path = "Utility/DUTUtility+DUTAlertView.m"; sourceTree = "<group>"; };
 		A5C422BC175BF80A006825F6 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -481,8 +481,8 @@
 				A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */,
 				A5C422B1175BD1CF006825F6 /* DUTUtility+Controls.h */,
 				A5C422B2175BD1CF006825F6 /* DUTUtility+Controls.m */,
-				A5C422B9175BEF8F006825F6 /* DUTUtility+DUTAlertView.h */,
-				A5C422BA175BEF8F006825F6 /* DUTUtility+DUTAlertView.m */,
+				A55F7E811763C64D006C86B8 /* DUTAlertView.h */,
+				A55F7E821763C64D006C86B8 /* DUTAlertView.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -612,8 +612,8 @@
 				A591B906175ACEB100FEAA93 /* DUTAmountCellController.m in Sources */,
 				A5C422B3175BD1CF006825F6 /* DUTUtility+Controls.m in Sources */,
 				A5C422B7175BEE9C006825F6 /* DUTAlertViewController.m in Sources */,
-				A5C422BB175BEF8F006825F6 /* DUTUtility+DUTAlertView.m in Sources */,
 				A594663D175D8C63002D0258 /* UILabel+DUT.m in Sources */,
+				A55F7E831763C64D006C86B8 /* DUTAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
