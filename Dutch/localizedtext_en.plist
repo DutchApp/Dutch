@@ -34,7 +34,11 @@
 	<string>Name: %@</string>
 	<key>TXT_HOME_TITLE</key>
 	<string>Home</string>
+	<key>TXT_OK</key>
+	<string>Ok</string>
+	<key>TXT_CANCEL</key>
+	<string>Cancel</string>
 	<key>VERSION</key>
-	<string>6</string>
+	<string>1</string>
 </dict>
 </plist>

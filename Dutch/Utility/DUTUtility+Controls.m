@@ -7,6 +7,7 @@
 //
 
 #import "DUTUtility+Controls.h"
+#import "DUTLocalizations.h"
 
 @implementation DUTUtility (Controls)
 
@@ -17,7 +18,16 @@
     buttonRect = button.frame;
     buttonRect.size = CGSizeMake(width, 40);
     button.frame = buttonRect;
+    UIImage *bgImage = [UIImage imageNamed:@"button_gradient.png"];
+    if ([[button titleForState:UIControlStateNormal] caseInsensitiveCompare:TXT_CANCEL] == NSOrderedSame) {
+        bgImage = [UIImage imageNamed:@"button_black_gradient.png"];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    }
+    else {
+        [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    }
     
+    [button setBackgroundImage:bgImage forState:UIControlStateNormal];
     UIBezierPath *bezPath;
     CAShapeLayer *shapeLayer;
     shapeLayer = [[CAShapeLayer alloc]init];

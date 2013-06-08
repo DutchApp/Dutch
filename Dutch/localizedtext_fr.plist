@@ -10,6 +10,10 @@
 	<string>Mot de passe</string>
 	<key>TXT_LOGIN_PHOLDER_USER_EMAIL</key>
 	<string>EMail de l&apos;utilisateur</string>
+	<key>TXT_LOGIN_DESC_USER_EMAIL</key>
+	<string>EMail: %@</string>
+	<key>TXT_LOGIN_DESC_USER_PASSWORD</key>
+	<string>Mot de passe: %@</string>
 	<key>TXT_LOGIN_TITLE</key>
 	<string>DUTCH</string>
 	<key>TXT_REGISTER_PHOLDER_USER_EMAIL</key>
@@ -30,7 +34,11 @@
 	<string>Nom: %@</string>
 	<key>TXT_HOME_TITLE</key>
 	<string>Maison</string>
+	<key>TXT_OK</key>
+	<string>approuver</string>
+	<key>TXT_CANCEL</key>
+	<string>résilier</string>
 	<key>VERSION</key>
-	<string>4</string>
+	<string>1</string>
 </dict>
 </plist>
