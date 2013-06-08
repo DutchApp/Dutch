@@ -165,19 +165,20 @@ heightForFooterInSection:(NSInteger)section {
 
 - (IBAction)actionLogin:(id)sender {
     
-#if 0 //Alert test code. Remove when stable
-    id alertView = [DUTUtility alertViewWithTitle:@"VeryAlert" message:@"In the not very very distant past, the corridors of the U.S. Senate were alive with men who had served in World War II, among them such powerful icons as John Warner of Virginia, Ted Stevens of Alaska, Daniel Inouye of Hawaii and Ernest Hollings"];
-    //id alertView = [DUTUtility alertViewWithTitle:@"VeryAlert" message:@"A Very Short Message"];
-    //[DUTUtility alertView:alertView addButtonWithTitle:@"Go!" action:nil];
-    [DUTUtility alertView:alertView addCancelButtonWithAction:^{
+#if 1 //Alert test code. Remove when stable
+
+    DUTAlertView *alertView = [DUTAlertView alertViewWithTitle:@"VeryAlert" message:@"In the not very very distant past, the corridors of the U.S. Senate were alive with men who had served in World War II, among them such powerful icons as John Warner of Virginia, Ted Stevens of Alaska, Daniel Inouye of Hawaii and Ernest Hollings"];
+
+    [alertView addButtonWithTitle:@"Go!" action:nil];
+    [alertView addCancelButtonWithAction:^{
         NSLog(@"Cancel clicked");
     }];
-    [DUTUtility alertView:alertView addOkButtonWithAction:^{
+    [alertView addOkButtonWithAction:^{
         NSLog(@"OK clicked");
     }];
     
 
-    [DUTUtility alertViewShow:alertView];
+    [alertView show];
     return;
 #endif
     NSDictionary *loginUserInformation =

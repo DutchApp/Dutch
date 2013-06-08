@@ -77,13 +77,12 @@
 - (void)show:(UIViewController *)presentingVC {
     presentingVC.modalPresentationStyle = UIModalPresentationCurrentContext;
     self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    //self.alertView.center = CGPointMake(-500, self.view.center.y);
     self.alertView.alpha = 0;
     self.view.backgroundColor = [UIColor clearColor];
     [presentingVC presentViewController:self animated:NO completion:nil];    
     [UIView animateWithDuration:.5 animations:^{
         self.view.backgroundColor = [UIColor colorWithWhite:.2 alpha:.6];
-        //self.alertView.center = self.view.center;
+        self.alertView.center = self.view.center;
 
     } completion:^(BOOL finished) {
         self.alertView.alpha = 1;
@@ -129,7 +128,7 @@
             if (block) {
                 block();
             }
-
+            self.interfaceObject = nil; // Release interface object. i.e DUTAlertView
         }];
     }];
 }
@@ -142,9 +141,11 @@
     self.messageLabel.text = self.alertMessage;
     self.alertTitleLabel.text = self.alertTitle;
     self.alertTitleLabel.textColor = [UIColor darkGrayColor];
-    [self.messageLabel fitToWidth:self.messageLabel.frame.size.width];
+    [self.messageLabel fitToWidth:self.alertView.frame.size.width - 10];
     CGRect rect = self.messageLabel.frame;
     rect.origin.y = self.alertTitleLabel.frame.origin.y + self.alertTitleLabel.frame.size.height + 10.0f;
+    rect.origin.x = 5;
+    rect.size.width = self.alertView.frame.size.width - 10;
     self.messageLabel.frame = rect;
 }
 

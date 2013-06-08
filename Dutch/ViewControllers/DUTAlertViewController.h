@@ -12,6 +12,7 @@
 
 @property(nonatomic,strong,readwrite) NSString *alertTitle;
 @property(nonatomic,strong,readwrite) NSString *alertMessage;
+@property(nonatomic,strong,readwrite) id  interfaceObject;
 
 - (void)addButtonWithTitle:(NSString *)title action:(void (^)()) block ;
 - (void)show:(UIViewController *)presentingVC;
