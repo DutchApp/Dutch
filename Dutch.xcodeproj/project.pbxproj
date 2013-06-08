@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		114CBB9E175C3C2900E4D48A /* DUTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114CBB9D175C3C2900E4D48A /* DUTHomeViewController.m */; };
 		11719A31175AC1C400A1EE26 /* DUTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 11719A30175AC1C400A1EE26 /* DUTSession.m */; };
 		11901A1E171227A700E5BC8E /* DUTServerOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A1D171227A700E5BC8E /* DUTServerOperations.m */; };
 		11901A2217122ACE00E5BC8E /* DUTRequestEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */; };
@@ -71,6 +72,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		114CBB9C175C3C2900E4D48A /* DUTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTHomeViewController.h; path = ViewControllers/DUTHomeViewController.h; sourceTree = "<group>"; };
+		114CBB9D175C3C2900E4D48A /* DUTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTHomeViewController.m; path = ViewControllers/DUTHomeViewController.m; sourceTree = "<group>"; };
 		11719A2F175AC1C400A1EE26 /* DUTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTSession.h; path = Models/DUTSession.h; sourceTree = "<group>"; };
 		11719A30175AC1C400A1EE26 /* DUTSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTSession.m; path = Models/DUTSession.m; sourceTree = "<group>"; };
 		11901A1C171227A700E5BC8E /* DUTServerOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTServerOperations.h; path = DutchOperations/DUTServerOperations.h; sourceTree = "<group>"; };
@@ -439,6 +442,8 @@
 				A597ECD517078AF5008061B2 /* DUTLoginTableViewController.m */,
 				A597ECDA17079746008061B2 /* DUTRegistrationViewController.h */,
 				A597ECDB17079746008061B2 /* DUTRegistrationViewController.m */,
+				114CBB9C175C3C2900E4D48A /* DUTHomeViewController.h */,
+				114CBB9D175C3C2900E4D48A /* DUTHomeViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -584,6 +589,7 @@
 				11719A31175AC1C400A1EE26 /* DUTSession.m in Sources */,
 				A591B906175ACEB100FEAA93 /* DUTAmountCellController.m in Sources */,
 				A5C422B3175BD1CF006825F6 /* DUTUtility+Controls.m in Sources */,
+				114CBB9E175C3C2900E4D48A /* DUTHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

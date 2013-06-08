@@ -15,6 +15,7 @@
 #import "DUTServerOperations.h"
 #import "DUTAmountCellController.h"
 #import "DUTUtility+Controls.h"
+#import "DUTHomeViewController.h"
 
 
 @interface DUTLoginTableViewController ()
@@ -163,8 +164,15 @@ heightForFooterInSection:(NSInteger)section {
 - (IBAction)actionLogin:(id)sender {
     NSDictionary *loginUserInformation =
         @{@"email": self.userName.text, @"password" : self.password.text};
+    
     [DUTServerOperations loginUserWithInformation:loginUserInformation successBlock:^(id object) {
         NSLog(@"Success Response: %@", object);
+        UIStoryboard *storyBoard = self.storyboard;
+        
+        // Pushing Home Screen.
+        DUTHomeViewController *homeScreenViewController =
+            [storyBoard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+        [self presentViewController:homeScreenViewController animated:YES completion:NULL];
     } failureBlock:^(id object) {
         NSLog(@"Failure Response: %@", object);
     }];
