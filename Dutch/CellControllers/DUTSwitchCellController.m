@@ -54,4 +54,5 @@
 -(UISwitch *)theSwitch {
     return self.cell.theSwitch;
 }
+
 @end

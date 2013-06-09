@@ -12,7 +12,7 @@
 #include "DUTTableViewCell.h"
 
 
-@interface DUTCellController : NSObject<DUTCellControllerDelegate,  DUTTableViewCellDelegate,DUTTableViewCellDelegate>
+@interface DUTCellController : NSObject<DUTCellControllerDelegate,          DUTTableViewCellDelegate>
 
 
 @property (nonatomic,strong,readonly) id cellData;

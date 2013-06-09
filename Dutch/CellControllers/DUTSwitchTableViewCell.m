@@ -25,7 +25,8 @@ static const CGFloat kUIEdgeXYOffset = 10.0f;
 + (DUTSwitchTableViewCell *)cellWithMessage:(NSString *)message {
     DUTSwitchTableViewCell *cell = [[DUTSwitchTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellIdentifier];
     cell.textLabel.text = message;
-    cell.textLabel.textColor = [UIColor lightGrayColor];
+    cell.textLabel.textColor = [UIColor darkGrayColor];
+    cell.textLabel.font = [UIFont systemFontOfSize:17];
     return cell;
 }
 
@@ -45,6 +46,7 @@ static const CGFloat kUIEdgeXYOffset = 10.0f;
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGFloat cellWidth = CGRectGetWidth(self.contentView.frame);
+    CGFloat cellHeight = CGRectGetHeight(self.contentView.frame);
     
     // layout Segment
     CGRect segmentRect = self.theSwitch.frame;
@@ -55,7 +57,9 @@ static const CGFloat kUIEdgeXYOffset = 10.0f;
     CGFloat textWidth = cellWidth - segmentWidth - 3 * kUIEdgeXYOffset;
     self.textLabel.frame = CGRectMake(kUIEdgeXYOffset, kUIEdgeXYOffset, textWidth, 0);
     [self.textLabel sizeToFit];
-    self.textLabel.frame = CGRectMake(kUIEdgeXYOffset, kUIEdgeXYOffset, textWidth, CGRectGetHeight(self.textLabel.frame));
+    CGFloat textHeight = CGRectGetHeight(self.textLabel.frame);
+    CGFloat textY = (cellHeight - textHeight)/2.0f;
+    self.textLabel.frame = CGRectMake(kUIEdgeXYOffset, textY, textWidth, CGRectGetHeight(self.textLabel.frame));
     
     segmentRect.origin.x = cellWidth - segmentWidth - kUIEdgeXYOffset;
     segmentRect.origin.y = (CGRectGetHeight(self.contentView.frame) - segmentHeight)/2.0f;

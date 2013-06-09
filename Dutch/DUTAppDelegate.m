@@ -33,8 +33,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [DUTUtility registerUserDefaults];
-    [DUTUtility localizationLoad];    
-    [self launchFirsScreen];
+    [DUTUtility localizationLoad];
+    
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self launchFirsScreen];        
+    });
+
     return YES;
 }
 
@@ -67,17 +73,17 @@
 
 
 - (void)launchFirsScreen {
-    UIViewController *firstViewController = nil;    
-    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];    
-    
+    UIViewController *firstViewController = nil;
+    UIViewController *initVC = self.window.rootViewController;
     if ([DUTUtility isAutoLogin] && [[DUTSession sharedSession]loadCache]) {
-        firstViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+        firstViewController = [initVC.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
     }
     else {
-        firstViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];
+        firstViewController = [initVC.storyboard instantiateViewControllerWithIdentifier:@"login"];
     }
-    self.window.rootViewController = firstViewController;
-    [self.window makeKeyAndVisible];    
+    [UIView transitionFromView:initVC.view toView:firstViewController.view duration:.5f options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
+        self.window.rootViewController = firstViewController;
+    }];
+
 }
 @end
