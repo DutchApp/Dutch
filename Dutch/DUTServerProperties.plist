@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>host</key>
-	<string>172.16.42.3:3000</string>
+	<string>dutchdev.herokuapp.com</string>
 	<key>secure</key>
 	<false/>
 	<key>port</key>
-	<string>3000</string>
+	<string></string>
 	<key>contentType</key>
 	<string>json</string>
 	<key>serverTimeOut</key>

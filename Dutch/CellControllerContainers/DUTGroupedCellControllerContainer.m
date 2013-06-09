@@ -200,4 +200,11 @@ const NSInteger kMaxSections = 10;
     }
 
 }
+
+- (void)dataChangedInCellController:(DUTCellController *)controller {
+    if ([self.delegate respondsToSelector:@selector(cellContainer:dataChangedInCellController:)]) {
+        [self.delegate cellContainer:self dataChangedInCellController:controller];
+    }
+}
+
 @end

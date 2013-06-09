@@ -8,6 +8,7 @@
 
 #import "DUTAppDelegate.h"
 
+#import "DUTSession.h"
 
 
 // *************************************************************************************************
@@ -16,9 +17,6 @@
 
 
 @interface DUTAppDelegate ()
-
-
-@property (nonatomic, strong, readwrite) IBOutlet UINavigationController *navigationController;
 
 
 @end
@@ -32,10 +30,11 @@
 @implementation DUTAppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.navigationController = (UINavigationController *)self.window.rootViewController;
-    [self.window makeKeyAndVisible];
-    [DUTUtility localizedStringWithId:nil];
+    [DUTUtility registerUserDefaults];
+    [DUTUtility localizationLoad];    
+    [self launchFirsScreen];
     return YES;
 }
 
@@ -67,4 +66,18 @@
 }
 
 
+- (void)launchFirsScreen {
+    UIViewController *firstViewController = nil;    
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];    
+    
+    if ([DUTUtility isAutoLogin] && [[DUTSession sharedSession]loadCache]) {
+        firstViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    }
+    else {
+        firstViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];
+    }
+    self.window.rootViewController = firstViewController;
+    [self.window makeKeyAndVisible];    
+}
 @end

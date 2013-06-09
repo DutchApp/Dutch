@@ -17,7 +17,7 @@
 #pragma mark Singleton Methods
 
 
-+ (id)sharedSession;
++ (DUTSession *)sharedSession;
 
 
 // *************************************************************************************************
@@ -28,7 +28,13 @@
 /**
  * To store the auth token send by the server in login response.
  */
-@property (nonatomic, strong, readwrite) NSString *authToken;
+@property (nonatomic, strong, readwrite) id authToken;
+
+
+/**
+ * To store the user_id send by the server in login response.
+ */
+@property (nonatomic, strong, readwrite) id userId;
 
 
 // *************************************************************************************************
@@ -37,6 +43,10 @@
 
 
 - (void)reset;
+
+- (void)cache;
+
+- (BOOL)loadCache;
 
 
 @end

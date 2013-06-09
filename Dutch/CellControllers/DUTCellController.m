@@ -72,6 +72,7 @@
         }
     }
     [self.eventDelegate cellController:self dataValid:valid];
+    [self.eventDelegate dataChangedInCellController:self];
 }
 
 - (BOOL)cell:(DUTTableViewCell *)cell validData:(id)data {

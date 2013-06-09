@@ -13,32 +13,6 @@
 static NSDictionary *sLocaleData = nil;
 @implementation DUTUtility (Localization)
 
-+ (void)load {
-    NSError *error;
-    [DUTUtility createDocumentDirectory];
-    NSData *binJSONData =
-        [DUTUtility dataFromDocument:[self localizationFileName]];
-
-
-    if (![binJSONData length]) {
-        error = [self createLocalizationFileWithBuiltinLocalization];
-    }
-    else {
-        sLocaleData =
-            [NSJSONSerialization JSONObjectWithData:binJSONData options:0 error:&error];
-        NSDictionary *bundleDict = [self localizationDictFromBundle];
-        if (bundleDict) {
-            NSString *bundleLocVersion = bundleDict[@"VERSION"];
-            if (bundleLocVersion.integerValue > [self txtVersion].integerValue) {
-                //Recreate file with localization in bundle
-                error = [self createLocalizationFileWithBuiltinLocalization];
-                sLocaleData = [self localizationDictFromBundle];
-            }
-        }
-        NSLog(@"Read Locale data VERSION: %@\n%@",[self txtVersion],sLocaleData);
-    }
-}
-
 + (NSString *)localizedStringWithId:(NSString *)stringId {
     return sLocaleData[stringId];
 }
@@ -127,6 +101,33 @@ static NSDictionary *sLocaleData = nil;
     NSString *localeId = [match anyObject];
     NSLocale *locale = [[NSLocale alloc]initWithLocaleIdentifier:localeId];
     return [locale objectForKey:NSLocaleCurrencySymbol];
+}
+
+
++ (void)localizationLoad {
+    NSError *error;
+    [DUTUtility createDocumentDirectory];
+    NSData *binJSONData =
+    [DUTUtility dataFromDocument:[self localizationFileName]];
+    
+    
+    if (![binJSONData length]) {
+        error = [self createLocalizationFileWithBuiltinLocalization];
+    }
+    else {
+        sLocaleData =
+        [NSJSONSerialization JSONObjectWithData:binJSONData options:0 error:&error];
+        NSDictionary *bundleDict = [self localizationDictFromBundle];
+        if (bundleDict) {
+            NSString *bundleLocVersion = bundleDict[@"VERSION"];
+            if (bundleLocVersion.integerValue > [self txtVersion].integerValue) {
+                //Recreate file with localization in bundle
+                error = [self createLocalizationFileWithBuiltinLocalization];
+                sLocaleData = [self localizationDictFromBundle];
+            }
+        }
+        NSLog(@"Read Locale data VERSION: %@\n%@",[self txtVersion],sLocaleData);
+    }    
 }
 
 

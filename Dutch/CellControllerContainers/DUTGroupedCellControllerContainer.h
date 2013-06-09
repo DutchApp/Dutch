@@ -24,6 +24,9 @@
 
 - (CGFloat)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
      heightForFooterInSection:(NSInteger)section;
+
+- (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
+         dataChangedInCellController:(DUTCellController *)cellController;
 @end
 
 @interface DUTGroupedCellControllerContainer : NSObject<UITableViewDelegate, UITableViewDataSource,DUTCellControllerEventDelegate>

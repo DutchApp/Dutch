@@ -17,4 +17,6 @@
 
 + (NSString *)currencySymbolForCurrencyCode:(NSString *)currencyCode;
 
++ (void)localizationLoad;
+
 @end

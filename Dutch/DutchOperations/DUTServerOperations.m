@@ -56,7 +56,18 @@ NSString * const kServerOpRequestData = @"requestDict";
     NSMutableURLRequest *urlRequest = [DUTRequestCreator urlRequestForLoginUser];
     [self submitURLRequest:urlRequest
                   withInfo:info
-              successBlock:successBlock
+              successBlock:^(id object) {
+                    NSDictionary *responseDictionary = object;
+                  responseDictionary = responseDictionary[kServerOpResponseData];
+                    id auth_token = [responseDictionary valueForKey:@"auth_token"];
+                    [[DUTSession sharedSession]setAuthToken:auth_token];
+                    [[DUTSession sharedSession]setUserId:[responseDictionary valueForKey:@"user_id"]];
+                    
+                    if ([DUTUtility isAutoLogin]) {
+                        [[DUTSession sharedSession]cache];
+                    }
+                    successBlock(object);
+                }
               failureBlock:failureBlock
            progressMessage:@"Logging in"];
 }
@@ -102,7 +113,6 @@ NSString * const kServerOpRequestData = @"requestDict";
     __block NSError *error = nil;
     NSData *encodedData = [DUTRequestEncoder encodeRequestFromData:info
                                                          withError:&error];
-    
     if (error) {
         NSDictionary *errorDictionary =
         @{kServerOpError:error, kServerOpRequestData:info};
@@ -112,6 +122,7 @@ NSString * const kServerOpRequestData = @"requestDict";
     
 
     [urlRequest setHTTPBody:encodedData];
+    [urlRequest addValue:[DUTSession sharedSession].authToken forHTTPHeaderField:@"X-API-TOKEN"];
     
     [self logRequest:urlRequest];
     
@@ -142,12 +153,6 @@ NSString * const kServerOpRequestData = @"requestDict";
                     failureBlock(errorDict);
                 }
                 else {
-                    // Store authToken in session. auth_token is expected only for login request.
-                    // Move this code elsewhere in future
-                    id auth_token = [responseDictionary valueForKey:@"auth_token"];
-                    if (auth_token) {
-                        [[DUTSession sharedSession]setAuthToken:auth_token];
-                    }
                     responseDictionary = @{kServerOpRequestData:info,
                                            kServerOpResponseData:responseDictionary};
                     successBlock(responseDictionary);

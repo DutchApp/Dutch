@@ -8,6 +8,28 @@
 
 #import "DUTUtility.h"
 
+#import "DUTSession.h"
+
 @implementation DUTUtility
+
+
++ (void)registerUserDefaults {
+    NSDictionary *dict = @{@"autologin":@(NO)};
+    [[NSUserDefaults standardUserDefaults]registerDefaults:dict];
+}
+
+
++ (BOOL)isAutoLogin {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"autologin"];
+}
+
++ (void)setAutoLogin:(BOOL)autologin {
+    [[NSUserDefaults standardUserDefaults]setBool:autologin forKey:@"autologin"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    if (!autologin) {
+        [[DUTSession sharedSession]reset];
+    }
+}
+
 
 @end

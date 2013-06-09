@@ -16,6 +16,8 @@
 	<string>Password: %@</string>
 	<key>TXT_LOGIN_TITLE</key>
 	<string>DUTCH</string>
+	<key>TXT_LOGIN_AUTOLOGIN</key>
+	<string>Autologin</string>
 	<key>TXT_REGISTER_PHOLDER_USER_EMAIL</key>
 	<string>User email</string>
 	<key>TXT_REGISTER_TITLE</key>
@@ -39,6 +41,6 @@
 	<key>TXT_CANCEL</key>
 	<string>Cancel</string>
 	<key>VERSION</key>
-	<string>1</string>
+	<string>2</string>
 </dict>
 </plist>
