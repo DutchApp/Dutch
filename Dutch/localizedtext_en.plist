@@ -17,7 +17,7 @@
 	<key>TXT_LOGIN_TITLE</key>
 	<string>DUTCH</string>
 	<key>TXT_LOGIN_AUTOLOGIN</key>
-	<string>Autologin</string>
+	<string>Auto Login</string>
 	<key>TXT_REGISTER_PHOLDER_USER_EMAIL</key>
 	<string>User email</string>
 	<key>TXT_REGISTER_TITLE</key>

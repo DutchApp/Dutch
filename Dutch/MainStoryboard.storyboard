@@ -74,7 +74,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="13"/>
                     <state key="normal" title="Button">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="highlighted">
@@ -178,8 +178,6 @@
         <class className="DUTRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DUTRegistrationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="applyButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
             </relationships>

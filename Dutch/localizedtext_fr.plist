@@ -16,6 +16,8 @@
 	<string>Mot de passe: %@</string>
 	<key>TXT_LOGIN_TITLE</key>
 	<string>DUTCH</string>
+	<key>TXT_LOGIN_AUTOLOGIN</key>
+	<string>Auto Login</string>
 	<key>TXT_REGISTER_PHOLDER_USER_EMAIL</key>
 	<string>EMail de l&apos;utilisateur</string>
 	<key>TXT_REGISTER_TITLE</key>

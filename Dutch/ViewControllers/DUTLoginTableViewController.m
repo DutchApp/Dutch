@@ -141,16 +141,16 @@
     UIView *v = nil;
     if (section == 0) {
         self.btnLogin.translatesAutoresizingMaskIntoConstraints = NO;
-        self.btnLogin.frame = CGRectMake(10, 20, 300, 50);
+        self.btnLogin.frame = CGRectMake(10, 5, 100, 45);
         
-        [DUTUtility roundButton:self.btnLogin width:300.0f];
+        [DUTUtility roundButton:self.btnLogin width:CGRectGetWidth(self.btnLogin.frame)];
         
         [self.btnLogin setTitle:TXT_LOGIN_BUTTON_LOGIN forState:UIControlStateNormal];
         v = [[UIView alloc]initWithFrame:CGRectZero];
         [v addSubview:self.btnLogin];
         
         self.btnNewUser.translatesAutoresizingMaskIntoConstraints = NO;
-        self.btnNewUser.frame = CGRectMake(10, 70, 300, 20);
+        self.btnNewUser.frame = CGRectMake(120, 5 +(45.0-20.0)/2.0, 200, 20);
         [self.btnNewUser setTitle:TXT_LOGIN_BUTTON_REGISTER forState:UIControlStateNormal];
         
         [v addSubview:self.btnNewUser];   

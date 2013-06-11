@@ -27,6 +27,7 @@ static const CGFloat kUIEdgeXYOffset = 10.0f;
     cell.textLabel.text = message;
     cell.textLabel.textColor = [UIColor darkGrayColor];
     cell.textLabel.font = [UIFont systemFontOfSize:17];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

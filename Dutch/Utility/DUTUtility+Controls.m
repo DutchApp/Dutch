@@ -16,7 +16,7 @@
     CGRect buttonRect;
     
     buttonRect = button.frame;
-    buttonRect.size = CGSizeMake(width, 40);
+    buttonRect.size = CGSizeMake(width, CGRectGetHeight(buttonRect));
     button.frame = buttonRect;
     UIImage *bgImage = [UIImage imageNamed:@"button_gradient.png"];
     if ([[button titleForState:UIControlStateNormal] caseInsensitiveCompare:TXT_CANCEL] == NSOrderedSame) {
