@@ -27,8 +27,8 @@ static const CGFloat kCornerRadius = 10;
 - (void)drawRect:(CGRect)rect
 {
     CGRect bounds = CGRectInset(self.bounds,
-                                0.5 / [UIScreen mainScreen].scale,
-                                0.5 / [UIScreen mainScreen].scale);
+                                0.5f / [UIScreen mainScreen].scale,
+                                0.5f / [UIScreen mainScreen].scale);
     UIBezierPath *path;
     if (self.position == CellPositionSingle) {
         path = [UIBezierPath bezierPathWithRoundedRect:bounds cornerRadius:kCornerRadius];
