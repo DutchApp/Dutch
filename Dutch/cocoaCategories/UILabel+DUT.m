@@ -26,10 +26,10 @@
     UILabel *label = self;
     CGSize requiredSize = [label.text sizeWithFont:label.font constrainedToSize:label.frame.size lineBreakMode:label.lineBreakMode];
     
-    int charSize = label.font.leading;
-    int rHeight = requiredSize.height;
+    CGFloat charSize = label.font.leading;
+    CGFloat rHeight = requiredSize.height;
     
-    lineCount = rHeight/charSize;
+    lineCount = (NSInteger) (rHeight/charSize);
     
     return lineCount;
 }

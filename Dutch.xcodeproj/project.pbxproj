@@ -81,6 +81,16 @@
 		A5C422BD175BF80A006825F6 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C422BC175BF80A006825F6 /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A5DDEBF1176D0F5F00BB8785 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A597ECA617077825008061B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A54716D5174B17FF002B8C0B;
+			remoteInfo = PreBuildScripts;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		114CBB9C175C3C2900E4D48A /* DUTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTHomeViewController.h; path = ViewControllers/DUTHomeViewController.h; sourceTree = "<group>"; };
 		114CBB9D175C3C2900E4D48A /* DUTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTHomeViewController.m; path = ViewControllers/DUTHomeViewController.m; sourceTree = "<group>"; };
@@ -524,6 +534,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A5DDEBF2176D0F5F00BB8785 /* PBXTargetDependency */,
 			);
 			name = Dutch;
 			productName = Dutch;
@@ -647,6 +658,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A5DDEBF2176D0F5F00BB8785 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A54716D5174B17FF002B8C0B /* PreBuildScripts */;
+			targetProxy = A5DDEBF1176D0F5F00BB8785 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		A597ECBA17077825008061B2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -736,10 +755,14 @@
 		A597ECCC17077825008061B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dutch/Dutch-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "Dutch/Dutch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -747,10 +770,14 @@
 		A597ECCD17077825008061B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dutch/Dutch-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "Dutch/Dutch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

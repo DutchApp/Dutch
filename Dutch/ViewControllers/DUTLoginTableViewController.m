@@ -43,7 +43,6 @@
     [self setupSections];
     [self autolayout];
     [self.controllerContainer reloadData];
-    [self.userName performSelector:@selector(becomeFirstResponder)];
 }
 
 
@@ -52,6 +51,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
 
 // *************************************************************************************************
 #pragma mark

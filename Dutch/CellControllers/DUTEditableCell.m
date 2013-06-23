@@ -123,4 +123,9 @@
     [self setupValidStatus:valid];
 }
 
+
+- (BOOL)becomeFirstResponder {
+    [super becomeFirstResponder];
+    return [self.textLabel becomeFirstResponder];
+}
 @end
