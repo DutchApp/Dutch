@@ -354,6 +354,10 @@
 				A591B905175ACEB100FEAA93 /* DUTAmountCellController.m */,
 				1159BC05177677C20095FA00 /* DUTStandardCellController.h */,
 				1159BC06177677C20095FA00 /* DUTStandardCellController.m */,
+				A55F7E891763FF04006C86B8 /* DUTSwitchCellController.h */,
+				A55F7E8A1763FF04006C86B8 /* DUTSwitchCellController.m */,
+				A55F7E8C17640019006C86B8 /* DUTSwitchTableViewCell.h */,
+				A55F7E8D17640019006C86B8 /* DUTSwitchTableViewCell.m */,
 			);
 			name = CellControllers;
 			path = Dutch/CellControllers;
@@ -397,6 +401,7 @@
 			children = (
 				11C34A071763D83F00242620 /* ButtonMenu.png */,
 				11C34A081763D83F00242620 /* ButtonMenu@2x.png */,
+				A55F7E871763FC39006C86B8 /* logo.png */,
 				A594663E175D9DE0002D0258 /* button_black_gradient.png */,
 				A53CE54B175AB8C800E692EE /* button_gradient.png */,
 				A5925E7D174DB9DF0024FBAD /* dotgreen.png */,
@@ -509,6 +514,8 @@
 				114CBB9D175C3C2900E4D48A /* DUTHomeViewController.m */,
 				11C34A111763F73500242620 /* DUTMenuViewController.h */,
 				11C34A121763F73600242620 /* DUTMenuViewController.m */,
+				A55F7E841763F24B006C86B8 /* DUTStartupViewController.h */,
+				A55F7E851763F24B006C86B8 /* DUTStartupViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -602,6 +609,7 @@
 				11C34A061763D0C700242620 /* DUTAlertViewController.xib in Resources */,
 				11C34A091763D83F00242620 /* ButtonMenu.png in Resources */,
 				11C34A0A1763D83F00242620 /* ButtonMenu@2x.png in Resources */,
+				A55F7E881763FC39006C86B8 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +675,9 @@
 				11C34A101763E18C00242620 /* UIViewController+DUTSlideBar.m in Sources */,
 				11C34A131763F73700242620 /* DUTMenuViewController.m in Sources */,
 				1159BC07177677C30095FA00 /* DUTStandardCellController.m in Sources */,
+				A55F7E861763F24B006C86B8 /* DUTStartupViewController.m in Sources */,
+				A55F7E8B1763FF04006C86B8 /* DUTSwitchCellController.m in Sources */,
+				A55F7E8E17640019006C86B8 /* DUTSwitchTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
