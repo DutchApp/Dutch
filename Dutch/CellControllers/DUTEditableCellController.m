@@ -23,9 +23,10 @@ static NSString *const cellIdentifier = @"editableCell";
 @dynamic mask;
 @dynamic descriptiveFormat;
 
+
 + (DUTEditableCellController *)cellControllerWithText:(NSString*)text
                                           placeHolder:(NSString *)placeHolder {
-    DUTEditableCellController *controller = [[DUTEditableCellController alloc]init];
+    DUTEditableCellController *controller = [[DUTEditableCellController alloc] init];
     
     controller.text = text;
     controller.placeHolder = placeHolder;

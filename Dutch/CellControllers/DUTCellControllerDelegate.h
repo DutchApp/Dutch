@@ -16,8 +16,11 @@
 
 @property(nonatomic,assign,readonly) CGFloat height;
 
+
 - (UITableViewCell *)tableViewCellForTable:(UITableView *)tableView;
 - (NSString *)cellIdentifier;
+
+
 @end
 
 

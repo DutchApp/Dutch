@@ -13,13 +13,13 @@
 
 
 #import <UIKit/UIKit.h>
-
+#import "DUTSlideBarDelegate.h"
 
 // *************************************************************************************************
 #pragma mark -
 #pragma mark Interface
 
 
-@interface DUTHomeViewController : UIViewController
+@interface DUTHomeViewController : UIViewController <DUTSlideBarDelegate>
 
 @end

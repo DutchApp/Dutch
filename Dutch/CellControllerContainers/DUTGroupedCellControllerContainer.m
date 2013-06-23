@@ -13,43 +13,78 @@
 
 const NSInteger kMaxSections = 10;
 
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Interface
+
+
 @interface DUTGroupedCellControllerContainer ()
+
+
 @property(nonatomic,weak,readwrite) UITableView *tableView;
 @property(nonatomic,strong,readwrite) NSMutableArray *sections;
+
+
 @end
+
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Implementation
+
 
 @implementation DUTGroupedCellControllerContainer
 
 @dynamic table;
 
-+ (DUTGroupedCellControllerContainer *)containerForViewController:(UIViewController *)vc frame:(CGRect)frame {
-    UITableView *groupedTable = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Class Methods
+
+
++ (DUTGroupedCellControllerContainer *)containerForViewController:(UIViewController *)viewController
+                                                   tableViewStyle:(UITableViewStyle)tableViewStyle
+                                                            frame:(CGRect)frame {
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero
+                                                             style:tableViewStyle];
     DUTGroupedCellControllerContainer *container =
-        [[DUTGroupedCellControllerContainer alloc]initWithTableView:groupedTable];
-    groupedTable.frame = frame;
-    [vc.view addSubview:groupedTable];
+        [[DUTGroupedCellControllerContainer alloc] initWithTableView:tableView];
+    tableView.frame = frame;
+    [viewController.view addSubview:tableView];
     return container;
 }
+
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Instance Methods
 
 
 - (id)initWithTableView:(UITableView *)tableView {
     self = [super init];
     if (self) {
         if (!tableView) {
-            tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+            tableView = [[UITableView alloc] initWithFrame:CGRectZero
+                                                     style:UITableViewStyleGrouped];
         }
+        
         self.tableView = tableView;
         tableView.delegate = self;
         tableView.dataSource = self;
         self.sections = [@[]mutableCopy];
+        
         for (NSInteger index = 0; index < kMaxSections; index++) {
             [self.sections addObject:[NSNull null]];
         }
+        
         tableView.backgroundView = nil;
         tableView.backgroundColor = [UIColor lightGrayColor];
     }
     return self;
 }
+
 
 - (BOOL)assignSectionWithTitle:(NSString *)title index:(NSInteger)sectionIndex {
     
@@ -61,13 +96,13 @@ const NSInteger kMaxSections = 10;
     if (sectionAtIndex != [NSNull null]) {
         // section is being replaced
     }
-    DUTCellContainerSection *containerSection = [DUTCellContainerSection containerSectionWithTitle:title];
-    
+    DUTCellContainerSection *containerSection =
+        [DUTCellContainerSection containerSectionWithTitle:title];
     [self.sections replaceObjectAtIndex:sectionIndex withObject:containerSection];
     
     return YES;
-    
 }
+
 
 - (BOOL)addCellController:(DUTCellController *)controller section:(NSInteger)sectionIndex {
     if (![self isValidSectionIndex:sectionIndex]) {
@@ -116,34 +151,38 @@ const NSInteger kMaxSections = 10;
     }
 
 }
-#pragma mark - TableView delegate
 
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Table View Delegate
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     NSPredicate *predicate = [NSPredicate
                               predicateWithFormat:@"SELF != null"];
-    //predicate = [predicate predicateWithSubstitutionVariables:
-      //           [NSDictionary dictionaryWithObject:[NSNull null] forKey:@"NULL"]];
     NSArray *matches = [self.sections filteredArrayUsingPredicate:predicate];
     return matches.count;
 }
 
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     DUTCellContainerSection *containerSection = [self.sections objectAtIndex:section];
     return containerSection.numberOfControllers;
 }
   
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DUTCellContainerSection *containerSection = [self.sections objectAtIndex:indexPath.section];
     DUTCellController *controller = [containerSection controllerAtIndex:indexPath.row];
     UITableViewCell *cell =
     [self.tableView dequeueReusableCellWithIdentifier:[controller cellIdentifier]];
+    
     if (!cell) {
         cell = [controller tableViewCellForTable:tableView];
     }
+    
     return cell;
 }
 
@@ -154,6 +193,7 @@ const NSInteger kMaxSections = 10;
     return controller.height;
 }
 
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     DUTCellContainerSection *containerSection = [self.sections objectAtIndex:section];
     return containerSection.title;
@@ -161,20 +201,33 @@ const NSInteger kMaxSections = 10;
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *v = nil;
+    UIView *view = nil;
     if ([self.delegate respondsToSelector:@selector(cellContainer:footerViewForSection:)]) {
-        v = [self.delegate cellContainer:self footerViewForSection:section];
+        view = [self.delegate cellContainer:self footerViewForSection:section];
     }
-    return v;
+    return view;
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    CGFloat h = UITableViewAutomaticDimension;
+    CGFloat height = UITableViewAutomaticDimension;
     if ([self.delegate respondsToSelector:@selector(cellContainer:heightForFooterInSection:)]) {
-        h = [self.delegate cellContainer:self heightForFooterInSection:section];
+        height = [self.delegate cellContainer:self heightForFooterInSection:section];
     }
-    return h;
+    return height;
 }
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DUTCellContainerSection *containerSection = [self.sections objectAtIndex:indexPath.section];
+    DUTCellController *controller = [containerSection controllerAtIndex:indexPath.row];
+    
+    if (controller.block) {
+        controller.block();
+    }
+}
+
+
 - (UITableView *)table {
     return self.tableView;
 }
@@ -200,4 +253,6 @@ const NSInteger kMaxSections = 10;
     }
 
 }
+
+
 @end

@@ -57,7 +57,9 @@
 
 - (void)setupSections {
     self.controllerContainer =
-        [DUTGroupedCellControllerContainer containerForViewController:self frame:CGRectZero];
+        [DUTGroupedCellControllerContainer containerForViewController:self
+                                                       tableViewStyle:UITableViewStyleGrouped
+                                                                frame:CGRectZero];
     self.controllerContainer.delegate = self;
     self.controllerContainer.table.translatesAutoresizingMaskIntoConstraints = NO;
     self.navigationBar.translatesAutoresizingMaskIntoConstraints = NO;
@@ -164,7 +166,7 @@ heightForFooterInSection:(NSInteger)section {
 
 
 - (IBAction)actionLogin:(id)sender {
-    
+/*
 #if 1 //Alert test code. Remove when stable
 
     DUTAlertView *alertView = [DUTAlertView alertViewWithTitle:@"VeryAlert" message:@"In the not very very distant past, the corridors of the U.S. Senate were alive with men who had served in World War II, among them such powerful icons as John Warner of Virginia, Ted Stevens of Alaska, Daniel Inouye of Hawaii and Ernest Hollings"];
@@ -181,6 +183,7 @@ heightForFooterInSection:(NSInteger)section {
     [alertView show];
     return;
 #endif
+*/
     NSDictionary *loginUserInformation =
         @{@"email": self.userName.text, @"password" : self.password.text};
     

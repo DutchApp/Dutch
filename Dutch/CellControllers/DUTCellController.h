@@ -9,19 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "DUTCellControllerDelegate.h"
 #import "DUTValidatorDelegate.h"
+#import "DUTConstantVariables.h"
 #include "DUTTableViewCell.h"
 
 
 @interface DUTCellController : NSObject<DUTCellControllerDelegate,  DUTTableViewCellDelegate>
 
 
-@property (nonatomic,strong,readonly) id cellData;
-@property (nonatomic,weak,readwrite) id<DUTCellControllerEventDelegate> eventDelegate;
+@property (nonatomic, strong, readonly) id cellData;
+@property (nonatomic, weak, readwrite) id<DUTCellControllerEventDelegate> eventDelegate;
+@property (nonatomic, copy, readwrite) BasicBlock block;
 
 
 - (void)addValidator:(id<DUTValidatorDelegate>)validator;
 - (void)addValidators:(NSArray *)validators;
 - (BOOL)isValidData;
 - (void)updateValidityStatus;
+
 
 @end

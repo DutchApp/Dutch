@@ -12,8 +12,11 @@
 
 
 @interface DUTEditableCell ()
+
 @property(nonatomic,strong,readwrite) DUTDescriptiveTextField *textField;
+
 @end
+
 
 @implementation DUTEditableCell
 
@@ -23,25 +26,25 @@
 
 
 + (UITableViewCell *)cellWithIdentifier:(NSString *)identifier {
-    UITableViewCell *cell = [[DUTEditableCell alloc]initWithStyle:UITableViewCellStyleDefault
-                                                  reuseIdentifier:identifier];
+    UITableViewCell *cell = [[DUTEditableCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                   reuseIdentifier:identifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.textField = [[DUTDescriptiveTextField alloc]initWithFrame:CGRectZero];
+        self.textField = [[DUTDescriptiveTextField alloc] initWithFrame:CGRectZero];
         [self.contentView addSubview:self.textField];
         self.textField.controlDelegate = self;
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
    
