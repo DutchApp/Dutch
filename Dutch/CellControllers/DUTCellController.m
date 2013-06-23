@@ -11,6 +11,8 @@
 #import "DUTEditableCell.h"
 
 
+static const CGFloat kCellDefaultHeight = 44.0f;
+
 @interface DUTCellController()
 @property (nonatomic,strong,readwrite) NSMutableSet *validators;
 @end
@@ -23,7 +25,7 @@
     self = [super init];
     
     if (self) {
-        _height = 44.0f;
+        _height = kCellDefaultHeight;
         self.validators = [NSMutableSet set];
     }
     return self;
@@ -45,9 +47,11 @@
     return nil;
 }
 
+
 - (NSString *)cellIdentifier {
     return nil;
 }
+
 
 - (BOOL)isValidData {
     if (!self.validators.count) {
@@ -63,6 +67,7 @@
     return valid;
 }
 
+
 - (void)cell:(DUTTableViewCell *)cell dataChanged:(id)data {
     BOOL valid = YES;
     for (id<DUTValidatorDelegate> validator in self.validators) {
@@ -72,7 +77,9 @@
         }
     }
     [self.eventDelegate cellController:self dataValid:valid];
+    [self.eventDelegate dataChangedInCellController:self];
 }
+
 
 - (BOOL)cell:(DUTTableViewCell *)cell validData:(id)data {
     BOOL valid = YES;
@@ -85,9 +92,11 @@
     return valid;
 }
 
+
 - (BOOL)isDataValidForCell:(DUTTableViewCell *)cell {
     return [self isValidData];
 }
+
 
 - (void)updateValidityStatus {
     

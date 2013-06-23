@@ -61,6 +61,25 @@
 
 - (void)reset {
     self.authToken = nil;
+    self.userId = nil;
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"user_id"];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"auth_token"];
+    [[NSUserDefaults standardUserDefaults]synchronize];    
 }
+
+
+- (void)cache {
+    [[NSUserDefaults standardUserDefaults]setObject:self.userId forKey:@"user_id"];
+    [[NSUserDefaults standardUserDefaults]setObject:self.authToken forKey:@"auth_token"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+
+- (BOOL)loadCache {
+    self.userId = [[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"];
+    self.authToken = [[NSUserDefaults standardUserDefaults]objectForKey:@"auth_token"];
+    return self.userId && self.authToken;
+}
+
 
 @end

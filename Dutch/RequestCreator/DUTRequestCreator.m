@@ -49,16 +49,7 @@
                   [self httpProtocol],
                   [self host], [self serverContentType]];
     
-    NSURL *url = [NSURL URLWithString:urlString];
-    
-    NSMutableURLRequest *urlRequest =
-        [[NSMutableURLRequest alloc] initWithURL:url
-                                     cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                 timeoutInterval:[self requestTimeOut]];
-    [urlRequest setValue:[self contentTypeForHTTPHeader]
-                forHTTPHeaderField:kContentTypeHTTPHeaderField];
-    [urlRequest setHTTPMethod:kHTTPPostMethod];
-    return urlRequest;
+   return [self postURLRequestWithURL:urlString];
 }
 
 
@@ -68,16 +59,16 @@
                                     [self host],
                                     [self serverContentType]];
     
-    NSURL *url = [NSURL URLWithString:urlString];
-    
-    NSMutableURLRequest *urlRequest =
-        [[NSMutableURLRequest alloc] initWithURL:url
-                                     cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                 timeoutInterval:[self requestTimeOut]];
-    [urlRequest setValue:[self contentTypeForHTTPHeader]
-                forHTTPHeaderField:kContentTypeHTTPHeaderField];
-    [urlRequest setHTTPMethod:kHTTPPostMethod];
-    return urlRequest;
+   return [self postURLRequestWithURL:urlString];
+}
+
+
++ (NSMutableURLRequest *)urlRequestForNewExpense {
+    NSString *urlString = [NSString stringWithFormat:@"%@://%@/expenses.%@",
+                           [self httpProtocol],
+                           [self host],
+                           [self serverContentType]];
+   return [self postURLRequestWithURL:urlString];
 }
 
 
@@ -118,5 +109,19 @@
 + (NSString *)contentTypeForHTTPHeader {
     return [NSString stringWithFormat:@"application/%@", [self serverContentType]];
 }
+
+
++ (NSMutableURLRequest *)postURLRequestWithURL:(NSString *)urlString {
+    NSURL *url = [NSURL URLWithString:urlString];    
+    NSMutableURLRequest *urlRequest =
+    [[NSMutableURLRequest alloc] initWithURL:url
+                                 cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                             timeoutInterval:[self requestTimeOut]];
+    [urlRequest setValue:[self contentTypeForHTTPHeader]
+      forHTTPHeaderField:kContentTypeHTTPHeaderField];
+    [urlRequest setHTTPMethod:kHTTPPostMethod];
+    return urlRequest;
+}
+
 
 @end

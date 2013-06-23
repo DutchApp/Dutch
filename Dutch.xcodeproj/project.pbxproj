@@ -53,6 +53,10 @@
 		A54E845E174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m in Sources */ = {isa = PBXBuildFile; fileRef = A54E845D174492260003D1B2 /* NSMutableSet+WeakZeroingReference.m */; };
 		A54E846117449B660003D1B2 /* DUTTextLengthValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = A54E846017449B660003D1B2 /* DUTTextLengthValidator.m */; };
 		A55F7E831763C64D006C86B8 /* DUTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A55F7E821763C64D006C86B8 /* DUTAlertView.m */; };
+		A55F7E861763F24B006C86B8 /* DUTStartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55F7E851763F24B006C86B8 /* DUTStartupViewController.m */; };
+		A55F7E881763FC39006C86B8 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A55F7E871763FC39006C86B8 /* logo.png */; };
+		A55F7E8B1763FF04006C86B8 /* DUTSwitchCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55F7E8A1763FF04006C86B8 /* DUTSwitchCellController.m */; };
+		A55F7E8E17640019006C86B8 /* DUTSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A55F7E8D17640019006C86B8 /* DUTSwitchTableViewCell.m */; };
 		A58F02F11745C75C0032AE8E /* DUTUtility+Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F02F01745C75C0032AE8E /* DUTUtility+Localization.m */; };
 		A58F02F31745CC0A0032AE8E /* localizedtext_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = A58F02F21745CC0A0032AE8E /* localizedtext_en.plist */; };
 		A58F02F61745D26D0032AE8E /* DUTUtility+FileOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = A58F02F51745D26D0032AE8E /* DUTUtility+FileOperations.m */; };
@@ -151,6 +155,13 @@
 		A54E846017449B660003D1B2 /* DUTTextLengthValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTTextLengthValidator.m; sourceTree = "<group>"; };
 		A55F7E811763C64D006C86B8 /* DUTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTAlertView.h; path = Utility/DUTAlertView.h; sourceTree = "<group>"; };
 		A55F7E821763C64D006C86B8 /* DUTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTAlertView.m; path = Utility/DUTAlertView.m; sourceTree = "<group>"; };
+		A55F7E841763F24B006C86B8 /* DUTStartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTStartupViewController.h; path = ViewControllers/DUTStartupViewController.h; sourceTree = "<group>"; };
+		A55F7E851763F24B006C86B8 /* DUTStartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTStartupViewController.m; path = ViewControllers/DUTStartupViewController.m; sourceTree = "<group>"; };
+		A55F7E871763FC39006C86B8 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		A55F7E891763FF04006C86B8 /* DUTSwitchCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTSwitchCellController.h; sourceTree = "<group>"; };
+		A55F7E8A1763FF04006C86B8 /* DUTSwitchCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTSwitchCellController.m; sourceTree = "<group>"; };
+		A55F7E8C17640019006C86B8 /* DUTSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTSwitchTableViewCell.h; sourceTree = "<group>"; };
+		A55F7E8D17640019006C86B8 /* DUTSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTSwitchTableViewCell.m; sourceTree = "<group>"; };
 		A58F02EF1745C75C0032AE8E /* DUTUtility+Localization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DUTUtility+Localization.h"; path = "Utility/DUTUtility+Localization.h"; sourceTree = "<group>"; };
 		A58F02F01745C75C0032AE8E /* DUTUtility+Localization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DUTUtility+Localization.m"; path = "Utility/DUTUtility+Localization.m"; sourceTree = "<group>"; };
 		A58F02F21745CC0A0032AE8E /* localizedtext_en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = localizedtext_en.plist; sourceTree = "<group>"; };

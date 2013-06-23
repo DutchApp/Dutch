@@ -139,13 +139,19 @@
 
 - (void)setupMessage {
     self.messageLabel.text = self.alertMessage;
+    if ([self.messageLabel computeNumberOfLines] > 1) {
+        self.messageLabel.textAlignment = NSTextAlignmentLeft;
+    }
+    else {
+        self.messageLabel.textAlignment = NSTextAlignmentCenter;
+    }
     self.alertTitleLabel.text = self.alertTitle;
     self.alertTitleLabel.textColor = [UIColor darkGrayColor];
-    [self.messageLabel fitToWidth:self.alertView.frame.size.width - 10];
+    [self.messageLabel fitToWidth:self.alertView.frame.size.width - 20];
     CGRect rect = self.messageLabel.frame;
     rect.origin.y = self.alertTitleLabel.frame.origin.y + self.alertTitleLabel.frame.size.height + 10.0f;
-    rect.origin.x = 5;
-    rect.size.width = self.alertView.frame.size.width - 10;
+    rect.origin.x = 10;
+    rect.size.width = self.alertView.frame.size.width - 20;
     self.messageLabel.frame = rect;
 }
 

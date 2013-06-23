@@ -28,4 +28,6 @@
 
 - (void)cellController:(DUTCellController *)controller dataValid:(BOOL)dataValid;
 
+- (void)dataChangedInCellController:(DUTCellController *)controller;
+
 @end

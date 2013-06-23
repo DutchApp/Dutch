@@ -8,6 +8,7 @@
 
 #import "DUTAppDelegate.h"
 
+#import "DUTSession.h"
 
 
 // *************************************************************************************************
@@ -16,9 +17,6 @@
 
 
 @interface DUTAppDelegate ()
-
-
-@property (nonatomic, strong, readwrite) IBOutlet UINavigationController *navigationController;
 
 
 @end
@@ -32,10 +30,17 @@
 @implementation DUTAppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.navigationController = (UINavigationController *)self.window.rootViewController;
-    [self.window makeKeyAndVisible];
-    [DUTUtility localizedStringWithId:nil];
+    [DUTUtility registerUserDefaults];
+    [DUTUtility localizationLoad];
+    
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self launchFirsScreen];        
+    });
+
     return YES;
 }
 
@@ -67,4 +72,18 @@
 }
 
 
+- (void)launchFirsScreen {
+    UIViewController *firstViewController = nil;
+    UIViewController *initVC = self.window.rootViewController;
+    if ([DUTUtility isAutoLogin] && [[DUTSession sharedSession]loadCache]) {
+        firstViewController = [initVC.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    }
+    else {
+        firstViewController = [initVC.storyboard instantiateViewControllerWithIdentifier:@"login"];
+    }
+    [UIView transitionFromView:initVC.view toView:firstViewController.view duration:.5f options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
+        self.window.rootViewController = firstViewController;
+    }];
+
+}
 @end

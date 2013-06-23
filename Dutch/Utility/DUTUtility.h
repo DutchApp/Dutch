@@ -10,4 +10,8 @@
 
 @interface DUTUtility : NSObject
 
++ (BOOL)isAutoLogin;
++ (void)registerUserDefaults;
++ (void)setAutoLogin:(BOOL)autologin;
+
 @end
