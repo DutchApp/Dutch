@@ -74,6 +74,7 @@
 		A597ECD617078AF5008061B2 /* DUTLoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECD517078AF5008061B2 /* DUTLoginTableViewController.m */; };
 		A597ECDC17079746008061B2 /* DUTRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECDB17079746008061B2 /* DUTRegistrationViewController.m */; };
 		A597ECE01707B486008061B2 /* DUTTransportUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECDF1707B486008061B2 /* DUTTransportUtility.m */; };
+		A5A432B61792008900078F40 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A432B31792000F00078F40 /* libCorePlot-CocoaTouch.a */; };
 		A5B57A491758480D00DFE16B /* localizedtext_fr.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5B57A481758480D00DFE16B /* localizedtext_fr.plist */; };
 		A5C3CB03171227A100724C25 /* DUTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C3CB02171227A100724C25 /* DUTUtility.m */; };
 		A5C3CB06171227C200724C25 /* DUTUtility+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C3CB05171227C200724C25 /* DUTUtility+Validation.m */; };
@@ -82,6 +83,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A5A432B21792000F00078F40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5A432AC1792000E00078F40 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		A5A432B41792005D00078F40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5A432AC1792000E00078F40 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
 		A5DDEBF1176D0F5F00BB8785 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A597ECA617077825008061B2 /* Project object */;
@@ -192,6 +207,7 @@
 		A597ECDB17079746008061B2 /* DUTRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTRegistrationViewController.m; path = ViewControllers/DUTRegistrationViewController.m; sourceTree = "<group>"; };
 		A597ECDE1707B486008061B2 /* DUTTransportUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTTransportUtility.h; path = Transport/DUTTransportUtility.h; sourceTree = "<group>"; };
 		A597ECDF1707B486008061B2 /* DUTTransportUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTTransportUtility.m; path = Transport/DUTTransportUtility.m; sourceTree = "<group>"; };
+		A5A432AC1792000E00078F40 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "CorePlot_1.3/Source/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		A5B57A481758480D00DFE16B /* localizedtext_fr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = localizedtext_fr.plist; sourceTree = "<group>"; };
 		A5C3CB01171227A100724C25 /* DUTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTUtility.h; path = Utility/DUTUtility.h; sourceTree = "<group>"; };
 		A5C3CB02171227A100724C25 /* DUTUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTUtility.m; path = Utility/DUTUtility.m; sourceTree = "<group>"; };
@@ -207,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A432B61792008900078F40 /* libCorePlot-CocoaTouch.a in Frameworks */,
 				A5C422BD175BF80A006825F6 /* CoreImage.framework in Frameworks */,
 				A591B908175AF14200FEAA93 /* QuartzCore.framework in Frameworks */,
 				A597ECB217077825008061B2 /* UIKit.framework in Frameworks */,
@@ -395,6 +412,7 @@
 		A597ECA517077825008061B2 = {
 			isa = PBXGroup;
 			children = (
+				A5A432AC1792000E00078F40 /* CorePlot-CocoaTouch.xcodeproj */,
 				A516906A17481A8700429EBF /* scripts */,
 				A597ECB717077825008061B2 /* Dutch */,
 				A597ECB017077825008061B2 /* Frameworks */,
@@ -520,6 +538,14 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		A5A432AD1792000E00078F40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5A432B31792000F00078F40 /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -535,6 +561,7 @@
 			);
 			dependencies = (
 				A5DDEBF2176D0F5F00BB8785 /* PBXTargetDependency */,
+				A5A432B51792005D00078F40 /* PBXTargetDependency */,
 			);
 			name = Dutch;
 			productName = Dutch;
@@ -561,6 +588,12 @@
 			mainGroup = A597ECA517077825008061B2;
 			productRefGroup = A597ECAF17077825008061B2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A5A432AD1792000E00078F40 /* Products */;
+					ProjectRef = A5A432AC1792000E00078F40 /* CorePlot-CocoaTouch.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A54716D5174B17FF002B8C0B /* PreBuildScripts */,
@@ -568,6 +601,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A5A432B31792000F00078F40 /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = A5A432B21792000F00078F40 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A597ECAC17077825008061B2 /* Resources */ = {
@@ -659,6 +702,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A5A432B51792005D00078F40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CorePlot-CocoaTouch";
+			targetProxy = A5A432B41792005D00078F40 /* PBXContainerItemProxy */;
+		};
 		A5DDEBF2176D0F5F00BB8785 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A54716D5174B17FF002B8C0B /* PreBuildScripts */;
@@ -763,6 +811,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/CorePlot_1.3/Source/framework\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -778,6 +827,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/CorePlot_1.3/Source/framework\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
