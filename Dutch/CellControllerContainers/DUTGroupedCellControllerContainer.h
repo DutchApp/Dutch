@@ -15,7 +15,9 @@
 
 
 @protocol DUTCellControllerContainerDelegate <NSObject>
+
 @optional
+
 - (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
          dataValidity:(BOOL)valid;
 
@@ -25,26 +27,46 @@
 - (CGFloat)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
      heightForFooterInSection:(NSInteger)section;
 
-- (void)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
-         dataChangedInCellController:(DUTCellController *)cellController;
 @end
 
-@interface DUTGroupedCellControllerContainer : NSObject<UITableViewDelegate, UITableViewDataSource,DUTCellControllerEventDelegate>
 
-#pragma mark - Properties
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Interface
+
+
+@interface DUTGroupedCellControllerContainer : NSObject<UITableViewDelegate,
+                                                        UITableViewDataSource,
+                                                        DUTCellControllerEventDelegate>
+
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Properties
 
 @property(nonatomic, strong, readonly) UITableView *table;
 @property(nonatomic, weak  , readwrite) id<DUTCellControllerContainerDelegate> delegate;
 
-#pragma mark - Class Methods
 
-+ (DUTGroupedCellControllerContainer *)containerForViewController:(UIViewController *)vc frame:(CGRect)frame;
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Class Methods
 
 
-#pragma mark - Instance Methods
++ (DUTGroupedCellControllerContainer *)containerForViewController:(UIViewController *)viewController
+                                                   tableViewStyle:(UITableViewStyle)tableViewStyle
+                                                            frame:(CGRect)frame;
+
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Instance Methods
+
 
 - (BOOL)assignSectionWithTitle:(NSString *)title index:(NSInteger)sectionIndex;
+
 - (BOOL)addCellController:(DUTCellController *)controller section:(NSInteger)sectionIndex;
+
 - (void)reloadData;
 
 @end

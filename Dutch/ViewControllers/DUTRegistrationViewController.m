@@ -81,7 +81,10 @@
 
 - (void)setupSections {
 
-    self.controllerContainer =[DUTGroupedCellControllerContainer containerForViewController:self frame:CGRectZero];
+    self.controllerContainer =
+        [DUTGroupedCellControllerContainer containerForViewController:self
+                                                       tableViewStyle:UITableViewStyleGrouped
+                                                                frame:CGRectZero];
     self.controllerContainer.delegate = self;
     self.controllerContainer.table.translatesAutoresizingMaskIntoConstraints = NO;
     self.navigationBar.translatesAutoresizingMaskIntoConstraints = NO;

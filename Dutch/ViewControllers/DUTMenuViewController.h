@@ -1,8 +1,8 @@
 //
-//  DUTHomeViewController.h
+//  DUTMenuViewController.h
 //  Dutch
 //
-//  Created by Anuj Chaudhary on 6/2/13.
+//  Created by Anuj Chaudhary on 6/8/13.
 //  Copyright (c) 2013 Dutch Inc. All rights reserved.
 //
 
@@ -13,13 +13,13 @@
 
 
 #import <UIKit/UIKit.h>
-#import "DUTSlideBarDelegate.h"
+
 
 // *************************************************************************************************
 #pragma mark -
 #pragma mark Interface
 
 
-@interface DUTHomeViewController : UIViewController <DUTSlideBarDelegate>
+@interface DUTMenuViewController : UIViewController
 
 @end

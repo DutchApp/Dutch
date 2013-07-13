@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		114CBB9E175C3C2900E4D48A /* DUTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114CBB9D175C3C2900E4D48A /* DUTHomeViewController.m */; };
+		1159BC07177677C30095FA00 /* DUTStandardCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1159BC06177677C20095FA00 /* DUTStandardCellController.m */; };
 		11719A31175AC1C400A1EE26 /* DUTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 11719A30175AC1C400A1EE26 /* DUTSession.m */; };
 		11901A1E171227A700E5BC8E /* DUTServerOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A1D171227A700E5BC8E /* DUTServerOperations.m */; };
 		11901A2217122ACE00E5BC8E /* DUTRequestEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */; };
@@ -29,6 +30,10 @@
 		11901A4C17123D9A00E5BC8E /* DUTServerProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11901A4B17123D9A00E5BC8E /* DUTServerProperties.plist */; };
 		11C34A051763D0C700242620 /* DUTAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C34A031763D0C700242620 /* DUTAlertViewController.m */; };
 		11C34A061763D0C700242620 /* DUTAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C34A041763D0C700242620 /* DUTAlertViewController.xib */; };
+		11C34A091763D83F00242620 /* ButtonMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C34A071763D83F00242620 /* ButtonMenu.png */; };
+		11C34A0A1763D83F00242620 /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C34A081763D83F00242620 /* ButtonMenu@2x.png */; };
+		11C34A101763E18C00242620 /* UIViewController+DUTSlideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C34A0F1763E18C00242620 /* UIViewController+DUTSlideBar.m */; };
+		11C34A131763F73700242620 /* DUTMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C34A121763F73600242620 /* DUTMenuViewController.m */; };
 		11DF9308171A64010069FA33 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A516906417480E5400429EBF /* NSData+Document.m in Sources */ = {isa = PBXBuildFile; fileRef = A516906317480E5400429EBF /* NSData+Document.m */; };
 		A516907F1748913A00429EBF /* DUTCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A516907E1748913A00429EBF /* DUTCellBackgroundView.m */; };
@@ -109,6 +114,8 @@
 /* Begin PBXFileReference section */
 		114CBB9C175C3C2900E4D48A /* DUTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTHomeViewController.h; path = ViewControllers/DUTHomeViewController.h; sourceTree = "<group>"; };
 		114CBB9D175C3C2900E4D48A /* DUTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTHomeViewController.m; path = ViewControllers/DUTHomeViewController.m; sourceTree = "<group>"; };
+		1159BC05177677C20095FA00 /* DUTStandardCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUTStandardCellController.h; sourceTree = "<group>"; };
+		1159BC06177677C20095FA00 /* DUTStandardCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTStandardCellController.m; sourceTree = "<group>"; };
 		11719A2F175AC1C400A1EE26 /* DUTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTSession.h; path = Models/DUTSession.h; sourceTree = "<group>"; };
 		11719A30175AC1C400A1EE26 /* DUTSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTSession.m; path = Models/DUTSession.m; sourceTree = "<group>"; };
 		11901A1C171227A700E5BC8E /* DUTServerOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTServerOperations.h; path = DutchOperations/DUTServerOperations.h; sourceTree = "<group>"; };
@@ -123,6 +130,13 @@
 		11C34A021763D0C700242620 /* DUTAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTAlertViewController.h; path = ViewControllers/DUTAlertViewController.h; sourceTree = "<group>"; };
 		11C34A031763D0C700242620 /* DUTAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTAlertViewController.m; path = ViewControllers/DUTAlertViewController.m; sourceTree = "<group>"; };
 		11C34A041763D0C700242620 /* DUTAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DUTAlertViewController.xib; path = ViewControllers/DUTAlertViewController.xib; sourceTree = "<group>"; };
+		11C34A071763D83F00242620 /* ButtonMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonMenu.png; sourceTree = "<group>"; };
+		11C34A081763D83F00242620 /* ButtonMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonMenu@2x.png"; sourceTree = "<group>"; };
+		11C34A0D1763DF1800242620 /* DUTSlideBarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTSlideBarDelegate.h; path = ViewControllers/SlideBar/DUTSlideBarDelegate.h; sourceTree = "<group>"; };
+		11C34A0E1763E18C00242620 /* UIViewController+DUTSlideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+DUTSlideBar.h"; path = "ViewControllers/SlideBar/UIViewController+DUTSlideBar.h"; sourceTree = "<group>"; };
+		11C34A0F1763E18C00242620 /* UIViewController+DUTSlideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+DUTSlideBar.m"; path = "ViewControllers/SlideBar/UIViewController+DUTSlideBar.m"; sourceTree = "<group>"; };
+		11C34A111763F73500242620 /* DUTMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTMenuViewController.h; path = ViewControllers/DUTMenuViewController.h; sourceTree = "<group>"; };
+		11C34A121763F73600242620 /* DUTMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTMenuViewController.m; path = ViewControllers/DUTMenuViewController.m; sourceTree = "<group>"; };
 		A5156B3A1741F1A2006FBC8B /* DUTCellContainerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUTCellContainerDelegate.h; sourceTree = "<group>"; };
 		A516906217480E5400429EBF /* NSData+Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Document.h"; sourceTree = "<group>"; };
 		A516906317480E5400429EBF /* NSData+Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Document.m"; sourceTree = "<group>"; };
@@ -284,6 +298,16 @@
 			name = RequestCreation;
 			sourceTree = "<group>";
 		};
+		11C34A0C1763DEC700242620 /* SlideBar */ = {
+			isa = PBXGroup;
+			children = (
+				11C34A0D1763DF1800242620 /* DUTSlideBarDelegate.h */,
+				11C34A0E1763E18C00242620 /* UIViewController+DUTSlideBar.h */,
+				11C34A0F1763E18C00242620 /* UIViewController+DUTSlideBar.m */,
+			);
+			name = SlideBar;
+			sourceTree = "<group>";
+		};
 		A516906517480FD400429EBF /* Dynamic */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +379,8 @@
 				A51FA20B173F4382001911B9 /* DUTTableViewCell.m */,
 				A591B904175ACEB100FEAA93 /* DUTAmountCellController.h */,
 				A591B905175ACEB100FEAA93 /* DUTAmountCellController.m */,
+				1159BC05177677C20095FA00 /* DUTStandardCellController.h */,
+				1159BC06177677C20095FA00 /* DUTStandardCellController.m */,
 				A55F7E891763FF04006C86B8 /* DUTSwitchCellController.h */,
 				A55F7E8A1763FF04006C86B8 /* DUTSwitchCellController.m */,
 				A55F7E8C17640019006C86B8 /* DUTSwitchTableViewCell.h */,
@@ -400,6 +426,8 @@
 		A5925E7C174DB9DF0024FBAD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				11C34A071763D83F00242620 /* ButtonMenu.png */,
+				11C34A081763D83F00242620 /* ButtonMenu@2x.png */,
 				A55F7E871763FC39006C86B8 /* logo.png */,
 				A594663E175D9DE0002D0258 /* button_black_gradient.png */,
 				A53CE54B175AB8C800E692EE /* button_gradient.png */,
@@ -502,6 +530,7 @@
 		A597ECD317078AA7008061B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				11C34A0C1763DEC700242620 /* SlideBar */,
 				11C34A021763D0C700242620 /* DUTAlertViewController.h */,
 				11C34A031763D0C700242620 /* DUTAlertViewController.m */,
 				11C34A041763D0C700242620 /* DUTAlertViewController.xib */,
@@ -511,6 +540,8 @@
 				A597ECDB17079746008061B2 /* DUTRegistrationViewController.m */,
 				114CBB9C175C3C2900E4D48A /* DUTHomeViewController.h */,
 				114CBB9D175C3C2900E4D48A /* DUTHomeViewController.m */,
+				11C34A111763F73500242620 /* DUTMenuViewController.h */,
+				11C34A121763F73600242620 /* DUTMenuViewController.m */,
 				A55F7E841763F24B006C86B8 /* DUTStartupViewController.h */,
 				A55F7E851763F24B006C86B8 /* DUTStartupViewController.m */,
 			);
@@ -630,6 +661,8 @@
 				A53CE54C175AB8C800E692EE /* button_gradient.png in Resources */,
 				A594663F175D9DE0002D0258 /* button_black_gradient.png in Resources */,
 				11C34A061763D0C700242620 /* DUTAlertViewController.xib in Resources */,
+				11C34A091763D83F00242620 /* ButtonMenu.png in Resources */,
+				11C34A0A1763D83F00242620 /* ButtonMenu@2x.png in Resources */,
 				A55F7E881763FC39006C86B8 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,6 +726,9 @@
 				A594663D175D8C63002D0258 /* UILabel+DUT.m in Sources */,
 				A55F7E831763C64D006C86B8 /* DUTAlertView.m in Sources */,
 				11C34A051763D0C700242620 /* DUTAlertViewController.m in Sources */,
+				11C34A101763E18C00242620 /* UIViewController+DUTSlideBar.m in Sources */,
+				11C34A131763F73700242620 /* DUTMenuViewController.m in Sources */,
+				1159BC07177677C30095FA00 /* DUTStandardCellController.m in Sources */,
 				A55F7E861763F24B006C86B8 /* DUTStartupViewController.m in Sources */,
 				A55F7E8B1763FF04006C86B8 /* DUTSwitchCellController.m in Sources */,
 				A55F7E8E17640019006C86B8 /* DUTSwitchTableViewCell.m in Sources */,
