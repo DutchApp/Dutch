@@ -76,8 +76,14 @@ static const CGFloat kCellDefaultHeight = 44.0f;
             break;
         }
     }
-    [self.eventDelegate cellController:self dataValid:valid];
-    [self.eventDelegate dataChangedInCellController:self];
+    
+    if ([self.eventDelegate respondsToSelector:@selector(cellController:dataValid:)]) {
+        [self.eventDelegate cellController:self dataValid:valid];
+    }
+    
+    if ([self.eventDelegate respondsToSelector:@selector(dataChangedInCellController:)]) {
+        [self.eventDelegate dataChangedInCellController:self];
+    }
 }
 
 
