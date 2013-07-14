@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>host</key>
-	<string>localhost:3000</string>
+	<string>dutchdev.herokuapp.com</string>
 	<key>secure</key>
 	<false/>
 	<key>port</key>

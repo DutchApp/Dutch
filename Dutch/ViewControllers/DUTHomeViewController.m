@@ -15,6 +15,7 @@
 #import "DUTHomeViewController.h"
 #import "UIViewController+DUTSlideBar.h"
 #import "DUTMenuViewController.h"
+#import "DUTPieChartViewController.h"
 
 
 // *************************************************************************************************
@@ -26,6 +27,7 @@
 
 
 @property(nonatomic, strong, readwrite) IBOutlet UINavigationBar *navigationBar;
+@property(nonatomic, weak, readwrite) IBOutlet DUTPieChartViewController *pieChartVC;
 
 
 @end
@@ -66,6 +68,7 @@
         [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                       target:self
                                                       action:@selector(showAddExpenseView:)];
+    [self setupPieChart];
 }
 
 
@@ -75,6 +78,12 @@
 }
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"piechart"]) {
+        self.pieChartVC = segue.destinationViewController;
+        [self setupPieChart];
+    }
+}
 // *************************************************************************************************
 #pragma mark -
 #pragma mark DUTSlideBarDelegate Implementation.
@@ -105,6 +114,15 @@
 
 - (void)showAddExpenseView:(id)sender {
     NSLog(@"Even this link is working");
+}
+
+
+- (void)setupPieChart {
+    
+    NSMutableArray *contentArray = [NSMutableArray arrayWithObjects:[NSNumber numberWithDouble:70.0], [NSNumber numberWithDouble:30.0], nil];
+    self.pieChartVC.dataForChart = contentArray;
+    self.pieChartVC.nameOfDataPoints = @[@"",@""];
+    self.pieChartVC.title = @"Big Picture";
 }
 
 

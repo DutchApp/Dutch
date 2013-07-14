@@ -80,6 +80,7 @@
 		A597ECDC17079746008061B2 /* DUTRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECDB17079746008061B2 /* DUTRegistrationViewController.m */; };
 		A597ECE01707B486008061B2 /* DUTTransportUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A597ECDF1707B486008061B2 /* DUTTransportUtility.m */; };
 		A5A432B61792008900078F40 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A432B31792000F00078F40 /* libCorePlot-CocoaTouch.a */; };
+		A5A432BD179225B600078F40 /* DUTPieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A432BC179225B600078F40 /* DUTPieChartViewController.m */; };
 		A5B57A491758480D00DFE16B /* localizedtext_fr.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5B57A481758480D00DFE16B /* localizedtext_fr.plist */; };
 		A5C3CB03171227A100724C25 /* DUTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C3CB02171227A100724C25 /* DUTUtility.m */; };
 		A5C3CB06171227C200724C25 /* DUTUtility+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C3CB05171227C200724C25 /* DUTUtility+Validation.m */; };
@@ -222,6 +223,8 @@
 		A597ECDE1707B486008061B2 /* DUTTransportUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTTransportUtility.h; path = Transport/DUTTransportUtility.h; sourceTree = "<group>"; };
 		A597ECDF1707B486008061B2 /* DUTTransportUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTTransportUtility.m; path = Transport/DUTTransportUtility.m; sourceTree = "<group>"; };
 		A5A432AC1792000E00078F40 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "CorePlot_1.3/Source/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+		A5A432BB179225B600078F40 /* DUTPieChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTPieChartViewController.h; path = ViewControllers/DUTPieChartViewController.h; sourceTree = "<group>"; };
+		A5A432BC179225B600078F40 /* DUTPieChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTPieChartViewController.m; path = ViewControllers/DUTPieChartViewController.m; sourceTree = "<group>"; };
 		A5B57A481758480D00DFE16B /* localizedtext_fr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = localizedtext_fr.plist; sourceTree = "<group>"; };
 		A5C3CB01171227A100724C25 /* DUTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTUtility.h; path = Utility/DUTUtility.h; sourceTree = "<group>"; };
 		A5C3CB02171227A100724C25 /* DUTUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTUtility.m; path = Utility/DUTUtility.m; sourceTree = "<group>"; };
@@ -544,6 +547,8 @@
 				11C34A121763F73600242620 /* DUTMenuViewController.m */,
 				A55F7E841763F24B006C86B8 /* DUTStartupViewController.h */,
 				A55F7E851763F24B006C86B8 /* DUTStartupViewController.m */,
+				A5A432BB179225B600078F40 /* DUTPieChartViewController.h */,
+				A5A432BC179225B600078F40 /* DUTPieChartViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -732,6 +737,7 @@
 				A55F7E861763F24B006C86B8 /* DUTStartupViewController.m in Sources */,
 				A55F7E8B1763FF04006C86B8 /* DUTSwitchCellController.m in Sources */,
 				A55F7E8E17640019006C86B8 /* DUTSwitchTableViewCell.m in Sources */,
+				A5A432BD179225B600078F40 /* DUTPieChartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +809,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -829,6 +839,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
