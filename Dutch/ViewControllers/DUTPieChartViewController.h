@@ -11,5 +11,6 @@
 @interface DUTPieChartViewController : UIViewController<CPTPieChartDataSource, CPTPieChartDelegate>
 @property(nonatomic,strong,readwrite) NSArray *dataForChart;
 @property(nonatomic,strong,readwrite) NSArray *nameOfDataPoints;
+@property(nonatomic,strong,readwrite) NSArray *colorOfDataPoints;
 
 @end

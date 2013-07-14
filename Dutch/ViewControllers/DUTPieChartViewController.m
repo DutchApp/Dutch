@@ -101,7 +101,7 @@
     }
 }
 
--(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index
+/*-(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index
 {
     CPTTextLayer *label = [[CPTTextLayer alloc] initWithText:self.nameOfDataPoints[index]];
     CPTMutableTextStyle *textStyle = [label.textStyle mutableCopy];
@@ -109,26 +109,31 @@
     textStyle.color = [CPTColor lightGrayColor];
     label.textStyle = textStyle;
     return label;
-}
+}*/
 
 -(CGFloat)radialOffsetForPieChart:(CPTPieChart *)piePlot recordIndex:(NSUInteger)index
 {
     CGFloat offset = 0.0;
     
-    if ( index == 0 ) {
+    /*if ( index == 0 ) {
         offset = piePlot.pieRadius / 8.0f;
-    }
+    }*/
     
     return offset;
 }
 
+-(CPTFill *)sliceFillForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)idx {
+    UIColor *color = self.colorOfDataPoints[idx];
+    CPTFill *fill = [CPTFill fillWithColor:[CPTColor colorWithCGColor:color.CGColor]];
+    return fill;
+}
 
 #pragma mark -
 #pragma mark Delegate Methods
 
 -(void)pieChart:(CPTPieChart *)plot sliceWasSelectedAtRecordIndex:(NSUInteger)index
 {
-    plot.title = [NSString stringWithFormat:@"Selected index: %lu", (unsigned long)index];
+    NSLog(@"%@",[NSString stringWithFormat:@"Selected index: %lu", (unsigned long)index]) ;
 }
 
 @end

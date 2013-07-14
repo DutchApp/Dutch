@@ -14,3 +14,4 @@
 #import "DUTConstantVariables.h"
 #import "DUTServerOperationConstants.h"
 
+#define COLOR(X) (X/255.0f)

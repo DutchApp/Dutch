@@ -16,6 +16,7 @@
 #import "UIViewController+DUTSlideBar.h"
 #import "DUTMenuViewController.h"
 #import "DUTPieChartViewController.h"
+#import "DUTConstants.h"
 
 
 // *************************************************************************************************
@@ -119,9 +120,20 @@
 
 - (void)setupPieChart {
     
-    NSMutableArray *contentArray = [NSMutableArray arrayWithObjects:[NSNumber numberWithDouble:70.0], [NSNumber numberWithDouble:30.0], nil];
-    self.pieChartVC.dataForChart = contentArray;
-    self.pieChartVC.nameOfDataPoints = @[@"",@""];
+    self.pieChartVC.dataForChart = @[@(20.0),@(30.0),@(30.0),@(20.0)];
+    
+    UIColor *oweAccepted = [UIColor redColor];
+    UIColor *oweNotAccepted = [UIColor colorWithRed:COLOR(223)
+                                              green:COLOR(135)
+                                               blue:COLOR(106)
+                                              alpha:1];
+    UIColor *owedAccepted = [UIColor greenColor];
+    UIColor *owedNotAccepted = [UIColor colorWithRed:COLOR(135)
+                                               green:COLOR(223)
+                                                blue:COLOR(106)
+                                               alpha:1];
+    
+    self.pieChartVC.colorOfDataPoints = @[oweAccepted,oweNotAccepted,owedAccepted,owedNotAccepted];
     self.pieChartVC.title = @"Big Picture";
 }
 
