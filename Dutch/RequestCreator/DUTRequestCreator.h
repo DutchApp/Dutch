@@ -24,6 +24,12 @@
 
 
 /**
+ * Method to create the URL request for logout.
+ */
++ (NSMutableURLRequest *)urlRequestForLogoutUser;
+
+
+/**
  * Method to create the URL request for NewExpense.
  */
 + (NSMutableURLRequest *)urlRequestForNewExpense;

@@ -75,7 +75,7 @@
 - (void)launchFirsScreen {
     UIViewController *firstViewController = nil;
     UIViewController *initVC = self.window.rootViewController;
-    if ([DUTUtility isAutoLogin] && [[DUTSession sharedSession]loadCache]) {
+    if ([DUTUtility isAutoLogin] && [[DUTSession sharedSession] loadCache]) {
         firstViewController = [initVC.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
     }
     else {

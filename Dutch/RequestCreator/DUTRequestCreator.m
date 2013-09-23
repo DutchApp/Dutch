@@ -20,14 +20,15 @@
 #pragma mark Constants
 
 
-#define kServerConfigPropertiesFileName @"DUTServerProperties"
-#define kPropertiesFileExtension @"plist"
-#define kSecureKey @"secure"
-#define kHostKey @"host"
-#define kContentType @"contentType"
-#define kServerTimeOut @"serverTimeOut"
-#define kContentTypeHTTPHeaderField @"Content-type"
-#define kHTTPPostMethod @"POST"
+static NSString * const kServerConfigPropertiesFileName = @"DUTServerProperties";
+static NSString * const kPropertiesFileExtension = @"plist";
+static NSString * const kSecureKey = @"secure";
+static NSString * const kHostKey = @"host";
+static NSString * const kContentType = @"contentType";
+static NSString * const kServerTimeOut = @"serverTimeOut";
+static NSString * const kContentTypeHTTPHeaderField = @"Content-type";
+static NSString * const kHTTPDeleteMethod = @"DELETE";
+static NSString * const kHTTPPostMethod = @"POST";
 
 
 // *************************************************************************************************
@@ -60,6 +61,15 @@
                                     [self serverContentType]];
     
    return [self postURLRequestWithURL:urlString];
+}
+
+
++ (NSMutableURLRequest *)urlRequestForLogoutUser {
+    NSString *urlString = [NSString stringWithFormat:@"%@://%@/users/sign_out.%@",
+                                     [self httpProtocol],
+                                     [self host],
+                                     [self serverContentType]];
+    return [self deleteURLRequestWithURL:urlString];
 }
 
 
@@ -108,6 +118,19 @@
 
 + (NSString *)contentTypeForHTTPHeader {
     return [NSString stringWithFormat:@"application/%@", [self serverContentType]];
+}
+
+
++ (NSMutableURLRequest *)deleteURLRequestWithURL:(NSString *)urlString {
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *urlRequest =
+        [[NSMutableURLRequest alloc] initWithURL:url
+                                     cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                 timeoutInterval:[self requestTimeOut]];
+    [urlRequest setValue:[self contentTypeForHTTPHeader]
+      forHTTPHeaderField:kContentTypeHTTPHeaderField];
+    [urlRequest setHTTPMethod:kHTTPDeleteMethod];
+    return urlRequest;
 }
 
 
