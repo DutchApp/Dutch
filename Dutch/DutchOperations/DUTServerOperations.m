@@ -49,8 +49,8 @@ NSString * const kServerOpRequestData = @"requestDict";
                     NSDictionary *responseDictionary = object;
                   responseDictionary = responseDictionary[kServerOpResponseData];
                     id auth_token = [responseDictionary valueForKey:@"auth_token"];
-                    [[DUTSession sharedSession]setAuthToken:auth_token];
-                    [[DUTSession sharedSession]setUserId:[responseDictionary valueForKey:@"user_id"]];
+                    [[DUTSession sharedSession] setAuthToken:auth_token];
+                    [[DUTSession sharedSession] setUserId:[responseDictionary valueForKey:@"user_id"]];
                     
                     if ([DUTUtility isAutoLogin]) {
                         [[DUTSession sharedSession] cache];
@@ -65,15 +65,13 @@ NSString * const kServerOpRequestData = @"requestDict";
 + (void)logoutUserWithSuccessBlock:(BlockWithParameter)sucessBlock
                       failureBlock:(BlockWithParameter)failureBlock {
     NSMutableURLRequest * urlRequest = [DUTRequestCreator urlRequestForLogoutUser];
-    NSDictionary *authTokenDictionary = nil;
-    /*
-    if ([[DUTSession sharedSession] authToken]) {
-        authTokenDictionary = @{@"auth_token": [[DUTSession sharedSession] authToken]};
-    }
-    */
+    
     [self submitURLRequest:urlRequest
-                  withInfo:authTokenDictionary
-              successBlock:sucessBlock
+                  withInfo:nil
+              successBlock:^(id object) {
+        [[DUTSession sharedSession] reset];
+        sucessBlock(object);
+    }
               failureBlock:failureBlock
            progressMessage:@"Logging out"];
 }
@@ -83,6 +81,7 @@ NSString * const kServerOpRequestData = @"requestDict";
                            successBlock:(BlockWithParameter)successBlock
                            failureBlock:(BlockWithParameter)failureBlock {
     NSMutableURLRequest *urlRequest = [DUTRequestCreator urlRequestForRegisterUser];
+    
     [self submitURLRequest:urlRequest
                   withInfo:info
               successBlock:successBlock
@@ -119,7 +118,9 @@ NSString * const kServerOpRequestData = @"requestDict";
 }
 
 + (void)logRequest:(NSURLRequest *)request {
-    NSLog(@"URL:%@\nHTTP Method: %@\nheaderFields:%@\nbody:%@",request.URL,request.HTTPMethod,request.allHTTPHeaderFields,request.HTTPBody);
+    NSLog(@"Outgoing request start **************************************************************");
+    NSLog(@"URL: %@\nHTTP Method: %@\nheaderFields:%@\nbody:%@",request.URL,request.HTTPMethod,request.allHTTPHeaderFields,request.HTTPBody);
+    NSLog(@"Outgoing request ends ***************************************************************");
 }
 
 
@@ -132,9 +133,9 @@ NSString * const kServerOpRequestData = @"requestDict";
     NSData *encodedData = nil;
     
     if (info) {
-        encodedData = [DUTRequestEncoder encodeRequestFromData:info
-                                                             withError:&error];
+        encodedData = [DUTRequestEncoder encodeRequestFromData:info withError:&error];
     }
+    
     if (error) {
         NSMutableDictionary *errorDictionary = [[NSMutableDictionary alloc] init];
         [errorDictionary setObjectIfNotNil:error forKey:kServerOpError];
@@ -154,10 +155,12 @@ NSString * const kServerOpRequestData = @"requestDict";
     __block MBProgressHUD *progressView = [self showProgressViewWithMessage:progressMessage];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        NSURLResponse *urlResponse = nil;
+        NSHTTPURLResponse *urlResponse = nil;
         NSData *responseData = [NSURLConnection sendSynchronousRequest:urlRequest
                                                      returningResponse:&urlResponse
                                                                  error:&error];
+        
+        NSLog(@"HTTP response code is %d", urlResponse.statusCode);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [progressView hide:YES];
@@ -185,7 +188,7 @@ NSString * const kServerOpRequestData = @"requestDict";
                     [successResponse setObjectIfNotNil:info forKey:kServerOpRequestData];
                     [successResponse setObjectIfNotNil:responseDictionary
                                                 forKey:kServerOpResponseData];
-                    successBlock(responseDictionary);
+                    successBlock(successResponse);
                 }
             }
         });
