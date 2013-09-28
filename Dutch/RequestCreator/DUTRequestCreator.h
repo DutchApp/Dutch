@@ -6,9 +6,26 @@
 //  Copyright (c) 2013 Dutch Inc. All rights reserved.
 //
 
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Imports
+
+
 #import <Foundation/Foundation.h>
 
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Interface
+
+
 @interface DUTRequestCreator : NSObject
+
+
+// *************************************************************************************************
+#pragma mark -
+#pragma mark Public Methods
 
 
 /**
@@ -21,6 +38,12 @@
  * Method to create the URL request for login.
  */
 + (NSMutableURLRequest *)urlRequestForLoginUser;
+
+
+/**
+ * Method to create the URL request for logout.
+ */
++ (NSMutableURLRequest *)urlRequestForLogoutUser;
 
 
 /**

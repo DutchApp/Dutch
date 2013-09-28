@@ -13,10 +13,12 @@
 
 
 #import "DUTHomeViewController.h"
-#import "UIViewController+DUTSlideBar.h"
+
+#import "DUTConstants.h"
 #import "DUTMenuViewController.h"
 #import "DUTPieChartViewController.h"
-#import "DUTConstants.h"
+#import "DUTServerOperations.h"
+#import "UIViewController+DUTSlideBar.h"
 
 
 // *************************************************************************************************
@@ -59,6 +61,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // TODO: Anuj -- 2nd phase
+    /*
     self.navigationBar.topItem.leftBarButtonItem =
         [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ButtonMenu"]
                                          style:UIBarButtonItemStyleBordered
@@ -69,6 +73,14 @@
         [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                       target:self
                                                       action:@selector(showAddExpenseView:)];
+    */
+    
+    self.navigationBar.topItem.leftBarButtonItem =
+        [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+                                         style:UIBarButtonItemStyleBordered
+                                        target:self
+                                        action:@selector(logoutUser)];
+    
     [self setupPieChart];
 }
 
@@ -104,6 +116,18 @@
 // *************************************************************************************************
 #pragma mark -
 #pragma mark Private Implementation.
+
+
+- (void)logoutUser {
+    NSLog(@"Logout user called");
+    
+    [DUTServerOperations logoutUserWithSuccessBlock:^(id object) {
+        NSLog(@"Success Response: %@", object);
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    } failureBlock:^(id object) {
+        NSLog(@"Failure Response: %@", object);
+    }];
+}
 
 
 - (void)showLeftSlideView:(id)sender {
