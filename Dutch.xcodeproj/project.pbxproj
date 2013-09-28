@@ -24,6 +24,7 @@
 		114CBB9E175C3C2900E4D48A /* DUTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114CBB9D175C3C2900E4D48A /* DUTHomeViewController.m */; };
 		1159BC07177677C30095FA00 /* DUTStandardCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1159BC06177677C20095FA00 /* DUTStandardCellController.m */; };
 		11719A31175AC1C400A1EE26 /* DUTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 11719A30175AC1C400A1EE26 /* DUTSession.m */; };
+		117420BA17F7501B00A5CD63 /* DUTServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 117420B917F7501B00A5CD63 /* DUTServerResponse.m */; };
 		118F627817EFCCCD007ACB30 /* NSMutableDictionary+DUTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 118F627717EFCCCD007ACB30 /* NSMutableDictionary+DUTExtension.m */; };
 		11901A1E171227A700E5BC8E /* DUTServerOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A1D171227A700E5BC8E /* DUTServerOperations.m */; };
 		11901A2217122ACE00E5BC8E /* DUTRequestEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 11901A2117122ACE00E5BC8E /* DUTRequestEncoder.m */; };
@@ -120,6 +121,8 @@
 		1159BC06177677C20095FA00 /* DUTStandardCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUTStandardCellController.m; sourceTree = "<group>"; };
 		11719A2F175AC1C400A1EE26 /* DUTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTSession.h; path = Models/DUTSession.h; sourceTree = "<group>"; };
 		11719A30175AC1C400A1EE26 /* DUTSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTSession.m; path = Models/DUTSession.m; sourceTree = "<group>"; };
+		117420B817F7501B00A5CD63 /* DUTServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTServerResponse.h; path = Models/DUTServerResponse.h; sourceTree = "<group>"; };
+		117420B917F7501B00A5CD63 /* DUTServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTServerResponse.m; path = Models/DUTServerResponse.m; sourceTree = "<group>"; };
 		118F627617EFCCCD007ACB30 /* NSMutableDictionary+DUTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+DUTExtension.h"; sourceTree = "<group>"; };
 		118F627717EFCCCD007ACB30 /* NSMutableDictionary+DUTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+DUTExtension.m"; sourceTree = "<group>"; };
 		11901A1C171227A700E5BC8E /* DUTServerOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTServerOperations.h; path = DutchOperations/DUTServerOperations.h; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 			children = (
 				11719A2F175AC1C400A1EE26 /* DUTSession.h */,
 				11719A30175AC1C400A1EE26 /* DUTSession.m */,
+				117420B817F7501B00A5CD63 /* DUTServerResponse.h */,
+				117420B917F7501B00A5CD63 /* DUTServerResponse.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -752,6 +757,7 @@
 				A55F7E8E17640019006C86B8 /* DUTSwitchTableViewCell.m in Sources */,
 				A5A432BD179225B600078F40 /* DUTPieChartViewController.m in Sources */,
 				118F627817EFCCCD007ACB30 /* NSMutableDictionary+DUTExtension.m in Sources */,
+				117420BA17F7501B00A5CD63 /* DUTServerResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
