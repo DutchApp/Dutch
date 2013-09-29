@@ -181,6 +181,9 @@
  **/
 -(void)drawInRect:(CGRect)rect withTextStyle:(CPTTextStyle *)style inContext:(CGContextRef)context
 {
+    if (!context) {
+        return;
+    }
     if ( style.color == nil ) {
         return;
     }

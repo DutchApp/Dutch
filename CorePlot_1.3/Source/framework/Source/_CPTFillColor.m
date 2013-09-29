@@ -57,10 +57,13 @@
  **/
 -(void)fillRect:(CGRect)rect inContext:(CGContextRef)context
 {
-    CGContextSaveGState(context);
-    CGContextSetFillColorWithColor(context, self.fillColor.cgColor);
-    CGContextFillRect(context, rect);
-    CGContextRestoreGState(context);
+    if (context) {
+        CGContextSaveGState(context);
+        CGContextSetFillColorWithColor(context, self.fillColor.cgColor);
+        CGContextFillRect(context, rect);
+        CGContextRestoreGState(context);
+    }
+
 }
 
 /** @brief Draws the color into the given graphics context clipped to the current drawing path.
@@ -68,10 +71,13 @@
  **/
 -(void)fillPathInContext:(CGContextRef)context
 {
-    CGContextSaveGState(context);
-    CGContextSetFillColorWithColor(context, self.fillColor.cgColor);
-    CGContextFillPath(context);
-    CGContextRestoreGState(context);
+    if (context) {
+        CGContextSaveGState(context);
+        CGContextSetFillColorWithColor(context, self.fillColor.cgColor);
+        CGContextFillPath(context);
+        CGContextRestoreGState(context);
+    }
+
 }
 
 #pragma mark -
