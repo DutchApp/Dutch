@@ -146,27 +146,38 @@
     UIView *v = nil;
     if (section == 0) {
         self.btnLogin.translatesAutoresizingMaskIntoConstraints = NO;
-        self.btnLogin.frame = CGRectMake(10, 5, 100, 45);
+
         
-        [DUTUtility roundButton:self.btnLogin width:CGRectGetWidth(self.btnLogin.frame)];
-        
-        [self.btnLogin setTitle:TXT_LOGIN_BUTTON_LOGIN forState:UIControlStateNormal];
         v = [[UIView alloc]initWithFrame:CGRectZero];
         [v addSubview:self.btnLogin];
+
         
         self.btnNewUser.translatesAutoresizingMaskIntoConstraints = NO;
-        self.btnNewUser.frame = CGRectMake(120, 5 +(45.0-20.0)/2.0, 200, 20);
         [self.btnNewUser setTitle:TXT_LOGIN_BUTTON_REGISTER forState:UIControlStateNormal];
+        [self.btnNewUser sizeToFit];
+        [v addSubview:self.btnNewUser];
         
-        [v addSubview:self.btnNewUser];   
+        // Configure Login button 
+        NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.btnLogin attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:v attribute:NSLayoutAttributeLeading multiplier:1 constant:10];
+        [v addConstraint:constraint];
+        constraint = [NSLayoutConstraint constraintWithItem:self.btnLogin attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:v attribute:NSLayoutAttributeTop multiplier:1 constant:5];
+        [v addConstraint:constraint];
+        constraint = [NSLayoutConstraint constraintWithItem:self.btnLogin attribute:NSLayoutAttributeBaseline relatedBy:NSLayoutRelationEqual toItem:self.btnNewUser attribute:NSLayoutAttributeBaseline multiplier:1 constant:0];
+        [v addConstraint:constraint];
+        [self.btnLogin setTitle:TXT_LOGIN_BUTTON_LOGIN forState:UIControlStateNormal];
+        [self.btnLogin sizeToFit];
+        
+        
+        constraint = [NSLayoutConstraint constraintWithItem:self.btnNewUser attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:v attribute:NSLayoutAttributeTrailing multiplier:1 constant:-10];
+        [v addConstraint:constraint];
+        v.frame = CGRectMake(0, 0, 0, 60);
     }
-    
     return v;
 }
 
 - (CGFloat)cellContainer:(DUTGroupedCellControllerContainer *)cellContainer
 heightForFooterInSection:(NSInteger)section {
-    return 140.0f;
+    return 60;
 }
 
 
