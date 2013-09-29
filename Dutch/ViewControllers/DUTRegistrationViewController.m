@@ -8,6 +8,7 @@
 
 #import "DUTRegistrationViewController.h"
 
+#import "DUTAlertView.h"
 #import "DUTUtility+Validation.h"
 #import "DUTServerOperations.h"
 #import "DUTEditableCellController.h"
@@ -70,6 +71,19 @@
                                             NSLog(@"Response:%@",object);
                                         } failureBlock:^(id object) {
                                             NSLog(@"Failure:%@",object);
+                                            if ([object isKindOfClass:[NSDictionary class]]) {
+                                                NSDictionary *errorDictionary =
+                                                    (NSDictionary *)object;
+                                                NSError *error = [errorDictionary objectForKey:kServerOpError];
+                                                NSLog(@"Error Description: %@", [error description]);
+                                                NSLog(@"Error's localized description %@", [error localizedDescription]);
+                                                NSString *errorDescription = [error localizedDescription];
+                                                NSLog(@"Error's localized description string %@", errorDescription);
+                                                DUTAlertView *alertView =
+                                                    [DUTAlertView alertViewWithTitle:@"Error" message:errorDescription];
+                                                [alertView addOkButtonWithAction:NULL];
+                                                [alertView show];
+                                            }
                                         }];
 }
 

@@ -44,7 +44,8 @@
         responseDictionary = [self decodeResponse:error];
     }
     
-    // If there is a success response and no error in parsing the response, return with response dictionary.
+    // If there is a success response and no error in parsing the response,
+    // return with response dictionary.
     if (!error && [self isSuccessResponse]) {
         return responseDictionary;
     }
@@ -52,7 +53,16 @@
         NSString *errorMessage = nil;
         
         if ([[responseDictionary allValues] count]) {
-            errorMessage = [[responseDictionary allValues] objectAtIndex:0];
+            // Assuming that first value
+            id firstObject = [[responseDictionary allValues] objectAtIndex:0];
+            
+            if ([firstObject isKindOfClass:[NSString class]]) {
+                errorMessage = (NSString *)firstObject;
+            }
+            else {
+                // Assuming that first value in the dictionary will always be an array of strings.
+                errorMessage = [firstObject objectAtIndex:0];
+            }
         }
         else {
             errorMessage =
