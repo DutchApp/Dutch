@@ -38,35 +38,25 @@
 
 
 - (NSDictionary *)handleServerResponse:(NSError **)error {
-    NSDictionary *responseDictionary = nil;
+    id parsedResponse  = nil;
     
     if (self.responseData) {
-        responseDictionary = [self decodeResponse:error];
+        parsedResponse = [self decodeResponse:error];
+        NSLog(@"Response: %@", [parsedResponse description]);
     }
     
     // If there is a success response and no error in parsing the response,
     // return with response dictionary.
     if (!error && [self isSuccessResponse]) {
-        return responseDictionary;
+        return (NSDictionary *)parsedResponse;
     }
     else if (![self isSuccessResponse]) {
         NSString *errorMessage = nil;
         
-        if ([[responseDictionary allValues] count]) {
-            // Assuming that first value
-            id firstObject = [[responseDictionary allValues] objectAtIndex:0];
-            
-            if ([firstObject isKindOfClass:[NSString class]]) {
-                errorMessage = (NSString *)firstObject;
-            }
-            else {
-                // Assuming that first value in the dictionary will always be an array of strings.
-                errorMessage = [firstObject objectAtIndex:0];
-            }
-        }
-        else {
-            errorMessage =
-                [NSHTTPURLResponse localizedStringForStatusCode:self.urlResponse.statusCode];
+        // Assuming if there is an error, we will have an array of messages.
+        if ([parsedResponse isKindOfClass:[NSArray class]]) {
+            NSArray *errorMessages = (NSArray *)parsedResponse;
+            errorMessage = [errorMessages componentsJoinedByString:@". "];
         }
         *error =
             [NSError errorWithDomain:@"ErrorDomain"
@@ -74,7 +64,7 @@
                             userInfo:@{NSLocalizedDescriptionKey: errorMessage}];
     }
     
-    return responseDictionary;
+    return (NSDictionary *) parsedResponse;
 }
 
 
@@ -83,11 +73,10 @@
 #pragma mark Private Methods
 
 
-- (NSDictionary *)decodeResponse:(NSError **)error {
-    NSDictionary *jsonDict =
-    (NSDictionary *) [NSJSONSerialization JSONObjectWithData:self.responseData
-                                                     options:NSJSONReadingMutableContainers
-                                                       error:error];
+- (id)decodeResponse:(NSError **)error {
+    id jsonDict = [NSJSONSerialization JSONObjectWithData:self.responseData
+                                                  options:NSJSONReadingMutableContainers
+                                                    error:error];
     return jsonDict;
 }
 
