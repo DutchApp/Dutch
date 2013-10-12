@@ -81,6 +81,9 @@
 }
 
 
+/**
+ * Consider http status code between 200 and 299 as success response.
+ */
 - (BOOL)isSuccessResponse {
     return self.urlResponse.statusCode >= 200 && self.urlResponse.statusCode <= 299;
 }
