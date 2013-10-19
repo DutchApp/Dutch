@@ -37,6 +37,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.textField = [[DUTDescriptiveTextField alloc] initWithFrame:CGRectZero];
+        self.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         [self.contentView addSubview:self.textField];
         self.textField.controlDelegate = self;
     }
@@ -99,6 +100,10 @@
 }
 - (void)editEnded:(id)control  {
     self.accessoryView = nil;
+}
+
+- (BOOL)controlCleared:(id)control {
+    return YES;
 }
 
 - (void)setupValidStatus:(BOOL)valid {

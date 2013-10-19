@@ -14,5 +14,6 @@
 - (void)control:(id)control dataChanged:(id)data;
 - (void)editBegan:(id)control ;
 - (void)editEnded:(id)control ;
+- (BOOL)controlCleared:(id)control;
 
 @end

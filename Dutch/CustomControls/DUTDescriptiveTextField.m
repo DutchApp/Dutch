@@ -63,6 +63,16 @@ replacementString:(NSString *)string {
     }
 }
 
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField {
+    BOOL canClear = [self.textField.controlDelegate controlCleared:textField];
+    if (canClear) {
+        self.textField.valueText = nil;        
+        [self.textField.controlDelegate control:self dataChanged:nil];
+    }
+    return canClear;
+}
+
 @end
 
 
