@@ -40,7 +40,19 @@
 	<string>Ok</string>
 	<key>TXT_CANCEL</key>
 	<string>Cancel</string>
+	<key>TXT_NAME</key>
+	<string>Name:%@</string>
+	<key>TXT_EXPENSE_DATE</key>
+	<string>Date:%@</string>
+	<key>TXT_EXPENSE_TOTAL_AMOUNT</key>
+	<string>Total:%@</string>
+	<key>TXT_EXPENSE_NAME_PHOLDER</key>
+	<string>Enter name for expense</string>
+	<key>TXT_EXPENSE_DATE_PHOLDER</key>
+	<string>Enter date of expense</string>
+	<key>TXT_EXPENSE_TOTAL_AMOUNT_PHOLDER</key>
+	<string>Enter total amount of expense</string>
 	<key>VERSION</key>
-	<string>2</string>
+	<string>6</string>
 </dict>
 </plist>

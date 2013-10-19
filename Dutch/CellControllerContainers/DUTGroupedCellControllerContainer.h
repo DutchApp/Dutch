@@ -62,6 +62,7 @@
 #pragma mark -
 #pragma mark Instance Methods
 
+- (id)initWithTableView:(UITableView *)tableView;
 
 - (BOOL)assignSectionWithTitle:(NSString *)title index:(NSInteger)sectionIndex;
 
