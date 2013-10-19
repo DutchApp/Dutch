@@ -10,8 +10,8 @@
 
 #import "DUTAppDelegate.h"
 #import "DUTRequestCreator.h"
-#import "DUTResponseDecoder.h"
 #import "DUTRequestEncoder.h"
+#import "DUTServerResponse.h"
 #import "DUTSession.h"
 #import "NSMutableDictionary+DUTExtension.h"
 
@@ -173,11 +173,13 @@ NSString * const kServerOpRequestData = @"requestDict";
                 return;
             }
             else {
-                NSDictionary *responseDictionary =
-                [DUTResponseDecoder decodeFromData:responseData
-                                         withError:&error];
+                DUTServerResponse *serverResponse =
+                    [[DUTServerResponse alloc] initWithHTTPURLResponse:urlResponse
+                                                               andData:responseData];
+                NSDictionary * responseDictionary = [serverResponse handleServerResponse:&error];
                 
                 if (error) {
+                    NSLog(@"Getting a error back");
                     NSMutableDictionary *errorDictionary = [[NSMutableDictionary alloc] init];
                     [errorDictionary setObjectIfNotNil:error forKey:kServerOpError];
                     [errorDictionary setObjectIfNotNil:info forKey:kServerOpRequestData];
